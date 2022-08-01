@@ -1,0 +1,690 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Drawing.Printing;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace egycashier
+{
+    public partial class pos : Form
+    {
+        private static pos _instance;
+
+        public pos()
+        {
+            InitializeComponent();
+            List_Life();
+            _instance = this;
+
+        }
+        int NormalTotal = 0;
+        int VATSystem = 0;
+        int VATtotal = 0;
+
+        private void List_Life()
+
+        {
+
+            string filePATH = @"C:\EgyCashier\guest\";
+            string[] text1 = File.ReadAllLines(filePATH + "list.txt");
+            int iddd = Convert.ToInt32(text1[0]);
+            for (int i = 0; i < iddd; i++)
+            {
+                string[] temp1 = File.ReadAllLines(filePATH + "fol" + i + "\\configuration.txt");
+
+                Button MenuBTN = new Button();
+                MenuBTN.Height = 40;
+                MenuBTN.Width = 145;
+                MenuBTN.BackColor = SystemColors.Info;
+                MenuBTN.FlatStyle = FlatStyle.Flat;
+                MenuBTN.Font= new Font("Arial", 14);
+
+                MenuBTN.Text = temp1[1];
+                MenuBTN.Name = "menuBtn" + i;
+
+                MenuBTN.Tag = "fol"+ i;
+
+                MenuBTN.Click += MenuBTN_Click;
+
+                flowLayoutPanel4.Controls.Add(MenuBTN);
+
+            }
+/*            VATSystem = Convert.ToInt32(text1[2]);
+            VATtotal = Convert.ToInt32(text1[3]);
+
+            if (VATSystem == 1 || VATSystem == 2)
+                label2.Text = "With Total " + text1[3] + "% Vat :";
+            else
+                label2.Text = "FREE VAT !";
+
+*/
+
+        }
+        string MAINMENU;
+        private void MenuBTN_Click(object sender, EventArgs e)
+        {
+            
+            Button bbb = sender as Button;
+            string THEFOLDERid = bbb.Tag.ToString();
+            ForeachControlsInForm(bbb.Name);
+
+
+            MAINMENU = bbb.Tag.ToString().Replace("fol", "");
+            if (MAINMENU.Length < 2)
+                MAINMENU = "0" + MAINMENU;
+             
+
+            string filePATH = @"C:\EgyCashier\guest\" + THEFOLDERid + "\\";
+
+
+
+            flowLayoutPanel1.Controls.Clear();
+            string[] text1 = File.ReadAllLines(filePATH + "configuration.txt");
+            int iddd = Convert.ToInt32(text1[0]);
+            if(iddd == 0)
+            {
+
+                Label L_no_space = new Label();
+                L_no_space.Font = new Font("Arial", 30);
+                L_no_space.Text = "This List Is Empty";
+                L_no_space.AutoSize = true;
+                flowLayoutPanel1.Controls.Add(L_no_space);
+            }
+            else
+            for (int i = 0; i < iddd; i++)
+            {
+                string[] temp1 = File.ReadAllLines(filePATH + "item" + i + ".txt");
+
+                Button itemBTN = new Button();
+                itemBTN.Height = 90;
+                itemBTN.Width = 90;
+                itemBTN.BackColor = Color.White;
+                itemBTN.FlatStyle = FlatStyle.Flat;
+                itemBTN.Font = new Font("Arial", 12);
+
+
+
+                itemBTN.Text = temp1[0];
+                itemBTN.Name =MAINMENU+"btnName" + i;
+                    //    itemBTN.Name = "G"+THEFOLDERid.Replace("fol","")+"btnName" + i;
+
+
+
+
+
+
+                    itemBTN.Tag = temp1[1];
+
+                itemBTN.Click += ItemBTN_Click;
+
+
+                flowLayoutPanel1.Controls.Add(itemBTN);
+            }
+           
+
+
+
+
+        }
+        object MOREtags(object obj, string propName)
+        {
+            return obj.GetType().GetProperty(propName).GetValue(obj, null);
+        }
+        private void ItemBTN_Click(object sender, EventArgs e)
+        {
+
+
+            Button btn = sender as Button;
+
+
+
+
+            Random rnd = new Random();
+            int R1 = rnd.Next(10, 99);
+            int R2 = rnd.Next(10, 20);
+            int R3 = rnd.Next(10, 40);
+            string R4 = "" + R1 + R2 + R3;
+
+
+            string mynamedLABEL ="";
+ 
+            mynamedLABEL =   btn.Name;
+          //  MessageBox.Show(mynamedLABEL);
+
+                foreach (Control contr in flowLayoutPanel2.Controls)
+                {
+                    if (contr.Name.Contains(mynamedLABEL))
+                    {
+                    Label InstanceOfplus = new Label();
+                   InstanceOfplus.Name = contr.Name.Replace("L1", "X2");
+                   // MessageBox.Show(InstanceOfplus.Name);
+
+
+                    Lbl_plus_Click(InstanceOfplus, e);
+                    //break;
+                    return;
+                    }
+            }
+
+            /*
+
+            zz_labelNAME_zz.Tag = new { Yname = MOREtags(zz_labelNAME_zz.Tag, "Yname").ToString(), Yprice = MOREtags(zz_labelNAME_zz.Tag, "Yprice").ToString(), Ycount = NnumN };
+   
+            MessageBox.Show(MOREtags(zz_labelNAME_zz.Tag, "Ycount").ToString() + "peice ... > " + MOREtags(zz_labelNAME_zz.Tag, "Yprice").ToString()+"$ ... and item"+ MOREtags(zz_labelNAME_zz.Tag, "Yname"));
+
+            */
+
+            Label label_item_name = new Label();
+            label_item_name.ForeColor = Color.White;
+            label_item_name.Text = btn.Text;
+            label_item_name.Width = 120;
+            label_item_name.Name = "L1" + btn.Name + R4;
+            label_item_name.Font = new Font("Arial", 18);
+
+ 
+            label_item_name.Tag = new {Yname = btn.Name.Replace("btnName",""), Yprice = btn.Tag, Ycount=1 , Yitem = btn.Text };
+
+
+
+            Label label_delete = new Label();
+            label_delete.ForeColor = Color.Red;
+            label_delete.Text = "Delete";
+            label_delete.Width = 55;
+            label_delete.Name = "L2" + btn.Name + R4;
+
+
+            Label label_price = new Label();
+            label_price.ForeColor = Color.Teal;
+            label_price.Text = btn.Tag.ToString()+" EGP";
+            label_price.Width = 60;
+            label_price.Height = 28;
+            label_price.Name = "L3" + btn.Name + R4;
+            label_price.Font = new Font("Arial", 18);
+
+            PictureBox picc = new PictureBox();
+            picc.Width = 280;
+            picc.Height = 5;
+            picc.BorderStyle = BorderStyle.Fixed3D;
+            picc.Name = "L4" + btn.Name + R4;
+
+            PictureBox picc2 = new PictureBox();
+            picc2.Width = 280;
+            picc2.Height =5;
+            picc2.BorderStyle = BorderStyle.Fixed3D;
+            picc2.Name = "L5" + btn.Name + R4;
+
+
+
+            Label lbl_minus = new Label();
+            lbl_minus.ForeColor = SystemColors.GradientInactiveCaption;
+            lbl_minus.Text = "X";
+            lbl_minus.Width = 40;
+            lbl_minus.Name = "X1" + btn.Name + R4;
+            lbl_minus.Font = new Font("Arial", 15);
+            lbl_minus.AutoSize = true;
+            lbl_minus.BorderStyle = BorderStyle.FixedSingle;
+
+
+            Label lbl_count = new Label();
+            lbl_count.ForeColor = SystemColors.Highlight;
+            lbl_count.Text = "1";
+            lbl_count.Width = 40;
+            lbl_count.Name = "X2" + btn.Name + R4;
+            lbl_count.AutoSize = true;
+            lbl_count.Font = new Font("Arial", 11);
+           // MessageBox.Show(lbl_count.Name);
+
+            Label lbl_plus = new Label();
+            lbl_plus.ForeColor = SystemColors.GradientInactiveCaption;
+            lbl_plus.Text = "+";
+            lbl_plus.Width = 40;
+            lbl_plus.Name = "X3" + btn.Name + R4;
+            lbl_plus.Font = new Font("Arial", 17);
+            lbl_plus.AutoSize = true;
+            lbl_plus.BorderStyle = BorderStyle.FixedSingle;
+
+
+
+            flowLayoutPanel2.Controls.Add(label_item_name);
+
+            flowLayoutPanel2.Controls.Add(label_price);
+
+
+
+
+
+            flowLayoutPanel3.Controls.Add(lbl_minus);
+            flowLayoutPanel3.Controls.Add(lbl_count);
+            flowLayoutPanel3.Controls.Add(lbl_plus);
+
+            flowLayoutPanel3.Controls.Add(label_delete);
+
+            flowLayoutPanel2.Controls.Add(picc);
+            flowLayoutPanel3.Controls.Add(picc2);
+
+            label_delete.Click += label_delete_Click;
+
+
+
+
+            lbl_minus.Click += Lbl_minus_Click;
+            lbl_plus.Click += Lbl_plus_Click;
+           /* NormalTotal += Convert.ToInt32(btn.Tag);
+
+
+            double theVat = 0;
+
+            theVat = (double)VATtotal / 100;
+            theVat *= NormalTotal;
+
+            label3.Text = theVat + "EGP";
+
+            if (VATSystem == 0 || VATSystem == 1)
+                linkLabel1.Text = NormalTotal + " EGP";
+            else if (VATSystem == 2)
+            {
+                linkLabel1.Text = (NormalTotal + theVat) + " EGP";
+                label4.Text = "+" + NormalTotal;
+            }*/
+
+
+        }
+
+        private void Lbl_plus_Click(object sender, EventArgs e)
+        {
+
+            Label LL_delete = sender as Label;
+
+            string THER = LL_delete.Name;
+            
+
+            THER = THER.Substring(THER.Length - 6);
+
+           
+            string testtt = "";
+            testtt = "X2" + LL_delete.Name.Remove(0, 2);
+
+            //MessageBox.Show(testtt);
+            char A1 = testtt[2];
+            char A2 = testtt[3];
+
+       //   if (A1 == MAINMENU[0] && A2 == MAINMENU[1])
+         //   testtt.Replace(MAINMENU + MAINMENU, MAINMENU);
+
+
+            testtt = testtt.Remove(testtt.Length - 6);
+            Label zz_label_count = (Label)flowLayoutPanel3.Controls[testtt + THER];
+
+            int NnumN = int.Parse(zz_label_count.Text)+1;
+            zz_label_count.Text = NnumN.ToString();
+
+
+
+
+            string mynamedLABEL;
+
+            mynamedLABEL = LL_delete.Name.Substring(LL_delete.Name.Length - 7);
+
+            Label zz_labelNAME_zz = (Label)flowLayoutPanel2.Controls["L1"+ A1+A2+"btnName" + mynamedLABEL];
+
+            zz_labelNAME_zz.Tag = new { Yname = MOREtags(zz_labelNAME_zz.Tag, "Yname").ToString(), Yprice = MOREtags(zz_labelNAME_zz.Tag, "Yprice").ToString(), Ycount = NnumN , Yitem = MOREtags(zz_labelNAME_zz.Tag, "Yitem").ToString() };
+   
+          //  MessageBox.Show(MOREtags(zz_labelNAME_zz.Tag, "Ycount").ToString() + "peice ... > " + MOREtags(zz_labelNAME_zz.Tag, "Yprice").ToString()+"$ ... and item"+ MOREtags(zz_labelNAME_zz.Tag, "Yname"));
+
+        }
+
+        private void Lbl_minus_Click(object sender, EventArgs e)
+        {
+            Label LL_delete = sender as Label;
+
+            string THER = LL_delete.Name;
+            THER = THER.Substring(THER.Length - 6);
+
+            string testtt = "";
+
+            testtt = "X2" + LL_delete.Name.Remove(0, 2);
+
+            char A1 = testtt[2];
+            char A2 = testtt[3];
+            //MessageBox.Show(testtt);
+      //      if (A1 == MAINMENU[0] && A2 == MAINMENU[1]) MessageBox.Show("wrong");
+              //  testtt.Replace(MAINMENU+ MAINMENU, MAINMENU);
+
+
+
+        testtt = testtt.Remove(testtt.Length - 6);
+
+            Label zz_label_count = (Label)flowLayoutPanel3.Controls[testtt + THER];
+             int NnumN = int.Parse(zz_label_count.Text) - 1;
+            if (NnumN > 0)
+                zz_label_count.Text = NnumN.ToString();
+
+
+
+
+
+            string mynamedLABEL;
+
+            mynamedLABEL = LL_delete.Name.Substring(LL_delete.Name.Length - 7);
+
+            string Forlabel = "L1" + A1 + A2 + "btnName" + mynamedLABEL;
+ 
+           // MessageBox.Show(Forlabel);
+            Label zz_labelNAME_zz = (Label)flowLayoutPanel2.Controls[Forlabel];
+
+            zz_labelNAME_zz.Tag = new { Yname = MOREtags(zz_labelNAME_zz.Tag, "Yname").ToString(), Yprice = MOREtags(zz_labelNAME_zz.Tag, "Yprice").ToString(), Ycount = NnumN , Yitem = MOREtags(zz_labelNAME_zz.Tag, "Yitem").ToString() };
+
+        }
+
+
+
+
+
+
+        //For Styling Menu With Colors....
+        public void ForeachControlsInForm(string contName)
+        {
+            
+            foreach (Control contr in flowLayoutPanel4.Controls)
+            {
+                contr.BackColor = SystemColors.Info;
+                contr.ForeColor = Color.Black;
+
+                if (contr.Name == contName)
+                {
+                      contr.BackColor = SystemColors.MenuHighlight;
+                       contr.ForeColor = Color.White;
+                }
+            }
+            
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private void label_delete_Click(object sender, EventArgs e)
+        {
+            Label LL_delete = sender as Label;
+
+            string THER = LL_delete.Name;
+            THER = THER.Substring(THER.Length - 6);
+
+            string testtt = "";
+
+
+            testtt = "L1" + LL_delete.Name.Remove(0, 2);
+            testtt = testtt.Remove(testtt.Length - 6);
+            Label zz_label_name = (Label)flowLayoutPanel2.Controls[testtt + THER];
+
+            testtt = "L3" + LL_delete.Name.Remove(0, 2);
+            testtt = testtt.Remove(testtt.Length - 6);
+            Label zz_label_price = (Label)flowLayoutPanel2.Controls[testtt + THER];
+
+
+            testtt = "L4" + LL_delete.Name.Remove(0, 2);
+            testtt = testtt.Remove(testtt.Length - 6);
+            PictureBox zz_picture_border = (PictureBox)flowLayoutPanel2.Controls[testtt + THER];
+
+            testtt = "L5" + LL_delete.Name.Remove(0, 2);
+            testtt = testtt.Remove(testtt.Length - 6);
+            PictureBox zz_picture_border2 = (PictureBox)flowLayoutPanel3.Controls[testtt + THER];
+
+
+            testtt = "X1" + LL_delete.Name.Remove(0, 2);
+            testtt = testtt.Remove(testtt.Length - 6);
+            Label zz_label_minus = (Label)flowLayoutPanel3.Controls[testtt + THER];
+
+            testtt = "X2" + LL_delete.Name.Remove(0, 2);
+            testtt = testtt.Remove(testtt.Length - 6);
+            Label zz_label_count = (Label)flowLayoutPanel3.Controls[testtt + THER];
+
+            testtt = "X3" + LL_delete.Name.Remove(0, 2);
+            testtt = testtt.Remove(testtt.Length - 6);
+            Label zz_label_plus = (Label)flowLayoutPanel3.Controls[testtt + THER];
+
+
+
+            flowLayoutPanel2.Controls.Remove(zz_label_name);
+            flowLayoutPanel2.Controls.Remove(zz_label_price);
+
+            flowLayoutPanel2.Controls.Remove(zz_picture_border);
+            flowLayoutPanel3.Controls.Remove(zz_picture_border2);
+
+
+            flowLayoutPanel3.Controls.Remove(LL_delete);
+
+            flowLayoutPanel3.Controls.Remove(zz_label_minus);
+            flowLayoutPanel3.Controls.Remove(zz_label_count);
+            flowLayoutPanel3.Controls.Remove(zz_label_plus);
+
+
+
+/*            NormalTotal -= Convert.ToInt32(zz2.Text);
+
+
+            double theVat = 0;
+
+            theVat = (double)VATtotal / 100;
+            theVat *= NormalTotal;
+
+            label3.Text = theVat + "EGP";
+
+            if (VATSystem == 0 || VATSystem == 1)
+                linkLabel1.Text = NormalTotal + " EGP";
+            else if (VATSystem == 2)
+            {
+                linkLabel1.Text = (NormalTotal + theVat) + " EGP";
+                label4.Text = "+" + NormalTotal;
+
+            }*/
+        }
+        private void pos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+
+            string path = @"C:\EgyCashier\guest\operations\";
+
+            string date = DateTime.Now.ToString("MM-dd-yyyy");
+            DirectoryInfo d = new DirectoryInfo(path);
+            string readText = "";
+
+            
+            if(!File.Exists(path + date + ".op"))
+            File.Create(path + date + ".op").Dispose();
+
+            readText= File.ReadAllText(path + date + ".op");
+            if (readText != "")
+                readText += "\n";
+
+            int Daloop = 0;
+            string FullProcc="";
+            foreach (Control contr in flowLayoutPanel2.Controls)
+            {
+                if (contr is Label )
+                {
+                    if(Daloop == 0)
+                    {
+                        string N = "\n";
+ FullProcc +=
+    MOREtags(contr.Tag, "Yname").ToString() +N+
+    MOREtags(contr.Tag, "Yitem") + N +
+    MOREtags(contr.Tag, "Yprice") + "," +
+    MOREtags(contr.Tag, "Ycount");
+                        Daloop++;
+                        FullProcc += "\n";
+                    }
+                    else
+                    Daloop--;
+                }
+
+
+
+
+            }
+
+
+
+              File.WriteAllText(path + date + ".op", readText+FullProcc);
+
+
+
+
+
+              PrintMe(panel2);
+
+        }
+
+        private void PrintMe(Panel pnl)
+        {
+            PrinterSettings ps = new PrinterSettings();
+           // panel2 = pnl;
+         //   getPrintArea(pnl);
+            printPreviewDialog1.Document = printDocument1;
+
+            printPreviewDialog1.ShowDialog();
+
+        }
+        private Bitmap memoryimg;
+        void getPrintArea(Panel pnl)
+        {
+            memoryimg = new Bitmap(pnl.Width, pnl.Height);
+
+            pnl.DrawToBitmap(memoryimg, new Rectangle(0, 0, pnl.Width, pnl.Height));
+        }
+
+
+
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+
+
+
+            e.Graphics.DrawString("Restaurant Name", new Font("Arial", 25, FontStyle.Bold), Brushes.Black, new Point(250, 0));
+
+            e.Graphics.DrawString("information #1", new Font("Arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 50));
+            e.Graphics.DrawString("information #2", new Font("Arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 100));
+            e.Graphics.DrawString("information #3", new Font("Arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 150));
+            e.Graphics.DrawString("information #4", new Font("Arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 200));
+
+            e.Graphics.DrawString("______________________________________________________________________________", new Font("Arial", 20, FontStyle.Bold), Brushes.Black, new Point(1, 220));
+
+            e.Graphics.DrawString("QTY", new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(50, 260));
+            e.Graphics.DrawString("Description", new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(200, 260));
+            e.Graphics.DrawString("Amount", new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(600, 260));
+            e.Graphics.DrawString("______________________________________________________________________________", new Font("Arial", 20, FontStyle.Bold), Brushes.Black, new Point(1, 270));
+            int Daloop = 0;
+            int TALL = 260;
+            foreach (Control contr in flowLayoutPanel2.Controls)
+            {
+                if (contr is Label)
+                {
+                    if (Daloop == 0)
+                    {
+
+                        //
+                        e.Graphics.DrawString(MOREtags(contr.Tag, "Ycount").ToString(),
+                            new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(60, TALL + 50));
+                        e.Graphics.DrawString(MOREtags(contr.Tag, "Yitem").ToString(),
+                            new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(200, TALL + 50));
+                        e.Graphics.DrawString(MOREtags(contr.Tag, "Yprice").ToString(),
+                            new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(600, TALL + 50));
+                        //
+                        e.Graphics.DrawString("---------------------------------------------------------------------------------------------------------------------------",
+                            new Font("Arial", 15, FontStyle.Italic), Brushes.DarkGray, new Point(1, TALL + 65));
+
+                        TALL += 50;
+                        Daloop++;
+ 
+                    }
+                    else
+                        Daloop--;
+                }
+
+
+
+
+            }
+
+
+
+
+        }
+        public static int[] omg()
+        {
+            Form fc = Application.OpenForms["pos"];
+            int[] wyj = new int[3];
+
+            if (fc != null)
+            {
+
+                wyj[0] = 0;
+                wyj[0] = _instance.Top;
+                wyj[1] = _instance.Left;
+                wyj[2] = _instance.Width;
+
+
+
+            }
+            return wyj;
+
+
+
+
+
+        }
+        private void pos_Move(object sender, EventArgs e)
+        {
+            Delivery.moveFORMnow();
+        }
+
+        private void pos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Form fc = Application.OpenForms["Delivery"];
+            if (fc != null)
+                Application.OpenForms["Delivery"].Close();
+
+        }
+    }
+}
