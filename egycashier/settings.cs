@@ -16,22 +16,36 @@ namespace egycashier
         {
             InitializeComponent();
         }
-        /*
-         
-        private void button1_Click(object sender, EventArgs e)
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            settingSCREEN SCSC = new settingSCREEN(1);
+            SCSC.Show();
+            Close();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
             settingSCREEN SCSC = new settingSCREEN(0);
             SCSC.Show();
             Close();
         }
+        /*
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            settingSCREEN SCSC = new settingSCREEN(1);
-            SCSC.Show();
-            Close();
-        }f
-         */
+private void button1_Click(object sender, EventArgs e)
+{
+settingSCREEN SCSC = new settingSCREEN(0);
+SCSC.Show();
+Close();
+}
+
+private void button2_Click(object sender, EventArgs e)
+{
+settingSCREEN SCSC = new settingSCREEN(1);
+SCSC.Show();
+Close();
+}
+*/
 
     }
 }

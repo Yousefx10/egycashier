@@ -127,7 +127,7 @@ namespace egycashier
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-        //    Program.FormX.FolderManage(2);
+            Program.FormX.FolderManage(2);
 
         }
         string mainUSR = "";

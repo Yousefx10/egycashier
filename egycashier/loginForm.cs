@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace egycashier
@@ -40,17 +34,9 @@ namespace egycashier
         void FriSH()
         {
 
-            flowLayoutPanel1.Controls.Clear();
-            Button addBT = new Button();
-            addBT.Text = "+";
-            addBT.Font = new Font("Arial", 15);
-            addBT.Click += AddBT_Click;
-            addBT.Size = new Size(80, 70);
-
-            flowLayoutPanel1.Controls.Add(addBT);
 
             string path = @"C:\EgyCashier\guest\users\";
-            string[] owner = File.ReadAllLines(path+"owner.pl");
+            string[] owner = File.ReadAllLines(path + "owner.pl");
 
             Button btnOw = new Button();
 
@@ -89,14 +75,16 @@ namespace egycashier
 
 
         }
-
+        /*
         private void AddBT_Click(object sender, EventArgs e)
         {
             panel2.Visible = false;
             panel3.Visible = true;
-            
+
 
         }
+        */
+
 
         private void BtnUser_Click(object sender, EventArgs e)
         {
@@ -104,7 +92,7 @@ namespace egycashier
             Button BOT = sender as Button;
             CurrentUsr = BOT.Text;
             CurrentPass = BOT.Tag.ToString();
-
+            label_User_name.Text = CurrentUsr;
             panel1.Visible = true;
         }
 
@@ -117,12 +105,14 @@ namespace egycashier
             int R2 = rnd.Next(100, 300);
             int R3 = rnd.Next(1, 9);
 
-            string numName = ""+ R1 + R2 + R3;
+            string numName = "" + R1 + R2 + R3;
 
-            File.Create(path + numName+ ".ppl").Dispose();
+            File.Create(path + numName + ".ppl").Dispose();
+
             string PER = "\n1\n1\n0\n0\n0";
-            File.WriteAllText(path + numName + ".ppl", textBoxName.Text+"\n"+textBoxPassword.Text+PER);
-            MessageBox.Show("The User Have Been Added !","Done !");
+
+            File.WriteAllText(path + numName + ".ppl", textBoxName.Text + "\n" + textBoxPassword.Text + PER);
+            MessageBox.Show("The User Have Been Added !", "Done !");
             panel2.Visible = true;
             panel3.Visible = false;
             FriSH();

@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Security.AccessControl;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Forms;
 
 namespace egycashier
@@ -19,33 +10,33 @@ namespace egycashier
         public settingSCREEN(int whatH)
         {
             InitializeComponent();
-          //  CreateDynamicButton();
+            //  CreateDynamicButton();
 
             tabControl1.SelectedIndex = whatH;
-
-            if(whatH == 1)
+            GlobalwhatH = whatH;
+            if (whatH == 1)
             {
-                Width = tabControl1.Width+50;
-                RefReshUsers();
+                Width = tabControl1.Width + 50;
+               
             }
 
 
-        //    string filePATH = @"C:\EgyCashier\guest\";
-       //     string[] text1 = File.ReadAllLines(filePATH + "configuration.txt");
-       //     int iddd = Convert.ToInt32(text1[2]);
-          //  if (iddd == 1 || iddd == 2)
+            //    string filePATH = @"C:\EgyCashier\guest\";
+            //     string[] text1 = File.ReadAllLines(filePATH + "configuration.txt");
+            //     int iddd = Convert.ToInt32(text1[2]);
+            //  if (iddd == 1 || iddd == 2)
             {
-             //   checkBox7.Checked = true;
-             //   panel_vat.Visible = true;
-           //     if (iddd == 1)
-            //        radioButton1.Checked = true;
-           //     else
-              //      radioButton2.Checked = true;
+                //   checkBox7.Checked = true;
+                //   panel_vat.Visible = true;
+                //     if (iddd == 1)
+                //        radioButton1.Checked = true;
+                //     else
+                //      radioButton2.Checked = true;
 
-              //  textBox4.Text = text1[3];
+                //  textBox4.Text = text1[3];
             }
         }
-
+        int GlobalwhatH = 0;
 
         void RefReshUsers()
         {
@@ -58,7 +49,7 @@ namespace egycashier
             addBT.Click += AddBT_Click;
             addBT.Size = new Size(80, 70);
 
-          //  flowLayoutPanel3.Controls.Add(addBT);
+           flowLayoutPanel3.Controls.Add(addBT);
 
             string path = @"C:\EgyCashier\guest\users\";
             string[] owner = File.ReadAllLines(path + "owner.pl");
@@ -104,10 +95,17 @@ namespace egycashier
         {
             MessageBox.Show("here for adding new button and new users from screen setting");
         }
-
+        string CurrentUsr , CurrentPass;
         private void BtnUser_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("great");
+            //when the "already user exist" button clicked.
+            Button BOT = sender as Button;
+            CurrentUsr = BOT.Text;
+            CurrentPass = BOT.Tag.ToString();
+        //    label_user_name.Text = CurrentUsr;
+            panel1.Visible = true;
+
+
         }
 
 
@@ -124,7 +122,7 @@ namespace egycashier
                 return Text;
             }
         }
-      int WHOLEE = 0;
+        int WHOLEE = 0;
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -143,8 +141,8 @@ namespace egycashier
 
                 using (StreamWriter writer = new StreamWriter(filePATH + "item" + iddd + ".txt"))
                 {
-                 //   writer.WriteLine(textBox1.Text);
-                 //   writer.WriteLine(textBox2.Text);
+                    //   writer.WriteLine(textBox1.Text);
+                    //   writer.WriteLine(textBox2.Text);
                 }
                 // Read a file  
                 //  string readText = File.ReadAllText(filePATH);
@@ -167,11 +165,11 @@ namespace egycashier
                 }
 
             }
-        //    textBox1.Text = "";
-      //      textBox2.Text = "";
+            //    textBox1.Text = "";
+            //      textBox2.Text = "";
             //comboBox1.Items.Clear();
 
-          //  CreateDynamicButton();
+            //  CreateDynamicButton();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -186,9 +184,9 @@ namespace egycashier
             numericUpDown1.Controls.RemoveAt(0);
 
 
-       //     tabControl1.SelectedIndex = 0;
-       //    tabControl2.SelectedIndex = 0;
-           // life();
+            //     tabControl1.SelectedIndex = 0;
+            //    tabControl2.SelectedIndex = 0;
+            // life();
             live();
 
 
@@ -197,44 +195,58 @@ namespace egycashier
 
         }
 
+
+
+
+
+
+
         private void live()
         {
-
-
-            flowLayoutPanel1.Controls.Clear();
-
-
-            string filePATH = @"C:\EgyCashier\guest\";
-            string[] text1 = File.ReadAllLines(filePATH + "list.txt");
-            int iddd = Convert.ToInt32(text1[0]);
-            for (int i = 0; i < iddd; i++)
+            //in case Setting was on EditMenu.
+            if(GlobalwhatH == 0)
             {
-                string[] temp1 = File.ReadAllLines(filePATH + "fol" + i + "\\configuration.txt");
-                Button ITMBTN = new Button();
-                ITMBTN.ForeColor = Color.Red;
-                ITMBTN.Size = new Size(75, 67);
-                ITMBTN.Text = temp1[1];
-                ITMBTN.Tag = "fol" + i;
-                ITMBTN.Click += ITMBTN_Click;
 
-                
-                flowLayoutPanel1.Controls.Add(ITMBTN);
+                flowLayoutPanel1.Controls.Clear();
 
 
+                string filePATH = @"C:\EgyCashier\guest\";
+                string[] text1 = File.ReadAllLines(filePATH + "list.txt");
+                int iddd = Convert.ToInt32(text1[0]);
+                for (int i = 0; i < iddd; i++)
+                {
+                    string[] temp1 = File.ReadAllLines(filePATH + "fol" + i + "\\configuration.txt");
+                    Button ITMBTN = new Button();
+                    ITMBTN.ForeColor = Color.Red;
+                    ITMBTN.Size = new Size(75, 67);
+                    ITMBTN.Text = temp1[1];
+                    ITMBTN.Tag = "fol" + i;
+                    ITMBTN.Click += ITMBTN_Click;
 
 
-                //   WHOLEE = i;
+                    flowLayoutPanel1.Controls.Add(ITMBTN);
 
 
+
+
+                    //   WHOLEE = i;
+
+
+                }
+                PictureBox ITMnew = new PictureBox();
+                ITMnew.Image = Properties.Resources.add;
+                ITMnew.SizeMode = PictureBoxSizeMode.Zoom;
+
+                ITMnew.Size = new Size(75, 67);
+                ITMnew.Click += ITMnew_Click;
+                flowLayoutPanel1.Controls.Add(ITMnew);
+
+
+            }//in case Setting Was In User Manager.
+            else if (GlobalwhatH == 1)
+            {
+                RefReshUsers();
             }
-            PictureBox ITMnew = new PictureBox();
-            ITMnew.Image = Properties.Resources.add;
-            ITMnew.SizeMode = PictureBoxSizeMode.Zoom;
-
-            ITMnew.Size = new Size(75, 67);
-            ITMnew.Click += ITMnew_Click;
-            flowLayoutPanel1.Controls.Add(ITMnew);
-
 
 
 
@@ -290,7 +302,7 @@ namespace egycashier
             textBox7.Text = bbb.Text;
             Selected_Tab = bbb.Tag.ToString();
             string filePATH = @"C:\EgyCashier\guest\" + bbb.Tag + "\\";
-            
+
             Flow2Btns(Selected_Tab, filePATH, bbb.Text);
 
             label17.Text = bbb.Text;
@@ -317,14 +329,14 @@ namespace egycashier
         {
             ClearALLtext();
             Button bbb = (Button)sender;
-            CurrentItemName = bbb.Name.Remove(0,13);
+            CurrentItemName = bbb.Name.Remove(0, 13);
 
             tabControl2.SelectedIndex = 1;
-            textBox6.Text= bbb.Text;
-            label1.Text= bbb.Text;
+            textBox6.Text = bbb.Text;
+            label1.Text = bbb.Text;
             numericUpDown1.Value = Int32.Parse(bbb.Tag.ToString());
-           // label17.Text = Selected_Tab;
-            
+            // label17.Text = Selected_Tab;
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -355,7 +367,7 @@ namespace egycashier
             string filePATH = @"C:\EgyCashier\guest\";
 
             //it was taking from the comboBox.
-           // string yesHere = (comboBox2.SelectedItem as ComboboxItem).Value.ToString();
+            // string yesHere = (comboBox2.SelectedItem as ComboboxItem).Value.ToString();
             string yesHere = Selected_Tab;
             string[] text1 = File.ReadAllLines(filePATH + yesHere + "\\configuration.txt");
             int iddd = Convert.ToInt32(text1[0]);
@@ -387,11 +399,11 @@ namespace egycashier
                 }
 
             }
-         //   textBox1.Text = "";
-          //  textBox2.Text = "";
-           // flowLayoutPanel1.Controls.Clear();
+            //   textBox1.Text = "";
+            //  textBox2.Text = "";
+            // flowLayoutPanel1.Controls.Clear();
 
-         //   CreateDynamicButton();
+            //   CreateDynamicButton();
             //life();
             live();
 
@@ -401,10 +413,10 @@ namespace egycashier
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            string filePATH = @"C:\EgyCashier\guest\"+Selected_Tab;
+            string filePATH = @"C:\EgyCashier\guest\" + Selected_Tab;
             string[] text1 = File.ReadAllLines(filePATH + "\\configuration.txt");
 
-            File.WriteAllText(filePATH + "\\configuration.txt", text1[0]+"\n"+textBox7.Text);
+            File.WriteAllText(filePATH + "\\configuration.txt", text1[0] + "\n" + textBox7.Text);
             live();
             ClearALLtext();
         }
@@ -419,7 +431,7 @@ namespace egycashier
             int iddd = Convert.ToInt32(text1[0]);
 
             Program.FormX.FolderManage(2);
- 
+
 
             DirectoryInfo di = Directory.CreateDirectory(filePATH + "fol" + iddd);
 
@@ -442,7 +454,7 @@ namespace egycashier
 
             }
             catch { }
-           // flowLayoutPanel1.Controls.Clear();
+            // flowLayoutPanel1.Controls.Clear();
             live();
             //life();
 
@@ -471,11 +483,11 @@ namespace egycashier
         private void pictureBox6_Click(object sender, EventArgs e)
         {
 
-             string filePATH = @"C:\EgyCashier\guest\"+ Selected_Tab+"\\";
-           //   string valueCOM = (comboBox1.SelectedItem as ComboboxItem).Value.ToString();
-           //   string numberOnly = Regex.Replace(valueCOM, "[^0-9.]", "");
-                 int vv = Convert.ToInt32(CurrentItemName);
-            File.Delete(filePATH + "item" +vv+ ".txt");
+            string filePATH = @"C:\EgyCashier\guest\" + Selected_Tab + "\\";
+            //   string valueCOM = (comboBox1.SelectedItem as ComboboxItem).Value.ToString();
+            //   string numberOnly = Regex.Replace(valueCOM, "[^0-9.]", "");
+            int vv = Convert.ToInt32(CurrentItemName);
+            File.Delete(filePATH + "item" + vv + ".txt");
 
             updateWHOLE(Selected_Tab);
 
@@ -484,13 +496,13 @@ namespace egycashier
                 File.Move(filePATH + "item" + i + ".txt", filePATH + "item" + (i - 1) + ".txt");
             }
             string[] temp1 = File.ReadAllLines(filePATH + "configuration.txt");
-         //   string oldD = temp1[1] + "\n" + temp1[2] + "\n" + temp1[3] + "\n";
+            //   string oldD = temp1[1] + "\n" + temp1[2] + "\n" + temp1[3] + "\n";
             File.WriteAllText(filePATH + "configuration.txt", WHOLEE.ToString() + "\n" + temp1[1]);
             tabControl2.SelectedIndex = 0;
-            
-           
 
-            Flow2Btns(Selected_Tab, filePATH,label17.Text);
+
+
+            Flow2Btns(Selected_Tab, filePATH, label17.Text);
 
 
         }
@@ -512,9 +524,9 @@ namespace egycashier
 
 
 
-            //this function makes Refresh/Create the items in the ComboBox[from old direction] ... no needed now !
+        //this function makes Refresh/Create the items in the ComboBox[from old direction] ... no needed now !
 
-            private void CreateDynamicButton()
+        private void CreateDynamicButton()
 
         {
 
@@ -538,6 +550,52 @@ namespace egycashier
 
              }*/
         }
+
+
+
+
+        private void radioBTN_setting_Click(object sender, EventArgs e)
+        {
+            if (radioBTN_setting.Checked && !ChangeSttS)
+            {
+                radioBTN_setting.Checked = false;
+                checkBTN_Op1.Checked = false;
+                checkBTN_Op2.Checked = false;
+                checkBTN_Op3.Checked = false;
+                checkBTN_Op4.Checked = false;
+
+                checkBTN_Op1.Enabled = false;
+                checkBTN_Op2.Enabled = false;
+                checkBTN_Op3.Enabled = false;
+                checkBTN_Op4.Enabled = false;
+            }
+            else
+            {
+                radioBTN_setting.Checked = true;
+                ChangeSttS = false;
+                checkBTN_Op1.Enabled = true;
+                checkBTN_Op2.Enabled = true;
+                checkBTN_Op3.Enabled = true;
+                checkBTN_Op4.Enabled = true;
+            }
+
+        }
+        //this bool is just to allow the RadioButton Change Check Without Any Lags...
+        bool ChangeSttS = false;
+
+        private void radioBTN_setting_CheckedChanged(object sender, EventArgs e)
+        {
+
+            ChangeSttS = radioBTN_setting.Checked;
+
+
+        }
+
+
+
+
+
+
         //this function makes Refresh/Create the items in the ComboBox ... no needed now !
         private void life()
         {
@@ -561,4 +619,4 @@ namespace egycashier
 
 
     }
-    }
+}

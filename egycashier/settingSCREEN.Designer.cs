@@ -33,6 +33,15 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txt_password = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.text_username = new System.Windows.Forms.TextBox();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.label14 = new System.Windows.Forms.Label();
@@ -64,24 +73,34 @@
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.label16 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.text_realname = new System.Windows.Forms.TextBox();
+            this.checkBTN_pos = new System.Windows.Forms.CheckBox();
+            this.checkBTN_reports = new System.Windows.Forms.CheckBox();
+            this.checkBTN_supplies = new System.Windows.Forms.CheckBox();
+            this.checkBTN_money = new System.Windows.Forms.CheckBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.radioBTN_setting = new System.Windows.Forms.RadioButton();
+            this.checkBTN_Op1 = new System.Windows.Forms.CheckBox();
+            this.checkBTN_Op3 = new System.Windows.Forms.CheckBox();
+            this.checkBTN_Op2 = new System.Windows.Forms.CheckBox();
+            this.checkBTN_Op4 = new System.Windows.Forms.CheckBox();
+            this.btn_crt_usr = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPage10.SuspendLayout();
             this.tabPage7.SuspendLayout();
@@ -96,8 +115,9 @@
             this.tabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -105,20 +125,20 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.ItemSize = new System.Drawing.Size(1, 1);
-            this.tabControl1.Location = new System.Drawing.Point(13, -9);
+            this.tabControl1.Location = new System.Drawing.Point(13, 55);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(845, 683);
+            this.tabControl1.Size = new System.Drawing.Size(845, 619);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.flowLayoutPanel1);
             this.tabPage1.Controls.Add(this.flowLayoutPanel2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 34);
+            this.tabPage1.Location = new System.Drawing.Point(4, 5);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(837, 624);
+            this.tabPage1.Size = new System.Drawing.Size(837, 610);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "group_item";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -136,22 +156,119 @@
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(412, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(422, 618);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(422, 604);
             this.flowLayoutPanel2.TabIndex = 6;
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.panel7);
-            this.tabPage2.Controls.Add(this.label18);
-            this.tabPage2.Controls.Add(this.pictureBox7);
+            this.tabPage2.Controls.Add(this.panel9);
+            this.tabPage2.Controls.Add(this.panel8);
             this.tabPage2.Controls.Add(this.flowLayoutPanel3);
             this.tabPage2.Location = new System.Drawing.Point(4, 5);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(837, 674);
+            this.tabPage2.Size = new System.Drawing.Size(837, 610);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Users";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.btn_crt_usr);
+            this.panel9.Controls.Add(this.checkBTN_Op4);
+            this.panel9.Controls.Add(this.checkBTN_Op2);
+            this.panel9.Controls.Add(this.checkBTN_Op3);
+            this.panel9.Controls.Add(this.checkBTN_Op1);
+            this.panel9.Controls.Add(this.radioBTN_setting);
+            this.panel9.Controls.Add(this.label22);
+            this.panel9.Controls.Add(this.pictureBox10);
+            this.panel9.Controls.Add(this.checkBTN_supplies);
+            this.panel9.Controls.Add(this.checkBTN_money);
+            this.panel9.Controls.Add(this.checkBTN_reports);
+            this.panel9.Controls.Add(this.checkBTN_pos);
+            this.panel9.Controls.Add(this.label21);
+            this.panel9.Controls.Add(this.text_realname);
+            this.panel9.Controls.Add(this.pictureBox9);
+            this.panel9.Controls.Add(this.pictureBox8);
+            this.panel9.Controls.Add(this.label18);
+            this.panel9.Controls.Add(this.pictureBox7);
+            this.panel9.Controls.Add(this.label20);
+            this.panel9.Controls.Add(this.txt_password);
+            this.panel9.Controls.Add(this.label19);
+            this.panel9.Controls.Add(this.text_username);
+            this.panel9.Location = new System.Drawing.Point(566, 8);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(265, 596);
+            this.panel9.TabIndex = 2;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(32, 36);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(198, 29);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Create New User";
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::egycashier.Properties.Resources.curved_line;
+            this.pictureBox7.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(65, 60);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 6;
+            this.pictureBox7.TabStop = false;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(20, 140);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(169, 22);
+            this.label20.TabIndex = 5;
+            this.label20.Text = "Account Password :";
+            // 
+            // txt_password
+            // 
+            this.txt_password.Location = new System.Drawing.Point(24, 166);
+            this.txt_password.Name = "txt_password";
+            this.txt_password.Size = new System.Drawing.Size(220, 22);
+            this.txt_password.TabIndex = 4;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(19, 76);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(102, 22);
+            this.label19.TabIndex = 3;
+            this.label19.Text = "Username :";
+            // 
+            // text_username
+            // 
+            this.text_username.Location = new System.Drawing.Point(23, 102);
+            this.text_username.Name = "text_username";
+            this.text_username.Size = new System.Drawing.Size(220, 22);
+            this.text_username.TabIndex = 1;
+            // 
+            // panel8
+            // 
+            this.panel8.Location = new System.Drawing.Point(6, 378);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(554, 122);
+            this.panel8.TabIndex = 2;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(6, 8);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(554, 364);
+            this.flowLayoutPanel3.TabIndex = 0;
             // 
             // tabControl2
             // 
@@ -454,13 +571,13 @@
             // 
             this.tabPage9.Controls.Add(this.label16);
             this.tabPage9.Controls.Add(this.label13);
-            this.tabPage9.Controls.Add(this.pictureBox5);
             this.tabPage9.Controls.Add(this.label11);
-            this.tabPage9.Controls.Add(this.pictureBox4);
             this.tabPage9.Controls.Add(this.textBox7);
             this.tabPage9.Controls.Add(this.panel6);
             this.tabPage9.Controls.Add(this.label10);
             this.tabPage9.Controls.Add(this.label7);
+            this.tabPage9.Controls.Add(this.pictureBox5);
+            this.tabPage9.Controls.Add(this.pictureBox4);
             this.tabPage9.Location = new System.Drawing.Point(4, 5);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
@@ -489,16 +606,6 @@
             this.label13.TabIndex = 20;
             this.label13.Text = "Delete";
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::egycashier.Properties.Resources.garbage;
-            this.pictureBox5.Location = new System.Drawing.Point(175, 205);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(57, 44);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 19;
-            this.pictureBox5.TabStop = false;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -508,17 +615,6 @@
             this.label11.Size = new System.Drawing.Size(41, 18);
             this.label11.TabIndex = 18;
             this.label11.Text = "Save";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::egycashier.Properties.Resources.more;
-            this.pictureBox4.Location = new System.Drawing.Point(255, 205);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(57, 44);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 17;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // textBox7
             // 
@@ -556,78 +652,187 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "Chane Group Setting";
             // 
-            // flowLayoutPanel3
+            // pictureBox5
             // 
-            this.flowLayoutPanel3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(6, 8);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(816, 364);
-            this.flowLayoutPanel3.TabIndex = 0;
+            this.pictureBox5.Image = global::egycashier.Properties.Resources.garbage;
+            this.pictureBox5.Location = new System.Drawing.Point(175, 205);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(57, 44);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 19;
+            this.pictureBox5.TabStop = false;
             // 
-            // pictureBox7
+            // pictureBox4
             // 
-            this.pictureBox7.Image = global::egycashier.Properties.Resources.garbage;
-            this.pictureBox7.Location = new System.Drawing.Point(27, 527);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(55, 63);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 1;
-            this.pictureBox7.TabStop = false;
+            this.pictureBox4.Image = global::egycashier.Properties.Resources.more;
+            this.pictureBox4.Location = new System.Drawing.Point(255, 205);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(57, 44);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 17;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // label18
+            // pictureBox8
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(6, 593);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(106, 16);
-            this.label18.TabIndex = 2;
-            this.label18.Text = "Delete The User";
+            this.pictureBox8.Image = global::egycashier.Properties.Resources.curved_line2;
+            this.pictureBox8.Location = new System.Drawing.Point(197, 533);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(65, 60);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 7;
+            this.pictureBox8.TabStop = false;
             // 
-            // textBox1
+            // pictureBox9
             // 
-            this.textBox1.Location = new System.Drawing.Point(258, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 3;
+            this.pictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox9.Location = new System.Drawing.Point(6, 206);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(255, 2);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 8;
+            this.pictureBox9.TabStop = false;
             // 
-            // panel7
+            // label21
             // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.label20);
-            this.panel7.Controls.Add(this.textBox2);
-            this.panel7.Controls.Add(this.label19);
-            this.panel7.Controls.Add(this.textBox1);
-            this.panel7.Location = new System.Drawing.Point(158, 378);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(664, 144);
-            this.panel7.TabIndex = 4;
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(19, 224);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(184, 22);
+            this.label21.TabIndex = 10;
+            this.label21.Text = "Person\'s Real Name :";
             // 
-            // label19
+            // text_realname
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label19.Location = new System.Drawing.Point(3, 9);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(238, 29);
-            this.label19.TabIndex = 4;
-            this.label19.Text = "Account User Name :";
+            this.text_realname.Location = new System.Drawing.Point(23, 250);
+            this.text_realname.Name = "text_realname";
+            this.text_realname.Size = new System.Drawing.Size(220, 22);
+            this.text_realname.TabIndex = 9;
             // 
-            // label20
+            // checkBTN_pos
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label20.Location = new System.Drawing.Point(3, 38);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(132, 29);
-            this.label20.TabIndex = 6;
-            this.label20.Text = "Password :";
+            this.checkBTN_pos.AutoSize = true;
+            this.checkBTN_pos.Checked = true;
+            this.checkBTN_pos.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBTN_pos.Location = new System.Drawing.Point(6, 297);
+            this.checkBTN_pos.Name = "checkBTN_pos";
+            this.checkBTN_pos.Size = new System.Drawing.Size(89, 20);
+            this.checkBTN_pos.TabIndex = 11;
+            this.checkBTN_pos.Text = "Open Pos";
+            this.checkBTN_pos.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // checkBTN_reports
             // 
-            this.textBox2.Location = new System.Drawing.Point(258, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 5;
+            this.checkBTN_reports.AutoSize = true;
+            this.checkBTN_reports.Location = new System.Drawing.Point(6, 334);
+            this.checkBTN_reports.Name = "checkBTN_reports";
+            this.checkBTN_reports.Size = new System.Drawing.Size(125, 20);
+            this.checkBTN_reports.TabIndex = 12;
+            this.checkBTN_reports.Text = "Access Reports";
+            this.checkBTN_reports.UseVisualStyleBackColor = true;
+            // 
+            // checkBTN_supplies
+            // 
+            this.checkBTN_supplies.AutoSize = true;
+            this.checkBTN_supplies.Location = new System.Drawing.Point(137, 334);
+            this.checkBTN_supplies.Name = "checkBTN_supplies";
+            this.checkBTN_supplies.Size = new System.Drawing.Size(118, 20);
+            this.checkBTN_supplies.TabIndex = 14;
+            this.checkBTN_supplies.Text = "Open Supplies";
+            this.checkBTN_supplies.UseVisualStyleBackColor = true;
+            // 
+            // checkBTN_money
+            // 
+            this.checkBTN_money.AutoSize = true;
+            this.checkBTN_money.Location = new System.Drawing.Point(137, 297);
+            this.checkBTN_money.Name = "checkBTN_money";
+            this.checkBTN_money.Size = new System.Drawing.Size(118, 20);
+            this.checkBTN_money.TabIndex = 13;
+            this.checkBTN_money.Text = "Access Money";
+            this.checkBTN_money.UseVisualStyleBackColor = true;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(42, 390);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(177, 22);
+            this.label22.TabIndex = 16;
+            this.label22.Text = "Settings Permissions";
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox10.Location = new System.Drawing.Point(6, 376);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(255, 2);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox10.TabIndex = 15;
+            this.pictureBox10.TabStop = false;
+            // 
+            // radioBTN_setting
+            // 
+            this.radioBTN_setting.AutoSize = true;
+            this.radioBTN_setting.Location = new System.Drawing.Point(62, 424);
+            this.radioBTN_setting.Name = "radioBTN_setting";
+            this.radioBTN_setting.Size = new System.Drawing.Size(127, 20);
+            this.radioBTN_setting.TabIndex = 17;
+            this.radioBTN_setting.TabStop = true;
+            this.radioBTN_setting.Text = "Acess Settings ?";
+            this.radioBTN_setting.UseVisualStyleBackColor = true;
+            this.radioBTN_setting.CheckedChanged += new System.EventHandler(this.radioBTN_setting_CheckedChanged);
+            this.radioBTN_setting.Click += new System.EventHandler(this.radioBTN_setting_Click);
+            // 
+            // checkBTN_Op1
+            // 
+            this.checkBTN_Op1.AutoSize = true;
+            this.checkBTN_Op1.Location = new System.Drawing.Point(17, 460);
+            this.checkBTN_Op1.Name = "checkBTN_Op1";
+            this.checkBTN_Op1.Size = new System.Drawing.Size(114, 20);
+            this.checkBTN_Op1.TabIndex = 18;
+            this.checkBTN_Op1.Text = "Manage Items";
+            this.checkBTN_Op1.UseVisualStyleBackColor = true;
+            // 
+            // checkBTN_Op3
+            // 
+            this.checkBTN_Op3.AutoSize = true;
+            this.checkBTN_Op3.Location = new System.Drawing.Point(17, 486);
+            this.checkBTN_Op3.Name = "checkBTN_Op3";
+            this.checkBTN_Op3.Size = new System.Drawing.Size(118, 20);
+            this.checkBTN_Op3.TabIndex = 19;
+            this.checkBTN_Op3.Text = "Manage Users";
+            this.checkBTN_Op3.UseVisualStyleBackColor = true;
+            // 
+            // checkBTN_Op2
+            // 
+            this.checkBTN_Op2.AutoSize = true;
+            this.checkBTN_Op2.Location = new System.Drawing.Point(148, 460);
+            this.checkBTN_Op2.Name = "checkBTN_Op2";
+            this.checkBTN_Op2.Size = new System.Drawing.Size(80, 20);
+            this.checkBTN_Op2.TabIndex = 20;
+            this.checkBTN_Op2.Text = "Option C";
+            this.checkBTN_Op2.UseVisualStyleBackColor = true;
+            // 
+            // checkBTN_Op4
+            // 
+            this.checkBTN_Op4.AutoSize = true;
+            this.checkBTN_Op4.Location = new System.Drawing.Point(148, 486);
+            this.checkBTN_Op4.Name = "checkBTN_Op4";
+            this.checkBTN_Op4.Size = new System.Drawing.Size(81, 20);
+            this.checkBTN_Op4.TabIndex = 21;
+            this.checkBTN_Op4.Text = "Option D";
+            this.checkBTN_Op4.UseVisualStyleBackColor = true;
+            // 
+            // btn_crt_usr
+            // 
+            this.btn_crt_usr.Location = new System.Drawing.Point(17, 533);
+            this.btn_crt_usr.Name = "btn_crt_usr";
+            this.btn_crt_usr.Size = new System.Drawing.Size(202, 39);
+            this.btn_crt_usr.TabIndex = 22;
+            this.btn_crt_usr.Text = "Create New User";
+            this.btn_crt_usr.UseVisualStyleBackColor = true;
             // 
             // settingSCREEN
             // 
@@ -645,7 +850,9 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabPage10.ResumeLayout(false);
             this.tabPage10.PerformLayout();
@@ -664,9 +871,9 @@
             this.tabPage9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -717,12 +924,29 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_password;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox text_username;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox text_realname;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.CheckBox checkBTN_supplies;
+        private System.Windows.Forms.CheckBox checkBTN_money;
+        private System.Windows.Forms.CheckBox checkBTN_reports;
+        private System.Windows.Forms.CheckBox checkBTN_pos;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.CheckBox checkBTN_Op4;
+        private System.Windows.Forms.CheckBox checkBTN_Op2;
+        private System.Windows.Forms.CheckBox checkBTN_Op3;
+        private System.Windows.Forms.CheckBox checkBTN_Op1;
+        private System.Windows.Forms.RadioButton radioBTN_setting;
+        private System.Windows.Forms.Button btn_crt_usr;
     }
 }
