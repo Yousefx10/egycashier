@@ -78,8 +78,8 @@ namespace egycashier
 
                 btnUser.ForeColor = Color.Black;
                 btnUser.Size = new Size(80, 70);
-                btnUser.Text = Dafile[0];
-                btnUser.Tag = Dafile[1];
+             //   btnUser.Text = Dafile[0];
+            //    btnUser.Tag = Dafile[1];
 
 
                 btnUser.Click += BtnUser_Click;
@@ -591,7 +591,93 @@ namespace egycashier
 
         }
 
+        private void btn_crt_usr_Click(object sender, EventArgs e)
+        {
+            //*** Create The New User : ***
 
+            //The Path To save The Users :
+            string path = @"C:\EgyCashier\guest\users\";
+
+            //we need the date to last open date.
+            string Thrdate = DateTime.Now.ToString("MM-dd-yyyy");
+
+            //A Unique Random Number As a File Name...
+            Random rnd = new Random();
+            int R1 = rnd.Next(10, 99);
+            int R2 = rnd.Next(100, 300);
+            int R3 = rnd.Next(1, 9);
+
+            string numName = "" + R1 + R2 + R3;
+
+            //Create The Empty User's File. 
+            //NOTE : ( .ppl ) is just for the normal user.
+            //NOTE : ( .pl ) is just for the ADMIN.
+            File.Create(path + numName + ".ppl").Dispose();
+
+            //The User Rules :
+            /*
+             * 
+             * ( 1) Username.
+             * ( 2) Password.
+             * ( 3) date : for saving the last login Date.
+             * ( 4) The User's Real Name.
+             
+                [ Program Screens PERMISSIONS ]
+             * ( 5) open POS.
+             * ( 6) open Reports.
+             * ( 7) open Money.
+             * ( 8) open Supplies.
+             * 
+             * 
+             * 
+                [ SETTINGS PERMISSIONS ]
+             * ( 5) option A.
+             * ( 6) option B.
+             * ( 7) option C.
+             * ( 8) option D.
+             */
+
+
+
+            string N = "\n", Z =",";
+            string PER = text_username.Text + N + txt_password.Text + N + text_realname.Text + N;
+            PER += CheckBoxToValueString(checkBTN_pos.Checked)+ Z;
+            PER += CheckBoxToValueString(checkBTN_reports.Checked) + Z;
+            PER += CheckBoxToValueString(checkBTN_money.Checked) + Z;
+            PER += CheckBoxToValueString(checkBTN_supplies.Checked)+ N;
+
+            //The Setting's Values.
+            if(radioBTN_setting.Checked) {
+                PER += CheckBoxToValueString(checkBTN_Op1.Checked) + Z;
+                PER += CheckBoxToValueString(checkBTN_Op2.Checked) + Z;
+                PER += CheckBoxToValueString(checkBTN_Op3.Checked) + Z;
+                PER += CheckBoxToValueString(checkBTN_Op4.Checked);
+            }
+            else
+                PER += "0,0,0,0";
+
+
+
+            File.WriteAllText(path + numName + ".ppl", PER);
+            MessageBox.Show("The User Have Been Added !", "Done !");
+            panel2.Visible = true;
+            panel3.Visible = false;
+         //   FriSH();
+
+
+
+
+        }
+
+        //function to make a value if checkbox is checked or not.
+        public int CheckBoxToValueString(bool Valll )
+        {
+            if (Valll)
+                return 1;
+            else
+                return 0;
+
+        }
 
 
 

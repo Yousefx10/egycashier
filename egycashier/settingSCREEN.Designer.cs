@@ -34,6 +34,22 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.btn_crt_usr = new System.Windows.Forms.Button();
+            this.checkBTN_Op4 = new System.Windows.Forms.CheckBox();
+            this.checkBTN_Op2 = new System.Windows.Forms.CheckBox();
+            this.checkBTN_Op3 = new System.Windows.Forms.CheckBox();
+            this.checkBTN_Op1 = new System.Windows.Forms.CheckBox();
+            this.radioBTN_setting = new System.Windows.Forms.RadioButton();
+            this.label22 = new System.Windows.Forms.Label();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.checkBTN_supplies = new System.Windows.Forms.CheckBox();
+            this.checkBTN_money = new System.Windows.Forms.CheckBox();
+            this.checkBTN_reports = new System.Windows.Forms.CheckBox();
+            this.checkBTN_pos = new System.Windows.Forms.CheckBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.text_realname = new System.Windows.Forms.TextBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label18 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -80,26 +96,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.text_realname = new System.Windows.Forms.TextBox();
-            this.checkBTN_pos = new System.Windows.Forms.CheckBox();
-            this.checkBTN_reports = new System.Windows.Forms.CheckBox();
-            this.checkBTN_supplies = new System.Windows.Forms.CheckBox();
-            this.checkBTN_money = new System.Windows.Forms.CheckBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.radioBTN_setting = new System.Windows.Forms.RadioButton();
-            this.checkBTN_Op1 = new System.Windows.Forms.CheckBox();
-            this.checkBTN_Op3 = new System.Windows.Forms.CheckBox();
-            this.checkBTN_Op2 = new System.Windows.Forms.CheckBox();
-            this.checkBTN_Op4 = new System.Windows.Forms.CheckBox();
-            this.btn_crt_usr = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPage10.SuspendLayout();
@@ -115,9 +118,6 @@
             this.tabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -200,6 +200,172 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(265, 596);
             this.panel9.TabIndex = 2;
+            // 
+            // btn_crt_usr
+            // 
+            this.btn_crt_usr.Location = new System.Drawing.Point(17, 533);
+            this.btn_crt_usr.Name = "btn_crt_usr";
+            this.btn_crt_usr.Size = new System.Drawing.Size(202, 39);
+            this.btn_crt_usr.TabIndex = 22;
+            this.btn_crt_usr.Text = "Create New User";
+            this.btn_crt_usr.UseVisualStyleBackColor = true;
+            this.btn_crt_usr.Click += new System.EventHandler(this.btn_crt_usr_Click);
+            // 
+            // checkBTN_Op4
+            // 
+            this.checkBTN_Op4.AutoSize = true;
+            this.checkBTN_Op4.Enabled = false;
+            this.checkBTN_Op4.Location = new System.Drawing.Point(148, 486);
+            this.checkBTN_Op4.Name = "checkBTN_Op4";
+            this.checkBTN_Op4.Size = new System.Drawing.Size(81, 20);
+            this.checkBTN_Op4.TabIndex = 21;
+            this.checkBTN_Op4.Text = "Option D";
+            this.checkBTN_Op4.UseVisualStyleBackColor = true;
+            // 
+            // checkBTN_Op2
+            // 
+            this.checkBTN_Op2.AutoSize = true;
+            this.checkBTN_Op2.Enabled = false;
+            this.checkBTN_Op2.Location = new System.Drawing.Point(148, 460);
+            this.checkBTN_Op2.Name = "checkBTN_Op2";
+            this.checkBTN_Op2.Size = new System.Drawing.Size(80, 20);
+            this.checkBTN_Op2.TabIndex = 20;
+            this.checkBTN_Op2.Text = "Option C";
+            this.checkBTN_Op2.UseVisualStyleBackColor = true;
+            // 
+            // checkBTN_Op3
+            // 
+            this.checkBTN_Op3.AutoSize = true;
+            this.checkBTN_Op3.Enabled = false;
+            this.checkBTN_Op3.Location = new System.Drawing.Point(17, 486);
+            this.checkBTN_Op3.Name = "checkBTN_Op3";
+            this.checkBTN_Op3.Size = new System.Drawing.Size(118, 20);
+            this.checkBTN_Op3.TabIndex = 19;
+            this.checkBTN_Op3.Text = "Manage Users";
+            this.checkBTN_Op3.UseVisualStyleBackColor = true;
+            // 
+            // checkBTN_Op1
+            // 
+            this.checkBTN_Op1.AutoSize = true;
+            this.checkBTN_Op1.Enabled = false;
+            this.checkBTN_Op1.Location = new System.Drawing.Point(17, 460);
+            this.checkBTN_Op1.Name = "checkBTN_Op1";
+            this.checkBTN_Op1.Size = new System.Drawing.Size(114, 20);
+            this.checkBTN_Op1.TabIndex = 18;
+            this.checkBTN_Op1.Text = "Manage Items";
+            this.checkBTN_Op1.UseVisualStyleBackColor = true;
+            // 
+            // radioBTN_setting
+            // 
+            this.radioBTN_setting.AutoSize = true;
+            this.radioBTN_setting.Location = new System.Drawing.Point(62, 424);
+            this.radioBTN_setting.Name = "radioBTN_setting";
+            this.radioBTN_setting.Size = new System.Drawing.Size(127, 20);
+            this.radioBTN_setting.TabIndex = 17;
+            this.radioBTN_setting.TabStop = true;
+            this.radioBTN_setting.Text = "Acess Settings ?";
+            this.radioBTN_setting.UseVisualStyleBackColor = true;
+            this.radioBTN_setting.CheckedChanged += new System.EventHandler(this.radioBTN_setting_CheckedChanged);
+            this.radioBTN_setting.Click += new System.EventHandler(this.radioBTN_setting_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(42, 390);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(177, 22);
+            this.label22.TabIndex = 16;
+            this.label22.Text = "Settings Permissions";
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox10.Location = new System.Drawing.Point(6, 376);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(255, 2);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox10.TabIndex = 15;
+            this.pictureBox10.TabStop = false;
+            // 
+            // checkBTN_supplies
+            // 
+            this.checkBTN_supplies.AutoSize = true;
+            this.checkBTN_supplies.Location = new System.Drawing.Point(137, 334);
+            this.checkBTN_supplies.Name = "checkBTN_supplies";
+            this.checkBTN_supplies.Size = new System.Drawing.Size(118, 20);
+            this.checkBTN_supplies.TabIndex = 14;
+            this.checkBTN_supplies.Text = "Open Supplies";
+            this.checkBTN_supplies.UseVisualStyleBackColor = true;
+            // 
+            // checkBTN_money
+            // 
+            this.checkBTN_money.AutoSize = true;
+            this.checkBTN_money.Location = new System.Drawing.Point(137, 297);
+            this.checkBTN_money.Name = "checkBTN_money";
+            this.checkBTN_money.Size = new System.Drawing.Size(118, 20);
+            this.checkBTN_money.TabIndex = 13;
+            this.checkBTN_money.Text = "Access Money";
+            this.checkBTN_money.UseVisualStyleBackColor = true;
+            // 
+            // checkBTN_reports
+            // 
+            this.checkBTN_reports.AutoSize = true;
+            this.checkBTN_reports.Location = new System.Drawing.Point(6, 334);
+            this.checkBTN_reports.Name = "checkBTN_reports";
+            this.checkBTN_reports.Size = new System.Drawing.Size(125, 20);
+            this.checkBTN_reports.TabIndex = 12;
+            this.checkBTN_reports.Text = "Access Reports";
+            this.checkBTN_reports.UseVisualStyleBackColor = true;
+            // 
+            // checkBTN_pos
+            // 
+            this.checkBTN_pos.AutoSize = true;
+            this.checkBTN_pos.Checked = true;
+            this.checkBTN_pos.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBTN_pos.Location = new System.Drawing.Point(6, 297);
+            this.checkBTN_pos.Name = "checkBTN_pos";
+            this.checkBTN_pos.Size = new System.Drawing.Size(89, 20);
+            this.checkBTN_pos.TabIndex = 11;
+            this.checkBTN_pos.Text = "Open Pos";
+            this.checkBTN_pos.UseVisualStyleBackColor = true;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(19, 224);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(184, 22);
+            this.label21.TabIndex = 10;
+            this.label21.Text = "Person\'s Real Name :";
+            // 
+            // text_realname
+            // 
+            this.text_realname.Location = new System.Drawing.Point(23, 250);
+            this.text_realname.Name = "text_realname";
+            this.text_realname.Size = new System.Drawing.Size(220, 22);
+            this.text_realname.TabIndex = 9;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox9.Location = new System.Drawing.Point(6, 206);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(255, 2);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 8;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::egycashier.Properties.Resources.curved_line2;
+            this.pictureBox8.Location = new System.Drawing.Point(197, 533);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(65, 60);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 7;
+            this.pictureBox8.TabStop = false;
             // 
             // label18
             // 
@@ -673,167 +839,6 @@
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::egycashier.Properties.Resources.curved_line2;
-            this.pictureBox8.Location = new System.Drawing.Point(197, 533);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(65, 60);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 7;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox9.Location = new System.Drawing.Point(6, 206);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(255, 2);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 8;
-            this.pictureBox9.TabStop = false;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(19, 224);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(184, 22);
-            this.label21.TabIndex = 10;
-            this.label21.Text = "Person\'s Real Name :";
-            // 
-            // text_realname
-            // 
-            this.text_realname.Location = new System.Drawing.Point(23, 250);
-            this.text_realname.Name = "text_realname";
-            this.text_realname.Size = new System.Drawing.Size(220, 22);
-            this.text_realname.TabIndex = 9;
-            // 
-            // checkBTN_pos
-            // 
-            this.checkBTN_pos.AutoSize = true;
-            this.checkBTN_pos.Checked = true;
-            this.checkBTN_pos.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBTN_pos.Location = new System.Drawing.Point(6, 297);
-            this.checkBTN_pos.Name = "checkBTN_pos";
-            this.checkBTN_pos.Size = new System.Drawing.Size(89, 20);
-            this.checkBTN_pos.TabIndex = 11;
-            this.checkBTN_pos.Text = "Open Pos";
-            this.checkBTN_pos.UseVisualStyleBackColor = true;
-            // 
-            // checkBTN_reports
-            // 
-            this.checkBTN_reports.AutoSize = true;
-            this.checkBTN_reports.Location = new System.Drawing.Point(6, 334);
-            this.checkBTN_reports.Name = "checkBTN_reports";
-            this.checkBTN_reports.Size = new System.Drawing.Size(125, 20);
-            this.checkBTN_reports.TabIndex = 12;
-            this.checkBTN_reports.Text = "Access Reports";
-            this.checkBTN_reports.UseVisualStyleBackColor = true;
-            // 
-            // checkBTN_supplies
-            // 
-            this.checkBTN_supplies.AutoSize = true;
-            this.checkBTN_supplies.Location = new System.Drawing.Point(137, 334);
-            this.checkBTN_supplies.Name = "checkBTN_supplies";
-            this.checkBTN_supplies.Size = new System.Drawing.Size(118, 20);
-            this.checkBTN_supplies.TabIndex = 14;
-            this.checkBTN_supplies.Text = "Open Supplies";
-            this.checkBTN_supplies.UseVisualStyleBackColor = true;
-            // 
-            // checkBTN_money
-            // 
-            this.checkBTN_money.AutoSize = true;
-            this.checkBTN_money.Location = new System.Drawing.Point(137, 297);
-            this.checkBTN_money.Name = "checkBTN_money";
-            this.checkBTN_money.Size = new System.Drawing.Size(118, 20);
-            this.checkBTN_money.TabIndex = 13;
-            this.checkBTN_money.Text = "Access Money";
-            this.checkBTN_money.UseVisualStyleBackColor = true;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(42, 390);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(177, 22);
-            this.label22.TabIndex = 16;
-            this.label22.Text = "Settings Permissions";
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox10.Location = new System.Drawing.Point(6, 376);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(255, 2);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox10.TabIndex = 15;
-            this.pictureBox10.TabStop = false;
-            // 
-            // radioBTN_setting
-            // 
-            this.radioBTN_setting.AutoSize = true;
-            this.radioBTN_setting.Location = new System.Drawing.Point(62, 424);
-            this.radioBTN_setting.Name = "radioBTN_setting";
-            this.radioBTN_setting.Size = new System.Drawing.Size(127, 20);
-            this.radioBTN_setting.TabIndex = 17;
-            this.radioBTN_setting.TabStop = true;
-            this.radioBTN_setting.Text = "Acess Settings ?";
-            this.radioBTN_setting.UseVisualStyleBackColor = true;
-            this.radioBTN_setting.CheckedChanged += new System.EventHandler(this.radioBTN_setting_CheckedChanged);
-            this.radioBTN_setting.Click += new System.EventHandler(this.radioBTN_setting_Click);
-            // 
-            // checkBTN_Op1
-            // 
-            this.checkBTN_Op1.AutoSize = true;
-            this.checkBTN_Op1.Location = new System.Drawing.Point(17, 460);
-            this.checkBTN_Op1.Name = "checkBTN_Op1";
-            this.checkBTN_Op1.Size = new System.Drawing.Size(114, 20);
-            this.checkBTN_Op1.TabIndex = 18;
-            this.checkBTN_Op1.Text = "Manage Items";
-            this.checkBTN_Op1.UseVisualStyleBackColor = true;
-            // 
-            // checkBTN_Op3
-            // 
-            this.checkBTN_Op3.AutoSize = true;
-            this.checkBTN_Op3.Location = new System.Drawing.Point(17, 486);
-            this.checkBTN_Op3.Name = "checkBTN_Op3";
-            this.checkBTN_Op3.Size = new System.Drawing.Size(118, 20);
-            this.checkBTN_Op3.TabIndex = 19;
-            this.checkBTN_Op3.Text = "Manage Users";
-            this.checkBTN_Op3.UseVisualStyleBackColor = true;
-            // 
-            // checkBTN_Op2
-            // 
-            this.checkBTN_Op2.AutoSize = true;
-            this.checkBTN_Op2.Location = new System.Drawing.Point(148, 460);
-            this.checkBTN_Op2.Name = "checkBTN_Op2";
-            this.checkBTN_Op2.Size = new System.Drawing.Size(80, 20);
-            this.checkBTN_Op2.TabIndex = 20;
-            this.checkBTN_Op2.Text = "Option C";
-            this.checkBTN_Op2.UseVisualStyleBackColor = true;
-            // 
-            // checkBTN_Op4
-            // 
-            this.checkBTN_Op4.AutoSize = true;
-            this.checkBTN_Op4.Location = new System.Drawing.Point(148, 486);
-            this.checkBTN_Op4.Name = "checkBTN_Op4";
-            this.checkBTN_Op4.Size = new System.Drawing.Size(81, 20);
-            this.checkBTN_Op4.TabIndex = 21;
-            this.checkBTN_Op4.Text = "Option D";
-            this.checkBTN_Op4.UseVisualStyleBackColor = true;
-            // 
-            // btn_crt_usr
-            // 
-            this.btn_crt_usr.Location = new System.Drawing.Point(17, 533);
-            this.btn_crt_usr.Name = "btn_crt_usr";
-            this.btn_crt_usr.Size = new System.Drawing.Size(202, 39);
-            this.btn_crt_usr.TabIndex = 22;
-            this.btn_crt_usr.Text = "Create New User";
-            this.btn_crt_usr.UseVisualStyleBackColor = true;
-            // 
             // settingSCREEN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -852,6 +857,9 @@
             this.tabPage2.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabPage10.ResumeLayout(false);
@@ -871,9 +879,6 @@
             this.tabPage9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.ResumeLayout(false);
 
         }
