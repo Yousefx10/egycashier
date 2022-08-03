@@ -78,8 +78,14 @@ namespace egycashier
 
                 btnUser.ForeColor = Color.Black;
                 btnUser.Size = new Size(80, 70);
-             //   btnUser.Text = Dafile[0];
-            //    btnUser.Tag = Dafile[1];
+                btnUser.Text = Dafile[0];
+                btnUser.Tag = new { tg_pass = Dafile[1],
+                                    tg_realname = Dafile[2],
+                                    tg_date = Dafile[3],
+                                    tg_screens = Dafile[4],
+                                    tg_sett = Dafile[5],
+                                    tg_file_name = file.FullName
+                };
 
 
                 btnUser.Click += BtnUser_Click;
@@ -89,6 +95,59 @@ namespace egycashier
             }
 
 
+        }
+
+
+        //this void is for taking the userValueProperty and changing it on the real checkboxes.
+        void HandleCheckBoxes(string FirstOptions , string SecondOptions)
+        {
+
+            Cc1.Checked = false;
+            Cc2.Checked = false;
+            Cc3.Checked = false;
+            Cc4.Checked = false;
+
+            SeC1.Checked = false;
+            SeC3.Checked = false;
+            SeC2.Checked = false;
+            SeC4.Checked = false;
+
+
+
+
+            string[] FirArray = FirstOptions.Split(',');
+            string[] SecArray = SecondOptions.Split(',');
+
+
+            if (FirArray[0] == "1")
+                Cc1.Checked = true;
+            if (FirArray[1] == "1")
+                Cc2.Checked = true;
+            if (FirArray[2] == "1")
+                Cc3.Checked = true;
+            if (FirArray[3] == "1")
+                Cc4.Checked = true;
+
+            if (SecArray[0] == "1")
+                SeC1.Checked = true;
+            if (SecArray[1] == "1")
+                SeC3.Checked = true;
+            if (SecArray[2] == "1")
+                SeC2.Checked = true;
+            if (SecArray[3] == "1")
+                SeC4.Checked = true;
+
+            panel8.Visible = true;
+        }
+
+
+
+
+
+
+        object MOREtags(object obj, string propName)
+        {
+            return obj.GetType().GetProperty(propName).GetValue(obj, null);
         }
 
         private void AddBT_Click(object sender, EventArgs e)
@@ -104,6 +163,13 @@ namespace egycashier
             CurrentPass = BOT.Tag.ToString();
         //    label_user_name.Text = CurrentUsr;
             panel1.Visible = true;
+
+            currentFileName = MOREtags(BOT.Tag, "tg_file_name").ToString();
+
+            view_label_username.Text = CurrentUsr;
+            view_label_RealName.Text = MOREtags(BOT.Tag, "tg_realname").ToString();
+            view_label_date.Text = MOREtags(BOT.Tag, "tg_date").ToString();
+            HandleCheckBoxes(MOREtags(BOT.Tag, "tg_screens").ToString() , MOREtags(BOT.Tag, "tg_sett").ToString());
 
 
         }
@@ -640,7 +706,7 @@ namespace egycashier
 
 
             string N = "\n", Z =",";
-            string PER = text_username.Text + N + txt_password.Text + N + text_realname.Text + N;
+            string PER = text_username.Text + N + txt_password.Text + N + Thrdate +N+ text_realname.Text + N;
             PER += CheckBoxToValueString(checkBTN_pos.Checked)+ Z;
             PER += CheckBoxToValueString(checkBTN_reports.Checked) + Z;
             PER += CheckBoxToValueString(checkBTN_money.Checked) + Z;
@@ -662,10 +728,9 @@ namespace egycashier
             MessageBox.Show("The User Have Been Added !", "Done !");
             panel2.Visible = true;
             panel3.Visible = false;
-         //   FriSH();
 
 
-
+            RefReshUsers();
 
         }
 
@@ -677,6 +742,14 @@ namespace egycashier
             else
                 return 0;
 
+        }
+
+        string currentFileName;
+        private void user_del_pic_Click(object sender, EventArgs e)
+        {
+            File.Delete(currentFileName);
+            panel8.Visible = false;
+            RefReshUsers();
         }
 
 
