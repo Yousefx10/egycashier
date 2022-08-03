@@ -15,6 +15,9 @@ namespace egycashier
         string CurrentUsr = "";
         string CurrentPass = "";
         string CurrentPropert = "";
+        string crntFileName = "";
+
+
 
 
         bool closeSAVE=false;
@@ -23,6 +26,12 @@ namespace egycashier
             if (textBox1.Text == CurrentPass)
             {
                 Program.FormM.CurrentUSR(CurrentUsr, CurrentPropert,true);
+
+                //Update The Sign-in Date....
+                string Thrdate = DateTime.Now.ToString("MM-dd-yyyy");
+                lineChanger(Thrdate,crntFileName, 3);
+
+
                 closeSAVE = true;
                 Close();
 
@@ -30,6 +39,19 @@ namespace egycashier
             else
                 MessageBox.Show("Wrong Password");
         }
+
+
+        static void lineChanger(string newText, string fileName, int line_to_edit)
+        {
+            string[] arrLine = File.ReadAllLines(fileName);
+            arrLine[line_to_edit - 1] = newText;
+            File.WriteAllLines(fileName, arrLine);
+        }
+
+
+
+
+
 
         private void loginForm_Load(object sender, EventArgs e)
         {
@@ -100,19 +122,6 @@ namespace egycashier
 
 
 
-
-        /*
-        private void AddBT_Click(object sender, EventArgs e)
-        {
-            panel2.Visible = false;
-            panel3.Visible = true;
-
-
-        }
-        */
-
-
-
         private void BtnUser_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("i have been clicked");
@@ -121,7 +130,7 @@ namespace egycashier
 
             CurrentPass    = MOREtags(BOT.Tag, "tg_pass").ToString();
             CurrentPropert = MOREtags(BOT.Tag, "tg_screens").ToString()+","+ MOREtags(BOT.Tag, "tg_sett").ToString();
-
+            crntFileName = MOREtags(BOT.Tag, "tg_file_name").ToString();
 
             label_User_name.Text = CurrentUsr;
             label_User_date.Text = MOREtags(BOT.Tag, "tg_date").ToString();
@@ -131,6 +140,7 @@ namespace egycashier
 
             label_User_name.Text = CurrentUsr;
             panel1.Visible = true;
+            panel2.Visible = true;
         }
 
         private void loginForm_FormClosing(object sender, FormClosingEventArgs e)

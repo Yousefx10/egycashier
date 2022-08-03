@@ -37,13 +37,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label_User_name = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label_User_date = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,7 +115,6 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.label_User_name);
-            this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.label_User_date);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.pictureBox1);
@@ -125,6 +122,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(163, 322);
             this.panel2.TabIndex = 6;
+            this.panel2.Visible = false;
             // 
             // label_User_name
             // 
@@ -135,16 +133,6 @@
             this.label_User_name.Size = new System.Drawing.Size(102, 25);
             this.label_User_name.TabIndex = 6;
             this.label_User_name.Text = "Username";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::egycashier.Properties.Resources.garbage;
-            this.pictureBox2.Location = new System.Drawing.Point(113, 279);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(47, 37);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
             // 
             // label_User_date
             // 
@@ -198,7 +186,6 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -218,7 +205,6 @@
         private System.Windows.Forms.Label label_User_date;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label_User_name;
     }
 }
