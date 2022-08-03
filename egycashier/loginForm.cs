@@ -21,7 +21,7 @@ namespace egycashier
             if (textBox1.Text == CurrentPass)
             {
                 Program.FormM.CurrentUSR(CurrentPass, CurrentPropert);
-
+                Close();
 
             }
             else
@@ -67,8 +67,8 @@ namespace egycashier
                 btnUser.Tag = new
                 {
                     tg_pass = Dafile[1],
-                    tg_realname = Dafile[2],
-                    tg_date = Dafile[3],
+                    tg_date = Dafile[2],
+                    tg_realname = Dafile[3],
                     tg_screens = Dafile[4],
                     tg_sett = Dafile[5],
                     tg_file_name = file.FullName
@@ -118,6 +118,13 @@ namespace egycashier
 
             CurrentPass    = MOREtags(BOT.Tag, "tg_pass").ToString();
             CurrentPropert = MOREtags(BOT.Tag, "tg_screens").ToString()+","+ MOREtags(BOT.Tag, "tg_sett").ToString();
+
+
+            label_User_name.Text = CurrentUsr;
+            label_User_date.Text = MOREtags(BOT.Tag, "tg_date").ToString();
+            label3.Text= "Welcome Back " + MOREtags(BOT.Tag, "tg_realname").ToString();
+
+
 
             label_User_name.Text = CurrentUsr;
             panel1.Visible = true;

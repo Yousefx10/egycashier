@@ -38,7 +38,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label_User_name = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label_User_date = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -118,7 +118,7 @@
             // 
             this.panel2.Controls.Add(this.label_User_name);
             this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label_User_date);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(621, 58);
@@ -146,15 +146,15 @@
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
-            // label6
+            // label_User_date
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(9, 194);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 25);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "2022/22/22";
+            this.label_User_date.AutoSize = true;
+            this.label_User_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_User_date.Location = new System.Drawing.Point(9, 194);
+            this.label_User_date.Name = "label_User_date";
+            this.label_User_date.Size = new System.Drawing.Size(112, 25);
+            this.label_User_date.TabIndex = 3;
+            this.label_User_date.Text = "2022/22/22";
             // 
             // label5
             // 
@@ -214,7 +214,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label_User_date;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;

@@ -80,8 +80,8 @@ namespace egycashier
                 btnUser.Size = new Size(80, 70);
                 btnUser.Text = Dafile[0];
                 btnUser.Tag = new { tg_pass = Dafile[1],
-                                    tg_realname = Dafile[2],
-                                    tg_date = Dafile[3],
+                                    tg_date = Dafile[2],
+                                    tg_realname = Dafile[3],
                                     tg_screens = Dafile[4],
                                     tg_sett = Dafile[5],
                                     tg_file_name = file.FullName

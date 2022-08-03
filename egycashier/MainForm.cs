@@ -44,6 +44,9 @@ namespace egycashier
             //this command will run after the dialog closes.
             //the CurntUserProp is important because it contains the lock Options data.
             CurrentUSR(mainUSR, CurntUserProp);
+
+            button3.Visible = false;
+            linkLabel2.Visible = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -218,6 +221,12 @@ namespace egycashier
 
 
 
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CurrentUSR("Guest","0,0,0,0,0,0,0,0");
+            button3.Visible = true;
         }
     }
 }
