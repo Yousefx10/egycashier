@@ -101,7 +101,7 @@
             this.Cc1 = new System.Windows.Forms.CheckBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.user_del_pic = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.user_save_pic = new System.Windows.Forms.PictureBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.checkBTN_Op2 = new System.Windows.Forms.CheckBox();
@@ -137,7 +137,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.user_del_pic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.user_save_pic)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -220,6 +220,7 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(265, 596);
             this.panel9.TabIndex = 2;
+            this.panel9.Visible = false;
             // 
             // btn_crt_usr
             // 
@@ -401,7 +402,7 @@
             // 
             this.panel8.Controls.Add(this.label24);
             this.panel8.Controls.Add(this.label23);
-            this.panel8.Controls.Add(this.pictureBox12);
+            this.panel8.Controls.Add(this.user_save_pic);
             this.panel8.Controls.Add(this.user_del_pic);
             this.panel8.Controls.Add(this.panel7);
             this.panel8.Controls.Add(this.Cc4);
@@ -419,6 +420,7 @@
             // 
             // flowLayoutPanel3
             // 
+            this.flowLayoutPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(6, 8);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
@@ -831,30 +833,31 @@
             // view_label_username
             // 
             this.view_label_username.AutoSize = true;
-            this.view_label_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.view_label_username.Location = new System.Drawing.Point(3, 6);
+            this.view_label_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.view_label_username.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.view_label_username.Location = new System.Drawing.Point(30, 6);
             this.view_label_username.Name = "view_label_username";
-            this.view_label_username.Size = new System.Drawing.Size(27, 29);
+            this.view_label_username.Size = new System.Drawing.Size(33, 36);
             this.view_label_username.TabIndex = 0;
             this.view_label_username.Text = " -";
             // 
             // view_label_RealName
             // 
             this.view_label_RealName.AutoSize = true;
-            this.view_label_RealName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.view_label_RealName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.view_label_RealName.Location = new System.Drawing.Point(3, 45);
             this.view_label_RealName.Name = "view_label_RealName";
-            this.view_label_RealName.Size = new System.Drawing.Size(27, 29);
+            this.view_label_RealName.Size = new System.Drawing.Size(21, 22);
             this.view_label_RealName.TabIndex = 1;
             this.view_label_RealName.Text = " -";
             // 
             // view_label_date
             // 
             this.view_label_date.AutoSize = true;
-            this.view_label_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.view_label_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.view_label_date.Location = new System.Drawing.Point(3, 81);
             this.view_label_date.Name = "view_label_date";
-            this.view_label_date.Size = new System.Drawing.Size(27, 29);
+            this.view_label_date.Size = new System.Drawing.Size(21, 22);
             this.view_label_date.TabIndex = 2;
             this.view_label_date.Text = " -";
             // 
@@ -923,15 +926,15 @@
             this.user_del_pic.TabStop = false;
             this.user_del_pic.Click += new System.EventHandler(this.user_del_pic_Click);
             // 
-            // pictureBox12
+            // user_save_pic
             // 
-            this.pictureBox12.Image = global::egycashier.Properties.Resources.save;
-            this.pictureBox12.Location = new System.Drawing.Point(243, 3);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox12.TabIndex = 28;
-            this.pictureBox12.TabStop = false;
+            this.user_save_pic.Image = global::egycashier.Properties.Resources.save;
+            this.user_save_pic.Location = new System.Drawing.Point(243, 3);
+            this.user_save_pic.Name = "user_save_pic";
+            this.user_save_pic.Size = new System.Drawing.Size(32, 32);
+            this.user_save_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.user_save_pic.TabIndex = 28;
+            this.user_save_pic.TabStop = false;
             // 
             // label23
             // 
@@ -1082,7 +1085,7 @@
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.user_del_pic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.user_save_pic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1164,7 +1167,7 @@
         private System.Windows.Forms.PictureBox user_del_pic;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.PictureBox user_save_pic;
         private System.Windows.Forms.CheckBox checkBTN_Op2;
         private System.Windows.Forms.CheckBox checkBTN_Op4;
         private System.Windows.Forms.CheckBox checkBTN_Op1;

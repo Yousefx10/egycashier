@@ -152,7 +152,20 @@ namespace egycashier
 
         private void AddBT_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("here for adding new button and new users from screen setting");
+            Button BOT = sender as Button;
+            if (BOT.Text == "+")
+            {
+
+                panel9.Visible = true;
+                BOT.Text = "X";
+            }
+            else
+            {
+                panel9.Visible = false;
+                BOT.Text = "+";
+
+            }
+
         }
         string CurrentUsr , CurrentPass;
         private void BtnUser_Click(object sender, EventArgs e)
