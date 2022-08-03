@@ -93,19 +93,8 @@ namespace egycashier
             WindowState = FormWindowState.Minimized;
         }
 
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-            money mon = new money();
-            mon.Show();
-        }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            //settingSCREEN st = new settingSCREEN(0);
-            //st.Show();
-            settings Se = new settings();
-            Se.Show();
-        }
+
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -119,10 +108,7 @@ namespace egycashier
             }
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void label1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -131,12 +117,8 @@ namespace egycashier
             movY = e.Y;
         }
 
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("i have been clicked.");
-            Program.FormX.FolderManage(2);
 
-        }
+
         public static string mainUSR = "";
         public static string CurntUserProp = "";
         public static bool CURRENTbool = false;
@@ -235,6 +217,27 @@ namespace egycashier
             CurrentUSR("Guest","0,0,0,0,0,0,0,0",true);
             button3.Visible = true;
             label_please.Visible = true;
+        }
+
+        private void btn_supplies_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("i have been clicked.");
+            Program.FormX.FolderManage(2);
+
+        }
+
+        private void btn_money_Click(object sender, EventArgs e)
+        {
+            money mon = new money();
+            mon.Show();
+        }
+
+        private void btn_Settings_Click(object sender, EventArgs e)
+        {
+            //settingSCREEN st = new settingSCREEN(0);
+            //st.Show();
+            settings Se = new settings();
+            Se.Show();
         }
     }
 }
