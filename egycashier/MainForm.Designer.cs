@@ -51,6 +51,7 @@
             this.btn_reports = new System.Windows.Forms.PictureBox();
             this.btn_Settings = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label_please = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_minimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_close)).BeginInit();
@@ -122,6 +123,7 @@
             this.btnPOS.TabIndex = 4;
             this.btnPOS.Text = "POS";
             this.btnPOS.UseVisualStyleBackColor = true;
+            this.btnPOS.Visible = false;
             this.btnPOS.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnDELIVERY
@@ -133,6 +135,7 @@
             this.btnDELIVERY.TabIndex = 5;
             this.btnDELIVERY.Text = "Delivery";
             this.btnDELIVERY.UseVisualStyleBackColor = true;
+            this.btnDELIVERY.Visible = false;
             this.btnDELIVERY.Click += new System.EventHandler(this.button2_Click);
             // 
             // linkLabel1
@@ -154,6 +157,7 @@
             this.Lbl_settings.Size = new System.Drawing.Size(55, 16);
             this.Lbl_settings.TabIndex = 8;
             this.Lbl_settings.Text = "Settings";
+            this.Lbl_settings.Visible = false;
             this.Lbl_settings.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // Lbl_reports
@@ -164,6 +168,7 @@
             this.Lbl_reports.Size = new System.Drawing.Size(55, 16);
             this.Lbl_reports.TabIndex = 10;
             this.Lbl_reports.Text = "Reports";
+            this.Lbl_reports.Visible = false;
             // 
             // label4
             // 
@@ -192,6 +197,7 @@
             this.Lbl_money.Size = new System.Drawing.Size(48, 16);
             this.Lbl_money.TabIndex = 15;
             this.Lbl_money.Text = "Money";
+            this.Lbl_money.Visible = false;
             this.Lbl_money.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // button3
@@ -236,6 +242,7 @@
             this.Lbl_supplies.Size = new System.Drawing.Size(64, 16);
             this.Lbl_supplies.TabIndex = 20;
             this.Lbl_supplies.Text = "Suppliers";
+            this.Lbl_supplies.Visible = false;
             // 
             // btn_supplies
             // 
@@ -246,6 +253,7 @@
             this.btn_supplies.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_supplies.TabIndex = 19;
             this.btn_supplies.TabStop = false;
+            this.btn_supplies.Visible = false;
             this.btn_supplies.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // btn_money
@@ -257,6 +265,7 @@
             this.btn_money.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_money.TabIndex = 14;
             this.btn_money.TabStop = false;
+            this.btn_money.Visible = false;
             this.btn_money.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // pictureBox4
@@ -279,6 +288,7 @@
             this.btn_reports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_reports.TabIndex = 9;
             this.btn_reports.TabStop = false;
+            this.btn_reports.Visible = false;
             // 
             // btn_Settings
             // 
@@ -289,6 +299,7 @@
             this.btn_Settings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_Settings.TabIndex = 7;
             this.btn_Settings.TabStop = false;
+            this.btn_Settings.Visible = false;
             this.btn_Settings.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
@@ -301,6 +312,16 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // label_please
+            // 
+            this.label_please.AutoSize = true;
+            this.label_please.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_please.Location = new System.Drawing.Point(378, 328);
+            this.label_please.Name = "label_please";
+            this.label_please.Size = new System.Drawing.Size(366, 25);
+            this.label_please.TabIndex = 21;
+            this.label_please.Text = "Please Login To Start Using The System";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -308,6 +329,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1088, 731);
             this.ControlBox = false;
+            this.Controls.Add(this.label_please);
             this.Controls.Add(this.Lbl_supplies);
             this.Controls.Add(this.btn_supplies);
             this.Controls.Add(this.label7);
@@ -374,5 +396,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label Lbl_supplies;
         private System.Windows.Forms.PictureBox btn_supplies;
+        private System.Windows.Forms.Label label_please;
     }
 }

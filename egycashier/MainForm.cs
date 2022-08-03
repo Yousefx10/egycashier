@@ -224,6 +224,7 @@ namespace egycashier
 
                 button3.Visible = false;
                 linkLabel2.Visible = true;
+                label_please.Visible = false;
             }
 
 
@@ -231,8 +232,9 @@ namespace egycashier
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            CurrentUSR("Guest","0,0,0,0,0,0,0,0",false);
+            CurrentUSR("Guest","0,0,0,0,0,0,0,0",true);
             button3.Visible = true;
+            label_please.Visible = true;
         }
     }
 }
