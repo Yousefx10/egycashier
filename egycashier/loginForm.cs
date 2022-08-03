@@ -16,11 +16,14 @@ namespace egycashier
         string CurrentPass = "";
         string CurrentPropert = "";
 
+
+        bool closeSAVE=false;
         private void button6_Click(object sender, EventArgs e)
         {
             if (textBox1.Text == CurrentPass)
             {
-                Program.FormM.CurrentUSR(CurrentPass, CurrentPropert);
+                Program.FormM.CurrentUSR(CurrentUsr, CurrentPropert,true);
+                closeSAVE = true;
                 Close();
 
             }
@@ -130,6 +133,11 @@ namespace egycashier
             panel1.Visible = true;
         }
 
+        private void loginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(!closeSAVE)
+            Program.FormM.CurrentUSR("Guest", "0,0,0,0,0,0,0,0", false);
 
+        }
     }
 }

@@ -43,10 +43,9 @@ namespace egycashier
 
             //this command will run after the dialog closes.
             //the CurntUserProp is important because it contains the lock Options data.
-            CurrentUSR(mainUSR, CurntUserProp);
+            CurrentUSR(mainUSR, CurntUserProp,CURRENTbool);
 
-            button3.Visible = false;
-            linkLabel2.Visible = true;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -140,92 +139,99 @@ namespace egycashier
         }
         public static string mainUSR = "";
         public static string CurntUserProp = "";
-        public void CurrentUSR(string UsER , string Propper)
+        public static bool CURRENTbool = false;
+        public void CurrentUSR(string UsER , string Propper,bool hoho)
         {
-            mainUSR= UsER;
-            CurntUserProp = Propper;
-            linkLabel1.Text = "Welcome "+UsER+" ";
-
-            //doing the important stuff about the users.
-
-
-
-
-
-
-
-            btnPOS.Visible = false;
-            btnDELIVERY.Visible = false;
-
-            btn_reports.Visible = false;
-            Lbl_reports.Visible = false;
-
-            btn_money.Visible = false;
-            Lbl_money.Visible = false;
-
-            btn_supplies.Visible = false;
-            Lbl_supplies.Visible = false;
-
-            btn_Settings.Visible = false;
-            Lbl_settings.Visible = false;
-
-
-
-
-            string[] MyTokens = CurntUserProp.Split(',');
-
-
-            //just for testing , displaying them all.
-            string toDisplay = string.Join(Environment.NewLine, MyTokens);
-            MessageBox.Show(toDisplay);
-
-
-
-            //pos
-            if (MyTokens[0] == "1")
+            CURRENTbool = hoho;
+            if (CURRENTbool)
             {
-                btnPOS.Visible = true;
-                btnDELIVERY.Visible = true;
+                mainUSR = UsER;
+                CurntUserProp = Propper;
+                linkLabel1.Text = "Welcome " + mainUSR + " ";
+
+                //doing the important stuff about the users.
+
+
+
+
+
+
+
+                btnPOS.Visible = false;
+                btnDELIVERY.Visible = false;
+
+                btn_reports.Visible = false;
+                Lbl_reports.Visible = false;
+
+                btn_money.Visible = false;
+                Lbl_money.Visible = false;
+
+                btn_supplies.Visible = false;
+                Lbl_supplies.Visible = false;
+
+                btn_Settings.Visible = false;
+                Lbl_settings.Visible = false;
+
+
+
+
+                string[] MyTokens = CurntUserProp.Split(',');
+
+/*
+                //just for testing , displaying them all.
+                string toDisplay = string.Join(Environment.NewLine, MyTokens);
+                MessageBox.Show(toDisplay);
+
+*/
+
+                //pos
+                if (MyTokens[0] == "1")
+                {
+                    btnPOS.Visible = true;
+                    btnDELIVERY.Visible = true;
+                }
+
+                //reports
+                if (MyTokens[1] == "1")
+                {
+                    btn_reports.Visible = true;
+                    Lbl_reports.Visible = true;
+                }
+
+                //money
+                if (MyTokens[2] == "1")
+                {
+                    btn_money.Visible = true;
+                    Lbl_money.Visible = true;
+                }
+
+                //supplies
+                if (MyTokens[3] == "1")
+                {
+                    btn_supplies.Visible = true;
+                    Lbl_supplies.Visible = true;
+                }
+
+
+                //open settings
+                int setNUM = Int32.Parse(MyTokens[4] + MyTokens[5] + MyTokens[6] + MyTokens[7]);
+
+                if (setNUM > 0)
+                {
+                    btn_Settings.Visible = true;
+                    Lbl_settings.Visible = true;
+                }
+
+                button3.Visible = false;
+                linkLabel2.Visible = true;
             }
-
-            //reports
-            if (MyTokens[1] == "1")
-            {
-                btn_reports.Visible = true;
-                Lbl_reports.Visible = true;
-            }
-
-            //money
-            if (MyTokens[2] == "1")
-            {
-                btn_money.Visible = true;
-                Lbl_money.Visible = true;
-            }
-
-            //supplies
-            if (MyTokens[3] == "1")
-            {
-                btn_supplies.Visible = true;
-                Lbl_supplies.Visible = true;
-            }
-
-
-            //open settings
-            int setNUM =   Int32.Parse(MyTokens[4] + MyTokens[5] + MyTokens[6] + MyTokens[7]);
-
-            if (setNUM > 0)
-            {
-                btn_Settings.Visible = true;
-                Lbl_settings.Visible = true;
-            }
-
 
 
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            CurrentUSR("Guest","0,0,0,0,0,0,0,0");
+            CurrentUSR("Guest","0,0,0,0,0,0,0,0",false);
             button3.Visible = true;
         }
     }
