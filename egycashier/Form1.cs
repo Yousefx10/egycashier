@@ -22,7 +22,7 @@ namespace egycashier
         private void button1_Click(object sender, EventArgs e)
         {
             panel2.Visible = true;
-            Height += 130;
+            Height += 135;
             
             button1.Enabled = false;
 

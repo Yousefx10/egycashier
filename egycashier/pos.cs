@@ -548,7 +548,7 @@ namespace egycashier
                     {
                         string N = "\n";
  FullProcc +=
-    MOREtags(contr.Tag, "Yname").ToString() +N+
+    MOREtags(contr.Tag, "Yname").ToString() +"---"+N+
     MOREtags(contr.Tag, "Yitem") + N +
     MOREtags(contr.Tag, "Yprice") + "," +
     MOREtags(contr.Tag, "Ycount");
