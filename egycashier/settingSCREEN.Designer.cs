@@ -853,9 +853,9 @@
             this.label__6.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.label__6.Location = new System.Drawing.Point(25, 232);
             this.label__6.Name = "label__6";
-            this.label__6.Size = new System.Drawing.Size(121, 29);
+            this.label__6.Size = new System.Drawing.Size(134, 29);
             this.label__6.TabIndex = 10;
-            this.label__6.Text = "Last Line :";
+            this.label__6.Text = "Third Line :";
             // 
             // textLine4
             // 
@@ -873,9 +873,9 @@
             this.label__5.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.label__5.Location = new System.Drawing.Point(25, 177);
             this.label__5.Name = "label__5";
-            this.label__5.Size = new System.Drawing.Size(134, 29);
+            this.label__5.Size = new System.Drawing.Size(160, 29);
             this.label__5.TabIndex = 8;
-            this.label__5.Text = "Third Line :";
+            this.label__5.Text = "Second Line :";
             // 
             // textLine3
             // 
@@ -893,9 +893,9 @@
             this.label__4.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.label__4.Location = new System.Drawing.Point(25, 122);
             this.label__4.Name = "label__4";
-            this.label__4.Size = new System.Drawing.Size(160, 29);
+            this.label__4.Size = new System.Drawing.Size(124, 29);
             this.label__4.TabIndex = 6;
-            this.label__4.Text = "Second Line :";
+            this.label__4.Text = "First Line :";
             // 
             // textLine2
             // 
@@ -913,9 +913,9 @@
             this.label__3.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.label__3.Location = new System.Drawing.Point(25, 67);
             this.label__3.Name = "label__3";
-            this.label__3.Size = new System.Drawing.Size(124, 29);
+            this.label__3.Size = new System.Drawing.Size(223, 29);
             this.label__3.TabIndex = 4;
-            this.label__3.Text = "First Line :";
+            this.label__3.Text = "Restaurants Name :";
             // 
             // label__2
             // 
@@ -931,9 +931,9 @@
             // textLine1
             // 
             this.textLine1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textLine1.Location = new System.Drawing.Point(218, 59);
+            this.textLine1.Location = new System.Drawing.Point(254, 59);
             this.textLine1.Name = "textLine1";
-            this.textLine1.Size = new System.Drawing.Size(316, 45);
+            this.textLine1.Size = new System.Drawing.Size(280, 45);
             this.textLine1.TabIndex = 0;
             this.textLine1.TextChanged += new System.EventHandler(this.textLine1_TextChanged);
             // 
