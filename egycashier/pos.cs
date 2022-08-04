@@ -496,6 +496,8 @@ namespace egycashier
         }
         private void pos_Load(object sender, EventArgs e)
         {
+            
+         //   MessageBox.Show(printDocument1.DefaultPageSettings.PaperSize.ToString());
 
         }
 
@@ -523,7 +525,7 @@ namespace egycashier
 
         private void button16_Click(object sender, EventArgs e)
         {
-
+           
             string path = @"C:\EgyCashier\guest\operations\";
 
             string date = DateTime.Now.ToString("MM-dd-yyyy");
@@ -540,12 +542,15 @@ namespace egycashier
 
             int Daloop = 0;
             string FullProcc="";
+
+            int PAPrSize = 0;
             foreach (Control contr in flowLayoutPanel2.Controls)
             {
                 if (contr is Label )
                 {
                     if(Daloop == 0)
                     {
+                        PAPrSize++;
                         string N = "\n";
  FullProcc +=
     MOREtags(contr.Tag, "Yname").ToString() +"---"+N+
@@ -566,26 +571,69 @@ namespace egycashier
 
 
 
-              File.WriteAllText(path + date + ".op", readText+FullProcc);
+            File.WriteAllText(path + date + ".op", readText+FullProcc);
 
 
 
 
+            printDocument1.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 850, 700 + (PAPrSize * 40));
+            //printPreviewDialog1.PrintPreviewControl
 
-              PrintMe(panel2);
+            PrintMe(panel2);
 
         }
+
+
+
+
+
+
 
         private void PrintMe(Panel pnl)
         {
-            PrinterSettings ps = new PrinterSettings();
-           // panel2 = pnl;
-         //   getPrintArea(pnl);
-            printPreviewDialog1.Document = printDocument1;
 
+
+            printPreviewDialog1.Document = printDocument1;
+            ToolStripButton b = new ToolStripButton();
+            b.Image = Properties.Resources.save;
+            b.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            b.Click += B_Click;
+            ((ToolStrip)(printPreviewDialog1.Controls[1])).Items.RemoveAt(0);
+            ((ToolStrip)(printPreviewDialog1.Controls[1])).Items.Insert(0, b);
             printPreviewDialog1.ShowDialog();
 
+
+           // printPreviewDialog1.Document = printDocument1;
+         //   printPreviewDialog1.ShowDialog();
+
+
+
         }
+
+        private void B_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                printDialog1.Document = printDocument1;
+                if (printDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    printDocument1.Print();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ToString());
+            }
+
+        }
+
+
+
+
+
+
+
+
         private Bitmap memoryimg;
         void getPrintArea(Panel pnl)
         {
@@ -598,6 +646,8 @@ namespace egycashier
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
+          //  printDocument1.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 200, 200);
+
             string filePATH = @"C:\EgyCashier\guest\general\";
             string[] text1 = File.ReadAllLines(filePATH + "data.bill");
 
