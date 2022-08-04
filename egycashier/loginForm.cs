@@ -69,7 +69,15 @@ namespace egycashier
             btnOw.ForeColor = Color.Black;
             btnOw.Size = new Size(80, 70);
             btnOw.Text = owner[0];
-            btnOw.Tag = owner[1];
+            btnOw.Tag = new
+            {
+                tg_pass = owner[1],
+                tg_date = owner[2],
+                tg_realname = owner[3],
+                tg_screens = owner[4],
+                tg_sett = owner[5],
+                tg_file_name = path + "owner.pl"
+            };
 
 
             btnOw.Click += BtnUser_Click;

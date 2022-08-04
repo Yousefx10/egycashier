@@ -21,43 +21,20 @@ namespace egycashier
 
         private void button1_Click(object sender, EventArgs e)
         {
+            panel2.Visible = true;
+            Height += 130;
+            
             button1.Enabled = false;
-            string folderPath = @"c:\EgyCashier\guest";
-
-            try
-            {
-                FolderManage(0);
-
-                string filePATH = @"C:\EgyCashier\guest\";
-
-                DirectoryInfo di = Directory.CreateDirectory(filePATH);
-                foreach (DirectoryInfo dir in di.GetDirectories())
-                {
-                    dir.Delete(true);
-
-                }
-                File.WriteAllText(filePATH + "configuration.txt", "0\n0\n0\n0\n");
-                File.WriteAllText(filePATH + "list.txt", "0");
-                
-                Directory.CreateDirectory(filePATH+"money");
-                Directory.CreateDirectory(filePATH+"clients");
-                Directory.CreateDirectory(filePATH+ "operations");
-                Directory.CreateDirectory(filePATH+ "users");
-                File.WriteAllText(@"C:\EgyCashier\v.jpg", "v0.0.0");    
-             File.WriteAllText(filePATH + "users/owner.pl", "Owner\n1234");
 
 
-                button1.BackColor = Color.GreenYellow;
-            }
-            catch { MessageBox.Show("Error Setuping The System..."); }
 
-            pic_1.Image = Properties.Resources.accept;
-            pic_2.Image = Properties.Resources.accept;
 
-            lbl_1.Text = "The System is working Correctly.";
-            lbl_1.Text = "The Newset Version is installed.";
-            FolderManage(1);
-            time_setup.Start();
+
+
+
+
+
+
         }
 
 
@@ -70,7 +47,7 @@ namespace egycashier
 
 
 
-         public  void FolderManage(int W)
+        public  void FolderManage(int W)
         {
 
             string folderPath = @"c:\EgyCashier\guest";
@@ -161,7 +138,7 @@ namespace egycashier
                 pic_1.Image = Properties.Resources.accept;
                 lbl_1.Text = "The System is working Correctly.";
                 
-                if (File.ReadAllText(path) == "v0.0.0")
+                if (File.ReadAllText(path) == "v0.0.0.0")
                 {
                     pic_2.Image = Properties.Resources.accept;
                     lbl_2.Text = "The Newset Version is installed.";
@@ -215,6 +192,62 @@ namespace egycashier
         private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FolderManage(0);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            button2.Visible = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(textBox1.Text!="")
+            {
+                button2.Enabled = false;
+               // string folderPath = @"c:\EgyCashier\guest";
+
+                try
+                {
+                    FolderManage(0);
+
+                    string filePATH = @"C:\EgyCashier\guest\";
+
+                    DirectoryInfo di = Directory.CreateDirectory(filePATH);
+                    foreach (DirectoryInfo dir in di.GetDirectories())
+                    {
+                        dir.Delete(true);
+
+                    }
+                    File.WriteAllText(filePATH + "configuration.txt", "0\n0\n0\n0\n");
+                    File.WriteAllText(filePATH + "list.txt", "0");
+
+                    Directory.CreateDirectory(filePATH + "money");
+                    Directory.CreateDirectory(filePATH + "clients");
+                    Directory.CreateDirectory(filePATH + "operations");
+                    Directory.CreateDirectory(filePATH + "users");
+                    File.WriteAllText(@"C:\EgyCashier\v.jpg", "v0.0.0.0");
+
+                    panel2.Visible = true;
+                   
+
+                    string Thrdate = DateTime.Now.ToString("MM-dd-yyyy");
+
+
+                    File.WriteAllText(filePATH + "users/owner.pl", "Owner\n"+textBox1.Text+"\n"+ Thrdate+"\nOwner Profile\n"+"1,1,1,1\n1,1,1,1");
+
+
+                    button1.BackColor = Color.GreenYellow;
+                }
+                catch { MessageBox.Show("Error Setuping The System..."); }
+
+                pic_1.Image = Properties.Resources.accept;
+                pic_2.Image = Properties.Resources.accept;
+
+                lbl_1.Text = "The System is working Correctly.";
+                lbl_1.Text = "The Newset Version is installed.";
+                FolderManage(1);
+                time_setup.Start();
+            }
         }
     }
 }

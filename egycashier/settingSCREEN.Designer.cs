@@ -34,6 +34,10 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.checkBTN_Op2 = new System.Windows.Forms.CheckBox();
+            this.checkBTN_Op4 = new System.Windows.Forms.CheckBox();
+            this.checkBTN_Op1 = new System.Windows.Forms.CheckBox();
+            this.checkBTN_Op3 = new System.Windows.Forms.CheckBox();
             this.btn_crt_usr = new System.Windows.Forms.Button();
             this.radioBTN_setting = new System.Windows.Forms.RadioButton();
             this.label22 = new System.Windows.Forms.Label();
@@ -53,6 +57,22 @@
             this.label19 = new System.Windows.Forms.Label();
             this.text_username = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.user_save_pic = new System.Windows.Forms.PictureBox();
+            this.user_del_pic = new System.Windows.Forms.PictureBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.SeC2 = new System.Windows.Forms.CheckBox();
+            this.SeC3 = new System.Windows.Forms.CheckBox();
+            this.SeC4 = new System.Windows.Forms.CheckBox();
+            this.SeC1 = new System.Windows.Forms.CheckBox();
+            this.Cc4 = new System.Windows.Forms.CheckBox();
+            this.view_label_date = new System.Windows.Forms.Label();
+            this.Cc3 = new System.Windows.Forms.CheckBox();
+            this.view_label_RealName = new System.Windows.Forms.Label();
+            this.Cc2 = new System.Windows.Forms.CheckBox();
+            this.view_label_username = new System.Windows.Forms.Label();
+            this.Cc1 = new System.Windows.Forms.CheckBox();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage10 = new System.Windows.Forms.TabPage();
@@ -92,26 +112,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.view_label_username = new System.Windows.Forms.Label();
-            this.view_label_RealName = new System.Windows.Forms.Label();
-            this.view_label_date = new System.Windows.Forms.Label();
-            this.Cc4 = new System.Windows.Forms.CheckBox();
-            this.Cc3 = new System.Windows.Forms.CheckBox();
-            this.Cc2 = new System.Windows.Forms.CheckBox();
-            this.Cc1 = new System.Windows.Forms.CheckBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.user_del_pic = new System.Windows.Forms.PictureBox();
-            this.user_save_pic = new System.Windows.Forms.PictureBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.checkBTN_Op2 = new System.Windows.Forms.CheckBox();
-            this.checkBTN_Op4 = new System.Windows.Forms.CheckBox();
-            this.checkBTN_Op1 = new System.Windows.Forms.CheckBox();
-            this.checkBTN_Op3 = new System.Windows.Forms.CheckBox();
-            this.SeC2 = new System.Windows.Forms.CheckBox();
-            this.SeC4 = new System.Windows.Forms.CheckBox();
-            this.SeC1 = new System.Windows.Forms.CheckBox();
-            this.SeC3 = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -121,6 +121,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.user_save_pic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.user_del_pic)).BeginInit();
+            this.panel7.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage10.SuspendLayout();
             this.tabPage7.SuspendLayout();
@@ -135,9 +138,6 @@
             this.tabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.user_del_pic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.user_save_pic)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -222,9 +222,53 @@
             this.panel9.TabIndex = 2;
             this.panel9.Visible = false;
             // 
+            // checkBTN_Op2
+            // 
+            this.checkBTN_Op2.AutoSize = true;
+            this.checkBTN_Op2.Enabled = false;
+            this.checkBTN_Op2.Location = new System.Drawing.Point(155, 454);
+            this.checkBTN_Op2.Name = "checkBTN_Op2";
+            this.checkBTN_Op2.Size = new System.Drawing.Size(80, 20);
+            this.checkBTN_Op2.TabIndex = 25;
+            this.checkBTN_Op2.Text = "Option C";
+            this.checkBTN_Op2.UseVisualStyleBackColor = true;
+            // 
+            // checkBTN_Op4
+            // 
+            this.checkBTN_Op4.AutoSize = true;
+            this.checkBTN_Op4.Enabled = false;
+            this.checkBTN_Op4.Location = new System.Drawing.Point(155, 483);
+            this.checkBTN_Op4.Name = "checkBTN_Op4";
+            this.checkBTN_Op4.Size = new System.Drawing.Size(81, 20);
+            this.checkBTN_Op4.TabIndex = 26;
+            this.checkBTN_Op4.Text = "Option D";
+            this.checkBTN_Op4.UseVisualStyleBackColor = true;
+            // 
+            // checkBTN_Op1
+            // 
+            this.checkBTN_Op1.AutoSize = true;
+            this.checkBTN_Op1.Enabled = false;
+            this.checkBTN_Op1.Location = new System.Drawing.Point(24, 454);
+            this.checkBTN_Op1.Name = "checkBTN_Op1";
+            this.checkBTN_Op1.Size = new System.Drawing.Size(114, 20);
+            this.checkBTN_Op1.TabIndex = 23;
+            this.checkBTN_Op1.Text = "Manage Items";
+            this.checkBTN_Op1.UseVisualStyleBackColor = true;
+            // 
+            // checkBTN_Op3
+            // 
+            this.checkBTN_Op3.AutoSize = true;
+            this.checkBTN_Op3.Enabled = false;
+            this.checkBTN_Op3.Location = new System.Drawing.Point(24, 483);
+            this.checkBTN_Op3.Name = "checkBTN_Op3";
+            this.checkBTN_Op3.Size = new System.Drawing.Size(118, 20);
+            this.checkBTN_Op3.TabIndex = 24;
+            this.checkBTN_Op3.Text = "Manage Users";
+            this.checkBTN_Op3.UseVisualStyleBackColor = true;
+            // 
             // btn_crt_usr
             // 
-            this.btn_crt_usr.Location = new System.Drawing.Point(17, 533);
+            this.btn_crt_usr.Location = new System.Drawing.Point(17, 531);
             this.btn_crt_usr.Name = "btn_crt_usr";
             this.btn_crt_usr.Size = new System.Drawing.Size(202, 39);
             this.btn_crt_usr.TabIndex = 22;
@@ -417,6 +461,172 @@
             this.panel8.Size = new System.Drawing.Size(554, 133);
             this.panel8.TabIndex = 2;
             this.panel8.Visible = false;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(229, 108);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(59, 16);
+            this.label24.TabIndex = 30;
+            this.label24.Text = "Remove";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(237, 38);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(46, 20);
+            this.label23.TabIndex = 29;
+            this.label23.Text = "Save";
+            // 
+            // user_save_pic
+            // 
+            this.user_save_pic.Image = global::egycashier.Properties.Resources.save;
+            this.user_save_pic.Location = new System.Drawing.Point(243, 3);
+            this.user_save_pic.Name = "user_save_pic";
+            this.user_save_pic.Size = new System.Drawing.Size(32, 32);
+            this.user_save_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.user_save_pic.TabIndex = 28;
+            this.user_save_pic.TabStop = false;
+            // 
+            // user_del_pic
+            // 
+            this.user_del_pic.Image = global::egycashier.Properties.Resources.garbage;
+            this.user_del_pic.Location = new System.Drawing.Point(243, 70);
+            this.user_del_pic.Name = "user_del_pic";
+            this.user_del_pic.Size = new System.Drawing.Size(32, 32);
+            this.user_del_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.user_del_pic.TabIndex = 27;
+            this.user_del_pic.TabStop = false;
+            this.user_del_pic.Click += new System.EventHandler(this.user_del_pic_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.SeC2);
+            this.panel7.Controls.Add(this.SeC3);
+            this.panel7.Controls.Add(this.SeC4);
+            this.panel7.Controls.Add(this.SeC1);
+            this.panel7.Location = new System.Drawing.Point(301, 61);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(249, 63);
+            this.panel7.TabIndex = 3;
+            // 
+            // SeC2
+            // 
+            this.SeC2.AutoSize = true;
+            this.SeC2.Location = new System.Drawing.Point(137, 9);
+            this.SeC2.Name = "SeC2";
+            this.SeC2.Size = new System.Drawing.Size(80, 20);
+            this.SeC2.TabIndex = 29;
+            this.SeC2.Text = "Option C";
+            this.SeC2.UseVisualStyleBackColor = true;
+            // 
+            // SeC3
+            // 
+            this.SeC3.AutoSize = true;
+            this.SeC3.Location = new System.Drawing.Point(6, 38);
+            this.SeC3.Name = "SeC3";
+            this.SeC3.Size = new System.Drawing.Size(118, 20);
+            this.SeC3.TabIndex = 28;
+            this.SeC3.Text = "Manage Users";
+            this.SeC3.UseVisualStyleBackColor = true;
+            // 
+            // SeC4
+            // 
+            this.SeC4.AutoSize = true;
+            this.SeC4.Location = new System.Drawing.Point(137, 38);
+            this.SeC4.Name = "SeC4";
+            this.SeC4.Size = new System.Drawing.Size(81, 20);
+            this.SeC4.TabIndex = 30;
+            this.SeC4.Text = "Option D";
+            this.SeC4.UseVisualStyleBackColor = true;
+            // 
+            // SeC1
+            // 
+            this.SeC1.AutoSize = true;
+            this.SeC1.Location = new System.Drawing.Point(6, 9);
+            this.SeC1.Name = "SeC1";
+            this.SeC1.Size = new System.Drawing.Size(114, 20);
+            this.SeC1.TabIndex = 27;
+            this.SeC1.Text = "Manage Items";
+            this.SeC1.UseVisualStyleBackColor = true;
+            // 
+            // Cc4
+            // 
+            this.Cc4.AutoSize = true;
+            this.Cc4.Location = new System.Drawing.Point(433, 35);
+            this.Cc4.Name = "Cc4";
+            this.Cc4.Size = new System.Drawing.Size(118, 20);
+            this.Cc4.TabIndex = 26;
+            this.Cc4.Text = "Open Supplies";
+            this.Cc4.UseVisualStyleBackColor = true;
+            // 
+            // view_label_date
+            // 
+            this.view_label_date.AutoSize = true;
+            this.view_label_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.view_label_date.Location = new System.Drawing.Point(3, 81);
+            this.view_label_date.Name = "view_label_date";
+            this.view_label_date.Size = new System.Drawing.Size(21, 22);
+            this.view_label_date.TabIndex = 2;
+            this.view_label_date.Text = " -";
+            // 
+            // Cc3
+            // 
+            this.Cc3.AutoSize = true;
+            this.Cc3.Location = new System.Drawing.Point(432, 6);
+            this.Cc3.Name = "Cc3";
+            this.Cc3.Size = new System.Drawing.Size(118, 20);
+            this.Cc3.TabIndex = 25;
+            this.Cc3.Text = "Access Money";
+            this.Cc3.UseVisualStyleBackColor = true;
+            // 
+            // view_label_RealName
+            // 
+            this.view_label_RealName.AutoSize = true;
+            this.view_label_RealName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.view_label_RealName.Location = new System.Drawing.Point(3, 45);
+            this.view_label_RealName.Name = "view_label_RealName";
+            this.view_label_RealName.Size = new System.Drawing.Size(21, 22);
+            this.view_label_RealName.TabIndex = 1;
+            this.view_label_RealName.Text = " -";
+            // 
+            // Cc2
+            // 
+            this.Cc2.AutoSize = true;
+            this.Cc2.Location = new System.Drawing.Point(301, 35);
+            this.Cc2.Name = "Cc2";
+            this.Cc2.Size = new System.Drawing.Size(125, 20);
+            this.Cc2.TabIndex = 24;
+            this.Cc2.Text = "Access Reports";
+            this.Cc2.UseVisualStyleBackColor = true;
+            // 
+            // view_label_username
+            // 
+            this.view_label_username.AutoSize = true;
+            this.view_label_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.view_label_username.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.view_label_username.Location = new System.Drawing.Point(30, 6);
+            this.view_label_username.Name = "view_label_username";
+            this.view_label_username.Size = new System.Drawing.Size(33, 36);
+            this.view_label_username.TabIndex = 0;
+            this.view_label_username.Text = " -";
+            // 
+            // Cc1
+            // 
+            this.Cc1.AutoSize = true;
+            this.Cc1.Checked = true;
+            this.Cc1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.Cc1.Location = new System.Drawing.Point(301, 6);
+            this.Cc1.Name = "Cc1";
+            this.Cc1.Size = new System.Drawing.Size(89, 20);
+            this.Cc1.TabIndex = 23;
+            this.Cc1.Text = "Open Pos";
+            this.Cc1.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel3
             // 
@@ -830,216 +1040,6 @@
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // view_label_username
-            // 
-            this.view_label_username.AutoSize = true;
-            this.view_label_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.view_label_username.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.view_label_username.Location = new System.Drawing.Point(30, 6);
-            this.view_label_username.Name = "view_label_username";
-            this.view_label_username.Size = new System.Drawing.Size(33, 36);
-            this.view_label_username.TabIndex = 0;
-            this.view_label_username.Text = " -";
-            // 
-            // view_label_RealName
-            // 
-            this.view_label_RealName.AutoSize = true;
-            this.view_label_RealName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.view_label_RealName.Location = new System.Drawing.Point(3, 45);
-            this.view_label_RealName.Name = "view_label_RealName";
-            this.view_label_RealName.Size = new System.Drawing.Size(21, 22);
-            this.view_label_RealName.TabIndex = 1;
-            this.view_label_RealName.Text = " -";
-            // 
-            // view_label_date
-            // 
-            this.view_label_date.AutoSize = true;
-            this.view_label_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.view_label_date.Location = new System.Drawing.Point(3, 81);
-            this.view_label_date.Name = "view_label_date";
-            this.view_label_date.Size = new System.Drawing.Size(21, 22);
-            this.view_label_date.TabIndex = 2;
-            this.view_label_date.Text = " -";
-            // 
-            // Cc4
-            // 
-            this.Cc4.AutoSize = true;
-            this.Cc4.Location = new System.Drawing.Point(433, 35);
-            this.Cc4.Name = "Cc4";
-            this.Cc4.Size = new System.Drawing.Size(118, 20);
-            this.Cc4.TabIndex = 26;
-            this.Cc4.Text = "Open Supplies";
-            this.Cc4.UseVisualStyleBackColor = true;
-            // 
-            // Cc3
-            // 
-            this.Cc3.AutoSize = true;
-            this.Cc3.Location = new System.Drawing.Point(432, 6);
-            this.Cc3.Name = "Cc3";
-            this.Cc3.Size = new System.Drawing.Size(118, 20);
-            this.Cc3.TabIndex = 25;
-            this.Cc3.Text = "Access Money";
-            this.Cc3.UseVisualStyleBackColor = true;
-            // 
-            // Cc2
-            // 
-            this.Cc2.AutoSize = true;
-            this.Cc2.Location = new System.Drawing.Point(301, 35);
-            this.Cc2.Name = "Cc2";
-            this.Cc2.Size = new System.Drawing.Size(125, 20);
-            this.Cc2.TabIndex = 24;
-            this.Cc2.Text = "Access Reports";
-            this.Cc2.UseVisualStyleBackColor = true;
-            // 
-            // Cc1
-            // 
-            this.Cc1.AutoSize = true;
-            this.Cc1.Checked = true;
-            this.Cc1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.Cc1.Location = new System.Drawing.Point(301, 6);
-            this.Cc1.Name = "Cc1";
-            this.Cc1.Size = new System.Drawing.Size(89, 20);
-            this.Cc1.TabIndex = 23;
-            this.Cc1.Text = "Open Pos";
-            this.Cc1.UseVisualStyleBackColor = true;
-            // 
-            // panel7
-            // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.SeC2);
-            this.panel7.Controls.Add(this.SeC3);
-            this.panel7.Controls.Add(this.SeC4);
-            this.panel7.Controls.Add(this.SeC1);
-            this.panel7.Location = new System.Drawing.Point(301, 61);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(249, 63);
-            this.panel7.TabIndex = 3;
-            // 
-            // user_del_pic
-            // 
-            this.user_del_pic.Image = global::egycashier.Properties.Resources.garbage;
-            this.user_del_pic.Location = new System.Drawing.Point(243, 70);
-            this.user_del_pic.Name = "user_del_pic";
-            this.user_del_pic.Size = new System.Drawing.Size(32, 32);
-            this.user_del_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.user_del_pic.TabIndex = 27;
-            this.user_del_pic.TabStop = false;
-            this.user_del_pic.Click += new System.EventHandler(this.user_del_pic_Click);
-            // 
-            // user_save_pic
-            // 
-            this.user_save_pic.Image = global::egycashier.Properties.Resources.save;
-            this.user_save_pic.Location = new System.Drawing.Point(243, 3);
-            this.user_save_pic.Name = "user_save_pic";
-            this.user_save_pic.Size = new System.Drawing.Size(32, 32);
-            this.user_save_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.user_save_pic.TabIndex = 28;
-            this.user_save_pic.TabStop = false;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(237, 38);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(46, 20);
-            this.label23.TabIndex = 29;
-            this.label23.Text = "Save";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(229, 108);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(59, 16);
-            this.label24.TabIndex = 30;
-            this.label24.Text = "Remove";
-            // 
-            // checkBTN_Op2
-            // 
-            this.checkBTN_Op2.AutoSize = true;
-            this.checkBTN_Op2.Enabled = false;
-            this.checkBTN_Op2.Location = new System.Drawing.Point(155, 454);
-            this.checkBTN_Op2.Name = "checkBTN_Op2";
-            this.checkBTN_Op2.Size = new System.Drawing.Size(80, 20);
-            this.checkBTN_Op2.TabIndex = 25;
-            this.checkBTN_Op2.Text = "Option C";
-            this.checkBTN_Op2.UseVisualStyleBackColor = true;
-            // 
-            // checkBTN_Op4
-            // 
-            this.checkBTN_Op4.AutoSize = true;
-            this.checkBTN_Op4.Enabled = false;
-            this.checkBTN_Op4.Location = new System.Drawing.Point(155, 483);
-            this.checkBTN_Op4.Name = "checkBTN_Op4";
-            this.checkBTN_Op4.Size = new System.Drawing.Size(81, 20);
-            this.checkBTN_Op4.TabIndex = 26;
-            this.checkBTN_Op4.Text = "Option D";
-            this.checkBTN_Op4.UseVisualStyleBackColor = true;
-            // 
-            // checkBTN_Op1
-            // 
-            this.checkBTN_Op1.AutoSize = true;
-            this.checkBTN_Op1.Enabled = false;
-            this.checkBTN_Op1.Location = new System.Drawing.Point(24, 454);
-            this.checkBTN_Op1.Name = "checkBTN_Op1";
-            this.checkBTN_Op1.Size = new System.Drawing.Size(114, 20);
-            this.checkBTN_Op1.TabIndex = 23;
-            this.checkBTN_Op1.Text = "Manage Items";
-            this.checkBTN_Op1.UseVisualStyleBackColor = true;
-            // 
-            // checkBTN_Op3
-            // 
-            this.checkBTN_Op3.AutoSize = true;
-            this.checkBTN_Op3.Enabled = false;
-            this.checkBTN_Op3.Location = new System.Drawing.Point(24, 483);
-            this.checkBTN_Op3.Name = "checkBTN_Op3";
-            this.checkBTN_Op3.Size = new System.Drawing.Size(118, 20);
-            this.checkBTN_Op3.TabIndex = 24;
-            this.checkBTN_Op3.Text = "Manage Users";
-            this.checkBTN_Op3.UseVisualStyleBackColor = true;
-            // 
-            // SeC2
-            // 
-            this.SeC2.AutoSize = true;
-            this.SeC2.Location = new System.Drawing.Point(137, 9);
-            this.SeC2.Name = "SeC2";
-            this.SeC2.Size = new System.Drawing.Size(80, 20);
-            this.SeC2.TabIndex = 29;
-            this.SeC2.Text = "Option C";
-            this.SeC2.UseVisualStyleBackColor = true;
-            // 
-            // SeC4
-            // 
-            this.SeC4.AutoSize = true;
-            this.SeC4.Location = new System.Drawing.Point(137, 38);
-            this.SeC4.Name = "SeC4";
-            this.SeC4.Size = new System.Drawing.Size(81, 20);
-            this.SeC4.TabIndex = 30;
-            this.SeC4.Text = "Option D";
-            this.SeC4.UseVisualStyleBackColor = true;
-            // 
-            // SeC1
-            // 
-            this.SeC1.AutoSize = true;
-            this.SeC1.Location = new System.Drawing.Point(6, 9);
-            this.SeC1.Name = "SeC1";
-            this.SeC1.Size = new System.Drawing.Size(114, 20);
-            this.SeC1.TabIndex = 27;
-            this.SeC1.Text = "Manage Items";
-            this.SeC1.UseVisualStyleBackColor = true;
-            // 
-            // SeC3
-            // 
-            this.SeC3.AutoSize = true;
-            this.SeC3.Location = new System.Drawing.Point(6, 38);
-            this.SeC3.Name = "SeC3";
-            this.SeC3.Size = new System.Drawing.Size(118, 20);
-            this.SeC3.TabIndex = 28;
-            this.SeC3.Text = "Manage Users";
-            this.SeC3.UseVisualStyleBackColor = true;
-            // 
             // settingSCREEN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1064,6 +1064,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.user_save_pic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.user_del_pic)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.tabControl2.ResumeLayout(false);
             this.tabPage10.ResumeLayout(false);
             this.tabPage10.PerformLayout();
@@ -1082,10 +1086,6 @@
             this.tabPage9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.user_del_pic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.user_save_pic)).EndInit();
             this.ResumeLayout(false);
 
         }
