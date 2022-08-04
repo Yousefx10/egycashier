@@ -598,24 +598,43 @@ namespace egycashier
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
+            string filePATH = @"C:\EgyCashier\guest\general\";
+            string[] text1 = File.ReadAllLines(filePATH + "data.bill");
 
+
+
+
+           
 
 
             e.Graphics.DrawString("Restaurant Name", new Font("Arial", 25, FontStyle.Bold), Brushes.Black, new Point(250, 0));
 
-            e.Graphics.DrawString("information #1", new Font("Arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 50));
-            e.Graphics.DrawString("information #2", new Font("Arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 100));
-            e.Graphics.DrawString("information #3", new Font("Arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 150));
-            e.Graphics.DrawString("information #4", new Font("Arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 200));
+            e.Graphics.DrawString(text1[0], new Font("Arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 50));
+            e.Graphics.DrawString(text1[1], new Font("Arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 100));
+            e.Graphics.DrawString(text1[2], new Font("Arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 150));
+            e.Graphics.DrawString(text1[3], new Font("Arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 200));
+         //   e.Graphics.DrawString("information #4", new Font("Arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 200));
 
-            e.Graphics.DrawString("______________________________________________________________________________", new Font("Arial", 20, FontStyle.Bold), Brushes.Black, new Point(1, 220));
+            if (text1[6] == "1")
+            {
+                 Image img1 = Image.FromFile(filePATH + "logo.jpg");
+                // Point loc = new Point(350, 200);
+                //Theimg, location (290,200) for example , the size , width and height
+                 e.Graphics.DrawImage(img1,270,250,250,100 );
 
-            e.Graphics.DrawString("QTY", new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(50, 260));
-            e.Graphics.DrawString("Description", new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(200, 260));
-            e.Graphics.DrawString("Amount", new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(600, 260));
-            e.Graphics.DrawString("______________________________________________________________________________", new Font("Arial", 20, FontStyle.Bold), Brushes.Black, new Point(1, 270));
+            }
+
+
+
+
+            e.Graphics.DrawString("______________________________________________________________________________", new Font("Arial", 20, FontStyle.Bold), Brushes.Black, new Point(1, 350));
+
+            e.Graphics.DrawString("QTY", new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(50, 390));
+            e.Graphics.DrawString("Description", new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(200, 390));
+            e.Graphics.DrawString("Amount", new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(600, 390));
+            e.Graphics.DrawString("______________________________________________________________________________", new Font("Arial", 20, FontStyle.Bold), Brushes.Black, new Point(1, 400));
             int Daloop = 0;
-            int TALL = 260;
+            int TALL = 400;
             foreach (Control contr in flowLayoutPanel2.Controls)
             {
                 if (contr is Label)
@@ -643,10 +662,10 @@ namespace egycashier
                 }
 
 
-
-
             }
 
+            e.Graphics.DrawString(text1[4], new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(350, TALL+40));
+            e.Graphics.DrawString(text1[5], new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(350, TALL+80));
 
 
 

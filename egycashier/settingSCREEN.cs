@@ -817,6 +817,7 @@ namespace egycashier
                 //for bill image status
                 + picWhat
                 );
+            bill_pic_save.Visible = false;
 
             Close();
 
@@ -837,22 +838,27 @@ namespace egycashier
             OpenFileDialog DIAlog = new OpenFileDialog();
             DIAlog.Filter = "images|*.jpg;*.png;*.jepg";
 
-            if(DIAlog.ShowDialog()== DialogResult.OK)
+            try
             {
-                imgLocation = DIAlog.FileName;
+                if (DIAlog.ShowDialog() == DialogResult.OK)
+                {
+                    imgLocation = DIAlog.FileName;
 
-                bill_logo_pic.ImageLocation = imgLocation;
+                    bill_logo_pic.ImageLocation = imgLocation;
 
-                string PPath= @"C:\EgyCashier\guest\general\";
-                //delete the old logo if exist to override.
-                if (File.Exists(PPath+"logo.jpg"))
-                    File.Delete(PPath+"logo.jpg");
+                    string PPath = @"C:\EgyCashier\guest\general\";
+                    //delete the old logo if exist to override.
+                    if (File.Exists(PPath + "logo.jpg"))
+                        File.Delete(PPath + "logo.jpg");
 
-                File.Copy(imgLocation, PPath + "logo.jpg");
+                    File.Copy(imgLocation, PPath + "logo.jpg");
 
-                textLine1_TextChanged(sender,e);
+                    textLine1_TextChanged(sender, e);
 
+                }
             }
+            catch { MessageBox.Show("Some error ! ! !"); }
+
         }
 
         //this bool prevent textbox from showing the save button
