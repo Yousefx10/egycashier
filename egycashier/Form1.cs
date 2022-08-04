@@ -225,7 +225,9 @@ namespace egycashier
                     Directory.CreateDirectory(filePATH + "clients");
                     Directory.CreateDirectory(filePATH + "operations");
                     Directory.CreateDirectory(filePATH + "users");
+                    Directory.CreateDirectory(filePATH + "general");
                     File.WriteAllText(@"C:\EgyCashier\v.jpg", "v0.0.0.0");
+                    File.WriteAllText(@"C:\EgyCashier\general\data.bill", "information1\ninformation2\ninformation3\ninformation4");
 
                     panel2.Visible = true;
                    

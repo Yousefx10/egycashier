@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
 
@@ -14,7 +15,7 @@ namespace egycashier
 
             tabControl1.SelectedIndex = whatH;
             GlobalwhatH = whatH;
-            if (whatH == 1)
+            if (whatH == 1 || whatH == 2)
             {
                 Width = tabControl1.Width + 50;
                
@@ -332,6 +333,28 @@ namespace egycashier
             else if (GlobalwhatH == 1)
             {
                 RefReshUsers();
+            }
+            else if (GlobalwhatH == 2)
+            {
+
+                //here's setting for load and reload Bill information
+                string filePATH = @"C:\EgyCashier\guest\general\";
+                string[] text1 = File.ReadAllLines(filePATH + "data.bill");
+
+                textLine1.Text = text1[0];
+                textLine2.Text = text1[1];
+                textLine3.Text = text1[2];
+                textLine4.Text = text1[3];
+                textLine5.Text = text1[4];
+                textLine6.Text = text1[5];
+
+                if (text1[6]=="1")
+                {
+                    bill_checkbox.Checked = true;
+                    bill_logo_pic.ImageLocation = filePATH + "logo.jpg";
+                }
+                DontChang = true;
+
             }
 
 
@@ -770,6 +793,89 @@ namespace egycashier
             File.Delete(currentFileName);
             panel8.Visible = false;
             RefReshUsers();
+        }
+
+        private void bill_pic_save_Click(object sender, EventArgs e)
+        {
+
+            int picWhat = 0;
+            if (bill_checkbox.Checked)
+                picWhat++;
+
+
+            File.WriteAllText(@"C:\EgyCashier\guest\general\data.bill", 
+                //for first 4 Lines on the top
+                textLine1.Text+"\n"
+                +textLine2.Text+"\n"
+                +textLine3.Text+"\n"
+                +textLine4.Text+"\n"
+                
+                //for Last 2 Lines in the end
+                +textLine5.Text+"\n"
+                +textLine6.Text+"\n"
+                
+                //for bill image status
+                + picWhat
+                );
+
+            Close();
+
+        }
+
+        private void bill_checkbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (bill_checkbox.Checked)
+                bill_btn_logo.Visible = true;
+            else
+                bill_btn_logo.Visible = false;
+        }
+
+        private void bill_btn_logo_Click(object sender, EventArgs e)
+        {
+            string imgLocation;
+
+            OpenFileDialog DIAlog = new OpenFileDialog();
+            DIAlog.Filter = "images|*.jpg;*.png;*.jepg";
+
+            if(DIAlog.ShowDialog()== DialogResult.OK)
+            {
+                imgLocation = DIAlog.FileName;
+
+                bill_logo_pic.ImageLocation = imgLocation;
+
+                string PPath= @"C:\EgyCashier\guest\general\";
+                //delete the old logo if exist to override.
+                if (File.Exists(PPath+"logo.jpg"))
+                    File.Delete(PPath+"logo.jpg");
+
+                File.Copy(imgLocation, PPath + "logo.jpg");
+
+                textLine1_TextChanged(sender,e);
+
+            }
+        }
+
+        //this bool prevent textbox from showing the save button
+        bool DontChang = false;
+        private void textLine1_TextChanged(object sender, EventArgs e)
+        {
+            if(DontChang)
+            {
+                bill_pic_save.Visible = true;
+                label__save.Visible = true;
+            }
+
+        }
+
+        private void settingSCREEN_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(bill_pic_save.Visible)
+            {
+                DialogResult dialogResult = MessageBox.Show("There's New Changes,Do you Really want to exit?", "you didn't Save The Latest Changes", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                    e.Cancel = true;
+            }
+
         }
 
 
