@@ -209,13 +209,13 @@ namespace egycashier
             label_price.Font = new Font("Arial", 18);
 
             PictureBox picc = new PictureBox();
-            picc.Width = 280;
+            picc.Width = 130;
             picc.Height = 5;
             picc.BorderStyle = BorderStyle.Fixed3D;
             picc.Name = "L4" + btn.Name + R4;
 
             PictureBox picc2 = new PictureBox();
-            picc2.Width = 280;
+            picc2.Width = 130;
             picc2.Height =5;
             picc2.BorderStyle = BorderStyle.Fixed3D;
             picc2.Name = "L5" + btn.Name + R4;
@@ -270,7 +270,7 @@ namespace egycashier
             flowLayoutPanel3.Controls.Add(picc2);
 
             label_delete.Click += label_delete_Click;
-
+            flowLayoutPanel3.HorizontalScroll.Visible = false;
 
 
 
@@ -496,8 +496,10 @@ namespace egycashier
         }
         private void pos_Load(object sender, EventArgs e)
         {
-            
-         //   MessageBox.Show(printDocument1.DefaultPageSettings.PaperSize.ToString());
+
+            //i read that this should stop the lag , when scrolling , but nah.
+            //DoubleBuffered = true;
+
 
         }
 
@@ -525,7 +527,8 @@ namespace egycashier
 
         private void button16_Click(object sender, EventArgs e)
         {
-           
+            printDocument1.DefaultPageSettings.PaperSource.RawKind = 1;
+
             string path = @"C:\EgyCashier\guest\operations\";
 
             string date = DateTime.Now.ToString("MM-dd-yyyy");
@@ -577,7 +580,8 @@ namespace egycashier
 
 
             printDocument1.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 850, 700 + (PAPrSize * 40));
-            //printPreviewDialog1.PrintPreviewControl
+
+
 
             PrintMe(panel2);
 
@@ -646,6 +650,8 @@ namespace egycashier
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
+
+            MessageBox.Show(printDocument1.DefaultPageSettings.Bounds.ToString());
           //  printDocument1.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 200, 200);
 
             string filePATH = @"C:\EgyCashier\guest\general\";
@@ -754,5 +760,6 @@ namespace egycashier
                 Application.OpenForms["Delivery"].Close();
 
         }
+
     }
 }

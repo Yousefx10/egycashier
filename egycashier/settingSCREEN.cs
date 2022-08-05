@@ -270,14 +270,10 @@ namespace egycashier
             //numericUpDown1.Controls[0].Visible = false;
             numericUpDown1.Controls.RemoveAt(0);
 
+            //note : i noticed that 
 
-            //     tabControl1.SelectedIndex = 0;
-            //    tabControl2.SelectedIndex = 0;
-            // life();
+
             live();
-
-
-
 
 
         }
@@ -579,6 +575,7 @@ namespace egycashier
             textBox5.Text = "";
             textBox7.Text = "";
             numericUpDown1.Value = 0;
+            
             label1.Text = "- Without Name -";
             pictureBox1.Image = Properties.Resources.edit;
 

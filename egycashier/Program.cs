@@ -29,7 +29,7 @@ namespace egycashier
             FormX = new Form1();
             FormM = new MainForm();
 
-            Application.Run(new Form1());
+            Application.Run(new pos());
 
         }
     }
