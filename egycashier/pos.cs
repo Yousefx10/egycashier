@@ -143,7 +143,8 @@ namespace egycashier
 
             Button btn = sender as Button;
 
-
+            flowLayoutPanel3.Height += 80;
+            flowLayoutPanel2.Height += 80;
 
 
             Random rnd = new Random();
@@ -420,6 +421,8 @@ namespace egycashier
 
         private void label_delete_Click(object sender, EventArgs e)
         {
+            flowLayoutPanel3.Height -= 80;
+            flowLayoutPanel2.Height -= 80;
             Label LL_delete = sender as Label;
 
             string THER = LL_delete.Name;
@@ -494,32 +497,20 @@ namespace egycashier
 
             }*/
         }
+
+
+
+
         private void pos_Load(object sender, EventArgs e)
         {
+
+
 
             //i read that this should stop the lag , when scrolling , but nah.
             //DoubleBuffered = true;
 
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -761,5 +752,32 @@ namespace egycashier
 
         }
 
+
+
+        private int location = 0;
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            if (e.OldValue > e.NewValue)
+            {
+                // here up
+                int change = panel4.VerticalScroll.Value - panel4.VerticalScroll.SmallChange * 30;
+                panel4.AutoScrollPosition = new Point(0, change);
+                panel3.AutoScrollPosition = new Point(0, change);
+            }
+            else
+            {
+                // here down
+                int change = panel4.VerticalScroll.Value + panel4.VerticalScroll.SmallChange * 30;
+                panel4.AutoScrollPosition = new Point(0, change);
+                panel3.AutoScrollPosition = new Point(0, change);
+            }
+        }
     }
 }
