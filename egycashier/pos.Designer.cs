@@ -61,7 +61,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(734, 791);
+            this.panel1.Size = new System.Drawing.Size(767, 791);
             this.panel1.TabIndex = 0;
             // 
             // flowLayoutPanel4
@@ -74,7 +74,7 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(215, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(248, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(517, 789);
             this.flowLayoutPanel1.TabIndex = 9;
@@ -111,7 +111,6 @@
             // panel3
             // 
             this.panel3.AutoScroll = true;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.flowLayoutPanel3);
             this.panel3.Location = new System.Drawing.Point(237, 3);
             this.panel3.Name = "panel3";

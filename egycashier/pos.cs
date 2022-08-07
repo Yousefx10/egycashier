@@ -458,15 +458,6 @@ namespace egycashier
 
 
 
-
-
-
-
-
-
-
-
-
         private void label_delete_Click(object sender, EventArgs e)
         {
 
