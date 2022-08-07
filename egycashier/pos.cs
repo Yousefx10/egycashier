@@ -137,71 +137,14 @@ namespace egycashier
         {
             return obj.GetType().GetProperty(propName).GetValue(obj, null);
         }
-        bool justF=false;
-        void ChangeScroll(bool ManyIt)
+
+        void ChangeScroll(bool whatStts)
         {
-
-
-            if (ManyIt) {
-                if(justF==false)
-                {
-                    /**
-                     * 
-                     * IMPORTANT
-                     * i really don't understand this.
-                     * if the number is less, it will continue displaying missing parts.
-                     * if the number is heigher , it will continue displaying LARGE SPACE.
-                     * if it's something in between , maybe looks like balance ?
-                     * BUT WHY !
-                     * 
-                     * i really don't understand. ??????
-                     * 
-                     * */
-                    flowLayoutPanel3.Height += 70;
-                    flowLayoutPanel2.Height += 70;
-                    justF=true; 
-                }
-                else
-                {
-                    flowLayoutPanel3.Height += 62;
-                    flowLayoutPanel2.Height += 62;
-                }
-
-            }
+            if (flowLayoutPanel3.Height < 50)
+                flowLayoutPanel3.Height = 62;
             else
-            {
-                flowLayoutPanel3.Height -= 80;
-                flowLayoutPanel2.Height -= 80;
-            }
-            int Daloop = 0;
-            int HowMany = 0;
-            foreach (Control contr in flowLayoutPanel2.Controls)
-            {
-                if (contr is Label)
-                {
-                    if (Daloop == 0)
-                    {
-                        HowMany++;
-                        Daloop++;
-
-                    }
-                    else
-                        Daloop--;
-                }
-
-            }
-            // vScrollBar1.Maximum = panel3.VerticalScroll.Maximum;
-            // vScrollBar1.Minimum = panel3.VerticalScroll.Minimum;
-           // vScrollBar1.Minimum = HowMany * 10;
-
-          //  if(HowMany>8)
-
-            //    vScrollBar1.Maximum = panel3.VerticalScroll.Maximum-(HowMany*40);
-
-
-            // vScrollBar1.Value = panel3.VerticalScroll.Value;
+                flowLayoutPanel3.Height += 70;
         }
-
         private void ItemBTN_Click(object sender, EventArgs e)
         {
 
@@ -560,7 +503,7 @@ namespace egycashier
 
                         }*/
 
-            ChangeScroll(false);
+
         }
 
 
@@ -819,49 +762,22 @@ namespace egycashier
 
 
 
+
+
+
+
+
+
+
+
+
+
         private int location = 0;
 
-        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            //if (e.OldValue > e.NewValue)
-            //{
-            //    // here up
-            //    int change = panel4.VerticalScroll.Value - panel4.VerticalScroll.SmallChange * 30;
-            //    panel4.AutoScrollPosition = new Point(0, change);
-            //    panel3.AutoScrollPosition = new Point(0, change);
-            //}
-            //else
-            //{
-            //    // here down
-            //    int change = panel4.VerticalScroll.Value + panel4.VerticalScroll.SmallChange * 30;
-            //    panel4.AutoScrollPosition = new Point(0, change);
-            //    panel3.AutoScrollPosition = new Point(0, change);
-            //}
-
-            panel3.VerticalScroll.Value = vScrollBar1.Value;
-            panel4.VerticalScroll.Value = vScrollBar1.Value;
-
-
-        }
-
-
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            MessageBox.Show("Vertical is " +vScrollBar1.Maximum.ToString());
-            MessageBox.Show("panel " +panel3.VerticalScroll.Maximum.ToString());
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Vertical is " + vScrollBar1.Value.ToString());
-            MessageBox.Show("panel " + panel3.VerticalScroll.Value.ToString());
-          //  vScrollBar1.Minimum = 90;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(flowLayoutPanel3.Height.ToString());
+            MessageBox.Show(flowLayoutPanel3.VerticalScroll.Value.ToString());
+            flowLayoutPanel3.VerticalScroll.Value = 10;
         }
     }
 }
