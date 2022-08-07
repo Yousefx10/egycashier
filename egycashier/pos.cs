@@ -137,22 +137,69 @@ namespace egycashier
         {
             return obj.GetType().GetProperty(propName).GetValue(obj, null);
         }
-
-        void ChangeScroll(bool WhAt)
+        bool justF=false;
+        void ChangeScroll(bool ManyIt)
         {
-            if (WhAt) 
-            {
+
+
+            if (ManyIt) {
+                if(justF==false)
+                {
+                    /**
+                     * 
+                     * IMPORTANT
+                     * i really don't understand this.
+                     * if the number is less, it will continue displaying missing parts.
+                     * if the number is heigher , it will continue displaying LARGE SPACE.
+                     * if it's something in between , maybe looks like balance ?
+                     * BUT WHY !
+                     * 
+                     * i really don't understand. ??????
+                     * 
+                     * */
+                    flowLayoutPanel3.Height += 70;
+                    flowLayoutPanel2.Height += 70;
+                    justF=true; 
+                }
+                else
+                {
+                    flowLayoutPanel3.Height += 62;
+                    flowLayoutPanel2.Height += 62;
+                }
 
             }
             else
             {
+                flowLayoutPanel3.Height -= 80;
+                flowLayoutPanel2.Height -= 80;
+            }
+            int Daloop = 0;
+            int HowMany = 0;
+            foreach (Control contr in flowLayoutPanel2.Controls)
+            {
+                if (contr is Label)
+                {
+                    if (Daloop == 0)
+                    {
+                        HowMany++;
+                        Daloop++;
+
+                    }
+                    else
+                        Daloop--;
+                }
 
             }
-            vScrollBar1.Maximum = panel3.VerticalScroll.Maximum;
-            vScrollBar1.Minimum = panel3.VerticalScroll.Minimum;
+            // vScrollBar1.Maximum = panel3.VerticalScroll.Maximum;
+            // vScrollBar1.Minimum = panel3.VerticalScroll.Minimum;
+           // vScrollBar1.Minimum = HowMany * 10;
+
+          //  if(HowMany>8)
+
+            //    vScrollBar1.Maximum = panel3.VerticalScroll.Maximum-(HowMany*40);
 
 
-            vScrollBar1.Value = panel3.VerticalScroll.Value;
+            // vScrollBar1.Value = panel3.VerticalScroll.Value;
         }
 
         private void ItemBTN_Click(object sender, EventArgs e)
@@ -162,7 +209,7 @@ namespace egycashier
             Button btn = sender as Button;
 
 
-            ChangeScroll(true);
+
 
             Random rnd = new Random();
             int R1 = rnd.Next(10, 99);
@@ -294,24 +341,24 @@ namespace egycashier
 
             lbl_minus.Click += Lbl_minus_Click;
             lbl_plus.Click += Lbl_plus_Click;
-           /* NormalTotal += Convert.ToInt32(btn.Tag);
+            /* NormalTotal += Convert.ToInt32(btn.Tag);
 
 
-            double theVat = 0;
+             double theVat = 0;
 
-            theVat = (double)VATtotal / 100;
-            theVat *= NormalTotal;
+             theVat = (double)VATtotal / 100;
+             theVat *= NormalTotal;
 
-            label3.Text = theVat + "EGP";
+             label3.Text = theVat + "EGP";
 
-            if (VATSystem == 0 || VATSystem == 1)
-                linkLabel1.Text = NormalTotal + " EGP";
-            else if (VATSystem == 2)
-            {
-                linkLabel1.Text = (NormalTotal + theVat) + " EGP";
-                label4.Text = "+" + NormalTotal;
-            }*/
-
+             if (VATSystem == 0 || VATSystem == 1)
+                 linkLabel1.Text = NormalTotal + " EGP";
+             else if (VATSystem == 2)
+             {
+                 linkLabel1.Text = (NormalTotal + theVat) + " EGP";
+                 label4.Text = "+" + NormalTotal;
+             }*/
+            ChangeScroll(true);
 
         }
 
@@ -438,7 +485,7 @@ namespace egycashier
 
         private void label_delete_Click(object sender, EventArgs e)
         {
-            ChangeScroll(false);
+
             Label LL_delete = sender as Label;
 
             string THER = LL_delete.Name;
@@ -494,24 +541,26 @@ namespace egycashier
 
 
 
-/*            NormalTotal -= Convert.ToInt32(zz2.Text);
+            /*            NormalTotal -= Convert.ToInt32(zz2.Text);
 
 
-            double theVat = 0;
+                        double theVat = 0;
 
-            theVat = (double)VATtotal / 100;
-            theVat *= NormalTotal;
+                        theVat = (double)VATtotal / 100;
+                        theVat *= NormalTotal;
 
-            label3.Text = theVat + "EGP";
+                        label3.Text = theVat + "EGP";
 
-            if (VATSystem == 0 || VATSystem == 1)
-                linkLabel1.Text = NormalTotal + " EGP";
-            else if (VATSystem == 2)
-            {
-                linkLabel1.Text = (NormalTotal + theVat) + " EGP";
-                label4.Text = "+" + NormalTotal;
+                        if (VATSystem == 0 || VATSystem == 1)
+                            linkLabel1.Text = NormalTotal + " EGP";
+                        else if (VATSystem == 2)
+                        {
+                            linkLabel1.Text = (NormalTotal + theVat) + " EGP";
+                            label4.Text = "+" + NormalTotal;
 
-            }*/
+                        }*/
+
+            ChangeScroll(false);
         }
 
 
@@ -772,12 +821,6 @@ namespace egycashier
 
         private int location = 0;
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
         private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
             //if (e.OldValue > e.NewValue)
@@ -801,16 +844,24 @@ namespace egycashier
 
         }
 
-        private void flowLayoutPanel3_ControlAdded(object sender, ControlEventArgs e)
+
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            flowLayoutPanel3.Height += 80;
-            flowLayoutPanel2.Height += 80;
+            MessageBox.Show("Vertical is " +vScrollBar1.Maximum.ToString());
+            MessageBox.Show("panel " +panel3.VerticalScroll.Maximum.ToString());
         }
 
-        private void flowLayoutPanel3_ControlRemoved(object sender, ControlEventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            flowLayoutPanel3.Height += 80;
-            flowLayoutPanel2.Height += 80;
+            MessageBox.Show("Vertical is " + vScrollBar1.Value.ToString());
+            MessageBox.Show("panel " + panel3.VerticalScroll.Value.ToString());
+          //  vScrollBar1.Minimum = 90;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(flowLayoutPanel3.Height.ToString());
         }
     }
 }
