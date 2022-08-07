@@ -140,10 +140,51 @@ namespace egycashier
 
         void ChangeScroll(bool whatStts)
         {
-            if (flowLayoutPanel3.Height < 50)
-                flowLayoutPanel3.Height = 62;
+            if (whatStts)
+            {
+                //idk why especially this numbers, but i tested it alot and i noticed this changes !
+                if (flowLayoutPanel3.Height < 50)
+                {
+                    flowLayoutPanel3.Height = 65;
+                    flowLayoutPanel2.Height = 65;
+                }
+
+                else
+                {
+                    flowLayoutPanel3.Height += 62;
+                    flowLayoutPanel2.Height += 62;
+                }
+            }
+
             else
-                flowLayoutPanel3.Height += 70;
+            {
+                if (flowLayoutPanel3.Height == 65)
+                {
+                    flowLayoutPanel3.Height = 0;
+                    flowLayoutPanel2.Height = 0;
+                }
+
+                else
+                {
+                    flowLayoutPanel3.Height -= 62;
+                    flowLayoutPanel2.Height -= 62;
+                }
+            }
+
+            //for display and hiding the VscrollBar...
+            if (flowLayoutPanel3.Height > 375)
+                vScrollBar1.Visible = true;
+            else
+                vScrollBar1.Visible = false;
+
+            vScrollBar1.Maximum = panel3.VerticalScroll.Maximum;
+
+            //the secret is here, because the default AutoScroll Change this alot.
+            vScrollBar1.LargeChange = panel3.VerticalScroll.LargeChange;
+            vScrollBar1.SmallChange = panel3.VerticalScroll.SmallChange;
+
+
+            vScrollBar1.Value = panel3.VerticalScroll.Value;
         }
         private void ItemBTN_Click(object sender, EventArgs e)
         {
@@ -502,7 +543,7 @@ namespace egycashier
                             label4.Text = "+" + NormalTotal;
 
                         }*/
-
+            ChangeScroll(false);
 
         }
 
@@ -511,7 +552,8 @@ namespace egycashier
 
         private void pos_Load(object sender, EventArgs e)
         {
-
+            panel3.MouseWheel += Panel3_MouseWheel;
+            panel4.MouseWheel += Panel4_MouseWheel;
 
 
             //i read that this should stop the lag , when scrolling , but nah.
@@ -520,9 +562,17 @@ namespace egycashier
 
         }
 
+        private void Panel4_MouseWheel(object sender, MouseEventArgs e)
+        {
+            panel3.VerticalScroll.Value = panel4.VerticalScroll.Value;
+            vScrollBar1.Value = panel4.VerticalScroll.Value;
+        }
 
-
-
+        private void Panel3_MouseWheel(object sender, MouseEventArgs e)
+        {
+            panel4.VerticalScroll.Value = panel3.VerticalScroll.Value;
+            vScrollBar1.Value = panel3.VerticalScroll.Value;
+        }
 
         private void button16_Click(object sender, EventArgs e)
         {
@@ -762,22 +812,11 @@ namespace egycashier
 
 
 
-
-
-
-
-
-
-
-
-
-
-        private int location = 0;
-
-        private void button1_Click(object sender, EventArgs e)
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
-            MessageBox.Show(flowLayoutPanel3.VerticalScroll.Value.ToString());
-            flowLayoutPanel3.VerticalScroll.Value = 10;
+            panel3.VerticalScroll.Value = e.NewValue;
+            panel4.VerticalScroll.Value = e.NewValue;
         }
+
     }
 }
