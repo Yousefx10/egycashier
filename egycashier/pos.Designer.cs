@@ -208,6 +208,8 @@
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(195, 467);
             this.flowLayoutPanel3.TabIndex = 33;
+            this.flowLayoutPanel3.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.flowLayoutPanel3_ControlAdded);
+            this.flowLayoutPanel3.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.flowLayoutPanel3_ControlRemoved);
             // 
             // panel4
             // 

@@ -137,15 +137,32 @@ namespace egycashier
         {
             return obj.GetType().GetProperty(propName).GetValue(obj, null);
         }
+
+        void ChangeScroll(bool WhAt)
+        {
+            if (WhAt) 
+            {
+
+            }
+            else
+            {
+
+            }
+            vScrollBar1.Maximum = panel3.VerticalScroll.Maximum;
+            vScrollBar1.Minimum = panel3.VerticalScroll.Minimum;
+
+
+            vScrollBar1.Value = panel3.VerticalScroll.Value;
+        }
+
         private void ItemBTN_Click(object sender, EventArgs e)
         {
 
 
             Button btn = sender as Button;
 
-            flowLayoutPanel3.Height += 80;
-            flowLayoutPanel2.Height += 80;
 
+            ChangeScroll(true);
 
             Random rnd = new Random();
             int R1 = rnd.Next(10, 99);
@@ -421,8 +438,7 @@ namespace egycashier
 
         private void label_delete_Click(object sender, EventArgs e)
         {
-            flowLayoutPanel3.Height -= 80;
-            flowLayoutPanel2.Height -= 80;
+            ChangeScroll(false);
             Label LL_delete = sender as Label;
 
             string THER = LL_delete.Name;
@@ -764,20 +780,37 @@ namespace egycashier
 
         private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
-            if (e.OldValue > e.NewValue)
-            {
-                // here up
-                int change = panel4.VerticalScroll.Value - panel4.VerticalScroll.SmallChange * 30;
-                panel4.AutoScrollPosition = new Point(0, change);
-                panel3.AutoScrollPosition = new Point(0, change);
-            }
-            else
-            {
-                // here down
-                int change = panel4.VerticalScroll.Value + panel4.VerticalScroll.SmallChange * 30;
-                panel4.AutoScrollPosition = new Point(0, change);
-                panel3.AutoScrollPosition = new Point(0, change);
-            }
+            //if (e.OldValue > e.NewValue)
+            //{
+            //    // here up
+            //    int change = panel4.VerticalScroll.Value - panel4.VerticalScroll.SmallChange * 30;
+            //    panel4.AutoScrollPosition = new Point(0, change);
+            //    panel3.AutoScrollPosition = new Point(0, change);
+            //}
+            //else
+            //{
+            //    // here down
+            //    int change = panel4.VerticalScroll.Value + panel4.VerticalScroll.SmallChange * 30;
+            //    panel4.AutoScrollPosition = new Point(0, change);
+            //    panel3.AutoScrollPosition = new Point(0, change);
+            //}
+
+            panel3.VerticalScroll.Value = vScrollBar1.Value;
+            panel4.VerticalScroll.Value = vScrollBar1.Value;
+
+
+        }
+
+        private void flowLayoutPanel3_ControlAdded(object sender, ControlEventArgs e)
+        {
+            flowLayoutPanel3.Height += 80;
+            flowLayoutPanel2.Height += 80;
+        }
+
+        private void flowLayoutPanel3_ControlRemoved(object sender, ControlEventArgs e)
+        {
+            flowLayoutPanel3.Height += 80;
+            flowLayoutPanel2.Height += 80;
         }
     }
 }
