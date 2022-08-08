@@ -793,28 +793,28 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
             e.Graphics.DrawString(text1[1], new Font("Arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 50));
             e.Graphics.DrawString(text1[2], new Font("Arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 100));
             e.Graphics.DrawString(text1[3], new Font("Arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 150));
-         //   e.Graphics.DrawString("information #4", new Font("Arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 200));
-
+            //   e.Graphics.DrawString("information #4", new Font("Arial", 19, FontStyle.Regular), Brushes.Black, new Point(350, 200));
+            int IMGLOCATION = 200;
             if (text1[6] == "1")
             {
                  Image img1 = Image.FromFile(filePATH + "logo.jpg");
                 // Point loc = new Point(350, 200);
-                //Theimg, location (290,200) for example , the size , width and height
+                //The img, location (290,200) for example , the size , width and height
                  e.Graphics.DrawImage(img1,270,200,250,100 );
-
+                IMGLOCATION += 100;
             }
 
 
 
 
-            e.Graphics.DrawString("______________________________________________________________________________", new Font("Arial", 20, FontStyle.Bold), Brushes.Black, new Point(1, 300));
+            e.Graphics.DrawString("______________________________________________________________________________", new Font("Arial", 20, FontStyle.Bold), Brushes.Black, new Point(1, IMGLOCATION));
 
-            e.Graphics.DrawString("QTY", new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(50, 340));
-            e.Graphics.DrawString("Description", new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(200, 340));
-            e.Graphics.DrawString("Amount", new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(600, 340));
-            e.Graphics.DrawString("______________________________________________________________________________", new Font("Arial", 20, FontStyle.Bold), Brushes.Black, new Point(1, 350));
+            e.Graphics.DrawString("QTY", new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(50, IMGLOCATION+40));
+            e.Graphics.DrawString("Description", new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(200, IMGLOCATION + 40));
+            e.Graphics.DrawString("Amount", new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(600, IMGLOCATION + 40));
+            e.Graphics.DrawString("______________________________________________________________________________", new Font("Arial", 20, FontStyle.Bold), Brushes.Black, new Point(1, IMGLOCATION + 50));
             int Daloop = 0;
-            int TALL = 350;
+            int TALL = IMGLOCATION + 50;
             foreach (Control contr in flowLayoutPanel2.Controls)
             {
                 if (contr is Label)
