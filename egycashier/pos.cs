@@ -56,15 +56,18 @@ namespace egycashier
                 flowLayoutPanel4.Controls.Add(MenuBTN);
 
             }
-/*            VATSystem = Convert.ToInt32(text1[2]);
-            VATtotal = Convert.ToInt32(text1[3]);
+            string[] text2 = File.ReadAllLines(filePATH + "configuration.txt");
+
+            VATSystem = Convert.ToInt32(text2[2]);
+         VATtotal = Convert.ToInt32(text2[3]);
 
             if (VATSystem == 1 || VATSystem == 2)
-                label2.Text = "With Total " + text1[3] + "% Vat :";
+                linkLabel1.Text = "With Total " + text2[3] + "% Vat :";
             else
-                label2.Text = "FREE VAT !";
+                linkLabel1.Text = "FREE VAT !";
 
-*/
+
+
 
         }
         string MAINMENU;
@@ -325,7 +328,9 @@ namespace egycashier
 
             lbl_minus.Click += Lbl_minus_Click;
             lbl_plus.Click += Lbl_plus_Click;
-            /* NormalTotal += Convert.ToInt32(btn.Tag);
+
+
+            NormalTotal += Convert.ToInt32(btn.Tag);
 
 
              double theVat = 0;
@@ -333,15 +338,24 @@ namespace egycashier
              theVat = (double)VATtotal / 100;
              theVat *= NormalTotal;
 
-             label3.Text = theVat + "EGP";
+             label4.Text = theVat + "EGP";
 
              if (VATSystem == 0 || VATSystem == 1)
-                 linkLabel1.Text = NormalTotal + " EGP";
+                label2.Text = NormalTotal + " EGP";
              else if (VATSystem == 2)
              {
-                 linkLabel1.Text = (NormalTotal + theVat) + " EGP";
-                 label4.Text = "+" + NormalTotal;
-             }*/
+                label2.Text = (NormalTotal + theVat) + " EGP";
+                 label3.Text = "+" + NormalTotal;
+             }
+
+
+
+
+
+
+
+
+
             ChangeScroll(true);
 
         }
