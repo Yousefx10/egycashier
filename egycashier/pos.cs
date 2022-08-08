@@ -62,9 +62,9 @@ namespace egycashier
          VATtotal = Convert.ToInt32(text2[3]);
 
             if (VATSystem == 1 || VATSystem == 2)
-                linkLabel1.Text = "With Total " + text2[3] + "% Vat :";
+                LBL_VAT.Text = "With Total " + text2[3] + "% Vat :";
             else
-                linkLabel1.Text = "FREE VAT !";
+                LBL_VAT.Text = "FREE VAT !";
 
 
 
@@ -220,6 +220,10 @@ namespace egycashier
 
 
                     Lbl_plus_Click(InstanceOfplus, e);
+
+
+
+
                     //break;
                     return;
                     }
@@ -282,6 +286,8 @@ namespace egycashier
             lbl_minus.Font = new Font("Arial", 15);
             lbl_minus.AutoSize = true;
             lbl_minus.BorderStyle = BorderStyle.FixedSingle;
+            //price in tag decrease the price when clicking on it
+            lbl_minus.Tag = btn.Tag;
 
 
             Label lbl_count = new Label();
@@ -293,6 +299,7 @@ namespace egycashier
             lbl_count.Font = new Font("Arial", 11);
            // MessageBox.Show(lbl_count.Name);
 
+
             Label lbl_plus = new Label();
             lbl_plus.ForeColor = SystemColors.GradientInactiveCaption;
             lbl_plus.Text = "+";
@@ -301,6 +308,9 @@ namespace egycashier
             lbl_plus.Font = new Font("Arial", 17);
             lbl_plus.AutoSize = true;
             lbl_plus.BorderStyle = BorderStyle.FixedSingle;
+            //price in tag increasing the price when clicking on it
+            lbl_plus.Tag=btn.Tag;
+
 
 
 
@@ -338,14 +348,14 @@ namespace egycashier
              theVat = (double)VATtotal / 100;
              theVat *= NormalTotal;
 
-             label4.Text = theVat + "EGP";
+             LBL_AMOUNT_VAT.Text = theVat + "EGP";
 
              if (VATSystem == 0 || VATSystem == 1)
-                label2.Text = NormalTotal + " EGP";
+                LBL_AMOUNT.Text = NormalTotal + " EGP";
              else if (VATSystem == 2)
              {
-                label2.Text = (NormalTotal + theVat) + " EGP";
-                 label3.Text = "+" + NormalTotal;
+                LBL_AMOUNT.Text = (NormalTotal + theVat) + " EGP";
+                 LBL_ADDITIONAL_VAT.Text = "+" + NormalTotal;
              }
 
 
@@ -388,12 +398,35 @@ namespace egycashier
             int NnumN = int.Parse(zz_label_count.Text)+1;
             zz_label_count.Text = NnumN.ToString();
 
+            NormalTotal += Convert.ToInt32(LL_delete.Tag);
+
+
+            double theVat = 0;
+
+            theVat = (double)VATtotal / 100;
+            theVat *= NormalTotal;
+
+            LBL_AMOUNT_VAT.Text = theVat + "EGP";
+
+            if (VATSystem == 0 || VATSystem == 1)
+                LBL_AMOUNT.Text = NormalTotal + " EGP";
+            else if (VATSystem == 2)
+            {
+                LBL_AMOUNT.Text = (NormalTotal + theVat) + " EGP";
+                LBL_ADDITIONAL_VAT.Text = "+" + NormalTotal;
+            }
+
+
 
 
 
             string mynamedLABEL;
 
             mynamedLABEL = LL_delete.Name.Substring(LL_delete.Name.Length - 7);
+
+
+
+
 
             Label zz_labelNAME_zz = (Label)flowLayoutPanel2.Controls["L1"+ A1+A2+"btnName" + mynamedLABEL];
 
@@ -427,7 +460,32 @@ namespace egycashier
             Label zz_label_count = (Label)flowLayoutPanel3.Controls[testtt + THER];
              int NnumN = int.Parse(zz_label_count.Text) - 1;
             if (NnumN > 0)
+            {
                 zz_label_count.Text = NnumN.ToString();
+
+
+
+                NormalTotal -= Convert.ToInt32(LL_delete.Tag);
+
+                double theVat = 0;
+
+                theVat = (double)VATtotal / 100;
+                theVat *= NormalTotal;
+
+                LBL_AMOUNT_VAT.Text = theVat + "EGP";
+
+                if (VATSystem == 0 || VATSystem == 1)
+                    LBL_AMOUNT.Text = NormalTotal + " EGP";
+                else if (VATSystem == 2)
+                {
+                    LBL_AMOUNT.Text = (NormalTotal + theVat) + " EGP";
+                    LBL_ADDITIONAL_VAT.Text = "+" + NormalTotal;
+                }
+            }
+
+
+
+
 
 
 

@@ -38,15 +38,15 @@
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LBL_AMOUNT_VAT = new System.Windows.Forms.Label();
+            this.LBL_VAT = new System.Windows.Forms.LinkLabel();
+            this.LBL_AMOUNT = new System.Windows.Forms.Label();
+            this.LBL_SUB_TOTAL = new System.Windows.Forms.Label();
             this.button16 = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.label3 = new System.Windows.Forms.Label();
+            this.LBL_ADDITIONAL_VAT = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -83,14 +83,14 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.LBL_ADDITIONAL_VAT);
             this.panel2.Controls.Add(this.vScrollBar1);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.linkLabel1);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.LBL_AMOUNT_VAT);
+            this.panel2.Controls.Add(this.LBL_VAT);
+            this.panel2.Controls.Add(this.LBL_AMOUNT);
+            this.panel2.Controls.Add(this.LBL_SUB_TOTAL);
             this.panel2.Controls.Add(this.button16);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(773, 0);
@@ -140,46 +140,46 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(204, 0);
             this.flowLayoutPanel2.TabIndex = 31;
             // 
-            // label4
+            // LBL_AMOUNT_VAT
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(201, 581);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 29);
-            this.label4.TabIndex = 37;
-            this.label4.Text = "Additional";
+            this.LBL_AMOUNT_VAT.AutoSize = true;
+            this.LBL_AMOUNT_VAT.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_AMOUNT_VAT.Location = new System.Drawing.Point(201, 581);
+            this.LBL_AMOUNT_VAT.Name = "LBL_AMOUNT_VAT";
+            this.LBL_AMOUNT_VAT.Size = new System.Drawing.Size(120, 29);
+            this.LBL_AMOUNT_VAT.TabIndex = 37;
+            this.LBL_AMOUNT_VAT.Text = "Additional";
             // 
-            // linkLabel1
+            // LBL_VAT
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(3, 584);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(38, 25);
-            this.linkLabel1.TabIndex = 36;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "vat";
+            this.LBL_VAT.AutoSize = true;
+            this.LBL_VAT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_VAT.Location = new System.Drawing.Point(3, 584);
+            this.LBL_VAT.Name = "LBL_VAT";
+            this.LBL_VAT.Size = new System.Drawing.Size(38, 25);
+            this.LBL_VAT.TabIndex = 36;
+            this.LBL_VAT.TabStop = true;
+            this.LBL_VAT.Text = "vat";
             // 
-            // label2
+            // LBL_AMOUNT
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(190, 522);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 42);
-            this.label2.TabIndex = 34;
-            this.label2.Text = "0.00";
+            this.LBL_AMOUNT.AutoSize = true;
+            this.LBL_AMOUNT.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_AMOUNT.Location = new System.Drawing.Point(190, 522);
+            this.LBL_AMOUNT.Name = "LBL_AMOUNT";
+            this.LBL_AMOUNT.Size = new System.Drawing.Size(91, 42);
+            this.LBL_AMOUNT.TabIndex = 34;
+            this.LBL_AMOUNT.Text = "0.00";
             // 
-            // label1
+            // LBL_SUB_TOTAL
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 522);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(181, 39);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Sup Total :";
+            this.LBL_SUB_TOTAL.AutoSize = true;
+            this.LBL_SUB_TOTAL.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_SUB_TOTAL.Location = new System.Drawing.Point(3, 522);
+            this.LBL_SUB_TOTAL.Name = "LBL_SUB_TOTAL";
+            this.LBL_SUB_TOTAL.Size = new System.Drawing.Size(181, 39);
+            this.LBL_SUB_TOTAL.TabIndex = 33;
+            this.LBL_SUB_TOTAL.Text = "Sup Total :";
             // 
             // button16
             // 
@@ -213,16 +213,16 @@
             // 
             this.printDialog1.UseEXDialog = true;
             // 
-            // label3
+            // LBL_ADDITIONAL_VAT
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label3.Location = new System.Drawing.Point(354, 581);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 32);
-            this.label3.TabIndex = 42;
-            this.label3.Text = "...";
+            this.LBL_ADDITIONAL_VAT.AutoSize = true;
+            this.LBL_ADDITIONAL_VAT.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_ADDITIONAL_VAT.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.LBL_ADDITIONAL_VAT.Location = new System.Drawing.Point(354, 581);
+            this.LBL_ADDITIONAL_VAT.Name = "LBL_ADDITIONAL_VAT";
+            this.LBL_ADDITIONAL_VAT.Size = new System.Drawing.Size(38, 32);
+            this.LBL_ADDITIONAL_VAT.TabIndex = 42;
+            this.LBL_ADDITIONAL_VAT.Text = "...";
             // 
             // pos
             // 
@@ -255,10 +255,10 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label LBL_SUB_TOTAL;
+        private System.Windows.Forms.Label LBL_AMOUNT;
+        private System.Windows.Forms.LinkLabel LBL_VAT;
+        private System.Windows.Forms.Label LBL_AMOUNT_VAT;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
@@ -268,6 +268,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.VScrollBar vScrollBar1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label LBL_ADDITIONAL_VAT;
     }
 }
