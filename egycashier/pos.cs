@@ -216,6 +216,7 @@ namespace egycashier
                     {
                     Label InstanceOfplus = new Label();
                    InstanceOfplus.Name = contr.Name.Replace("L1", "X2");
+                    InstanceOfplus.Tag = btn.Tag;
                    // MessageBox.Show(InstanceOfplus.Name);
 
 
@@ -398,8 +399,9 @@ namespace egycashier
             int NnumN = int.Parse(zz_label_count.Text)+1;
             zz_label_count.Text = NnumN.ToString();
 
-            NormalTotal += Convert.ToInt32(LL_delete.Tag);
 
+
+            NormalTotal += Convert.ToInt32(LL_delete.Tag);
 
             double theVat = 0;
 
@@ -590,9 +592,9 @@ namespace egycashier
 
             
 
-
-        NormalTotal -= Convert.ToInt32(zz_label_price.Text.Remove(zz_label_price.Text.Length - 3));
-            MessageBox.Show("" + NormalTotal);
+            int tempNUM = Convert.ToInt32(zz_label_price.Text.Remove(zz_label_price.Text.Length - 3));
+             tempNUM *= Convert.ToInt32(zz_label_count.Text);
+            NormalTotal -= tempNUM;
 
             double theVat = 0;
 
