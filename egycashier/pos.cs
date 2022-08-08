@@ -588,24 +588,27 @@ namespace egycashier
 
 
 
-            /*            NormalTotal -= Convert.ToInt32(zz2.Text);
+            
 
 
-                        double theVat = 0;
+        NormalTotal -= Convert.ToInt32(zz_label_price.Text.Remove(zz_label_price.Text.Length - 3));
+            MessageBox.Show("" + NormalTotal);
 
-                        theVat = (double)VATtotal / 100;
-                        theVat *= NormalTotal;
+            double theVat = 0;
 
-                        label3.Text = theVat + "EGP";
+            theVat = (double)VATtotal / 100;
+            theVat *= NormalTotal;
 
-                        if (VATSystem == 0 || VATSystem == 1)
-                            linkLabel1.Text = NormalTotal + " EGP";
-                        else if (VATSystem == 2)
-                        {
-                            linkLabel1.Text = (NormalTotal + theVat) + " EGP";
-                            label4.Text = "+" + NormalTotal;
+            LBL_AMOUNT_VAT.Text = theVat + "EGP";
 
-                        }*/
+            if (VATSystem == 0 || VATSystem == 1)
+                LBL_AMOUNT.Text = NormalTotal + " EGP";
+            else if (VATSystem == 2)
+            {
+                LBL_AMOUNT.Text = (NormalTotal + theVat) + " EGP";
+                LBL_ADDITIONAL_VAT.Text = "+" + NormalTotal;
+
+            }
             ChangeScroll(false);
 
         }
