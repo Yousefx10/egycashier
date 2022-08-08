@@ -138,7 +138,7 @@ namespace egycashier
                 pic_1.Image = Properties.Resources.accept;
                 lbl_1.Text = "The System is working Correctly.";
                 
-                if (File.ReadAllText(path) == "v0.0.0.0")
+                if (File.ReadAllText(path) == "v0.0.0.0.0")
                 {
                     pic_2.Image = Properties.Resources.accept;
                     lbl_2.Text = "The Newset Version is installed.";
@@ -226,8 +226,9 @@ namespace egycashier
                     Directory.CreateDirectory(filePATH + "operations");
                     Directory.CreateDirectory(filePATH + "users");
                     Directory.CreateDirectory(filePATH + "general");
-                    File.WriteAllText(@"C:\EgyCashier\v.jpg", "v0.0.0.0");
-                    File.WriteAllText(@"C:\EgyCashier\general\data.bill", "information1\ninformation2\ninformation3\ninformation4");
+
+                    File.WriteAllText(@"C:\EgyCashier\v.jpg", "v0.0.0.0.0");
+                    File.WriteAllText(@"C:\EgyCashier\guest\general\data.bill", "information1\ninformation2\ninformation3\ninformation4\ninformation5\ninformation6\n0");
 
                     panel2.Visible = true;
                    
@@ -235,19 +236,19 @@ namespace egycashier
                     string Thrdate = DateTime.Now.ToString("MM-dd-yyyy");
 
 
-                    File.WriteAllText(filePATH + "users/owner.pl", "Owner\n"+textBox1.Text+"\n"+ Thrdate+"\nOwner Profile\n"+"1,1,1,1\n1,1,1,1");
+                    File.WriteAllText(filePATH + @"users\owner.pl", "Owner\n"+textBox1.Text+"\n"+ Thrdate+"\nOwner Profile\n"+"1,1,1,1\n1,1,1,1");
 
 
                     button1.BackColor = Color.GreenYellow;
                 }
-                catch { MessageBox.Show("Error Setuping The System..."); }
+                catch { MessageBox.Show("Error Setuping The System..." ); }
 
                 pic_1.Image = Properties.Resources.accept;
                 pic_2.Image = Properties.Resources.accept;
 
                 lbl_1.Text = "The System is working Correctly.";
                 lbl_1.Text = "The Newset Version is installed.";
-                FolderManage(1);
+              //  FolderManage(1);
                 time_setup.Start();
             }
         }
