@@ -15,7 +15,7 @@ namespace egycashier
 
             tabControl1.SelectedIndex = whatH;
             GlobalwhatH = whatH;
-            if (whatH == 1 || whatH == 2)
+            if (whatH == 1 || whatH == 2 || whatH == 3)
             {
                 Width = tabControl1.Width + 50;
                
@@ -330,7 +330,7 @@ namespace egycashier
             {
                 RefReshUsers();
             }
-            else if (GlobalwhatH == 2)
+            else if (GlobalwhatH == 2)//bill settings
             {
 
                 //here's setting for load and reload Bill information
@@ -351,6 +351,23 @@ namespace egycashier
                 }
                 DontChang = true;
 
+            }
+            else if(GlobalwhatH == 3)//vat settings
+            {
+                string filePATH = @"C:\EgyCashier\guest\configuration.txt";
+                string[] text1 = File.ReadAllLines(filePATH);
+                int iddd = Convert.ToInt32(text1[2]);
+                if (iddd == 1 || iddd == 2)
+                {
+                    checkBoxVAT.Checked = true;
+                    panel_VAT.Visible = true;
+                    if (iddd == 1)
+                        radioButton1.Checked = true;
+                    else
+                        radioButton2.Checked = true;
+
+                    vat_textbox.Text = text1[3];
+                }
             }
 
 
@@ -879,6 +896,48 @@ namespace egycashier
                     e.Cancel = true;
             }
 
+        }
+
+        private void pic_saveVAT_Click(object sender, EventArgs e)
+        {
+
+            int STATS = 0;
+
+            if (checkBoxVAT.Checked)
+            {
+                STATS++;
+                if (radioButton2.Checked)
+                    STATS++;
+
+
+                string filePATH = @"C:\EgyCashier\guest\configuration.txt";
+                string[] temp1 = File.ReadAllLines(filePATH);
+                string old1 = temp1[0];
+                string old2 = temp1[1];
+                string final_old = temp1[0] + "\n" + temp1[1] + "\n";
+                string HHnew = final_old + STATS + "\n" + vat_textbox.Text;
+                File.WriteAllText(filePATH, HHnew);
+
+            }
+            else
+            {
+                string filePATH = @"C:\EgyCashier\guest\configuration.txt";
+                string[] temp1 = File.ReadAllLines(filePATH);
+                string old1 = temp1[0];
+                string old2 = temp1[1];
+                string final_old = temp1[0] + "\n" + temp1[1] + "\n" + STATS + "\n" + 0;
+                string HHnew = final_old;
+                File.WriteAllText(filePATH, HHnew);
+            }
+            Close();
+        }
+
+        private void checkBoxVAT_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxVAT.Checked)
+                panel_VAT.Visible = true;
+            else
+                panel_VAT.Visible = false;
         }
 
 
