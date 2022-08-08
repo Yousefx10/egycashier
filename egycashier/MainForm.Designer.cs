@@ -169,6 +169,7 @@
             this.Lbl_reports.TabIndex = 10;
             this.Lbl_reports.Text = "Reports";
             this.Lbl_reports.Visible = false;
+            this.Lbl_reports.Click += new System.EventHandler(this.btn_reports_Click);
             // 
             // label4
             // 
@@ -289,6 +290,7 @@
             this.btn_reports.TabIndex = 9;
             this.btn_reports.TabStop = false;
             this.btn_reports.Visible = false;
+            this.btn_reports.Click += new System.EventHandler(this.btn_reports_Click);
             // 
             // btn_Settings
             // 

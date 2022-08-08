@@ -239,5 +239,11 @@ namespace egycashier
             settings Se = new settings();
             Se.Show();
         }
+
+        private void btn_reports_Click(object sender, EventArgs e)
+        {
+            Reports rep = new Reports();
+            rep.Show();
+        }
     }
 }
