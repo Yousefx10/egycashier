@@ -95,13 +95,13 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(773, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(522, 791);
+            this.panel2.Size = new System.Drawing.Size(576, 791);
             this.panel2.TabIndex = 1;
             // 
             // vScrollBar1
             // 
             this.vScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.vScrollBar1.Location = new System.Drawing.Point(487, 0);
+            this.vScrollBar1.Location = new System.Drawing.Point(541, 0);
             this.vScrollBar1.Name = "vScrollBar1";
             this.vScrollBar1.Size = new System.Drawing.Size(33, 789);
             this.vScrollBar1.TabIndex = 41;
@@ -112,9 +112,9 @@
             // 
             this.panel3.AutoScroll = true;
             this.panel3.Controls.Add(this.flowLayoutPanel3);
-            this.panel3.Location = new System.Drawing.Point(237, 3);
+            this.panel3.Location = new System.Drawing.Point(269, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(280, 495);
+            this.panel3.Size = new System.Drawing.Size(285, 495);
             this.panel3.TabIndex = 39;
             // 
             // flowLayoutPanel3
@@ -128,9 +128,9 @@
             // 
             this.panel4.AutoScroll = true;
             this.panel4.Controls.Add(this.flowLayoutPanel2);
-            this.panel4.Location = new System.Drawing.Point(13, 3);
+            this.panel4.Location = new System.Drawing.Point(0, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(251, 495);
+            this.panel4.Size = new System.Drawing.Size(293, 495);
             this.panel4.TabIndex = 40;
             // 
             // flowLayoutPanel2
@@ -143,7 +143,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(153, 581);
+            this.label4.Location = new System.Drawing.Point(229, 579);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 16);
             this.label4.TabIndex = 37;
@@ -152,7 +152,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(89, 581);
+            this.linkLabel1.Location = new System.Drawing.Point(165, 579);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(58, 16);
             this.linkLabel1.TabIndex = 36;
@@ -162,7 +162,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(134, 544);
+            this.label3.Location = new System.Drawing.Point(262, 545);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 16);
             this.label3.TabIndex = 35;
@@ -171,7 +171,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(83, 544);
+            this.label2.Location = new System.Drawing.Point(211, 545);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 16);
             this.label2.TabIndex = 34;
@@ -180,7 +180,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 544);
+            this.label1.Location = new System.Drawing.Point(138, 545);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 16);
             this.label1.TabIndex = 33;
@@ -192,7 +192,7 @@
             this.button16.FlatAppearance.BorderSize = 0;
             this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.button16.Location = new System.Drawing.Point(4, 606);
+            this.button16.Location = new System.Drawing.Point(96, 612);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(338, 54);
             this.button16.TabIndex = 30;
@@ -223,7 +223,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1295, 791);
+            this.ClientSize = new System.Drawing.Size(1349, 791);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;

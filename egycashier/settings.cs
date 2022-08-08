@@ -37,22 +37,13 @@ namespace egycashier
             SCSC.Show();
             Close();
         }
-        /*
 
-private void button1_Click(object sender, EventArgs e)
-{
-settingSCREEN SCSC = new settingSCREEN(0);
-SCSC.Show();
-Close();
-}
-
-private void button2_Click(object sender, EventArgs e)
-{
-settingSCREEN SCSC = new settingSCREEN(1);
-SCSC.Show();
-Close();
-}
-*/
+        private void label4_Click(object sender, EventArgs e)
+        {
+            settingSCREEN SCSC = new settingSCREEN(3);
+            SCSC.Show();
+            Close();
+        }
 
     }
 }
