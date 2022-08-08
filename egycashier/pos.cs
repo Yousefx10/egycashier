@@ -704,7 +704,7 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
 
 
 
-            printDocument1.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 850, 700 + (PAPrSize * 40));
+            printDocument1.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 850, 780 + (PAPrSize * 40));
 
 
 
@@ -776,7 +776,7 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
 
-            MessageBox.Show(printDocument1.DefaultPageSettings.Bounds.ToString());
+           //MessageBox.Show(printDocument1.DefaultPageSettings.Bounds.ToString());
           //  printDocument1.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 200, 200);
 
             string filePATH = @"C:\EgyCashier\guest\general\";
@@ -844,8 +844,43 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
 
             }
 
-            e.Graphics.DrawString(text1[4], new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(350, TALL+40));
-            e.Graphics.DrawString(text1[5], new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(350, TALL+80));
+            e.Graphics.DrawString("------------------------------------------------------------------------", 
+                new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(400, TALL + 40));
+
+
+            if(VATSystem == 1) {}else{}
+
+            e.Graphics.DrawString("The SubTotal Is : " + NormalTotal + " EGP",
+                new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(400, TALL + 70));
+
+            e.Graphics.DrawString("Vat Amount :( " + LBL_AMOUNT_VAT.Text + " ) EGP",
+                new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(400, TALL + 110));
+
+            e.Graphics.DrawString("Vat Rate Is :( " + VATtotal + " % )",
+                 new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(400, TALL + 150));
+
+            e.Graphics.DrawString("------------------------------------------------------------------------",
+                new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(400, TALL + 190));
+
+
+
+            e.Graphics.DrawString("______________________",
+                new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(350, TALL + 220));
+
+            e.Graphics.DrawString("The Total Amount Price : " + LBL_AMOUNT.Text,
+                new Font("Arial", 18, FontStyle.Regular), Brushes.Black, new Point(350, TALL + 250));
+
+
+            e.Graphics.DrawString("______________________",
+                new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(350, TALL + 270));
+
+
+
+
+
+
+            e.Graphics.DrawString(text1[4], new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(350, TALL+310));
+            e.Graphics.DrawString(text1[5], new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(350, TALL+340));
 
 
 
