@@ -696,7 +696,7 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
             }
 
 
-        FullProcc = + PAPrSize +","+ timeNOW+","+ VATSystem + "," + VATtotal +"\n"+ FullProcc;
+        FullProcc = "Head,"+ PAPrSize +","+ timeNOW+","+ VATSystem + "," + VATtotal +"\n"+ FullProcc;
 
 
             File.WriteAllText(path + date + ".op", readText+FullProcc);
