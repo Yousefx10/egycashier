@@ -123,9 +123,11 @@ namespace egycashier
 
 
 
-                    itemBTN.Tag = temp1[1];
 
-                itemBTN.Click += ItemBTN_Click;
+//itemBTN.Tag = temp1[1]; original code.
+itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
+
+                    itemBTN.Click += ItemBTN_Click;
 
 
                 flowLayoutPanel1.Controls.Add(itemBTN);
@@ -216,7 +218,7 @@ namespace egycashier
                     {
                     Label InstanceOfplus = new Label();
                    InstanceOfplus.Name = contr.Name.Replace("L1", "X2");
-                    InstanceOfplus.Tag = btn.Tag;
+                    InstanceOfplus.Tag = MOREtags(btn.Tag, "itmTAG") ;
                    // MessageBox.Show(InstanceOfplus.Name);
 
 
@@ -246,7 +248,7 @@ namespace egycashier
             label_item_name.Font = new Font("Arial", 18);
 
  
-            label_item_name.Tag = new {Yname = btn.Name.Replace("btnName",""), Yprice = btn.Tag, Ycount=1 , Yitem = btn.Text };
+            label_item_name.Tag = new { YmenuName = MOREtags(btn.Tag, "itmMENU") , Yname = btn.Name.Replace("btnName",""), Yprice = MOREtags(btn.Tag, "itmTAG") , Ycount =1 , Yitem = btn.Text };
 
 
 
@@ -259,7 +261,7 @@ namespace egycashier
 
             Label label_price = new Label();
             label_price.ForeColor = Color.Teal;
-            label_price.Text = btn.Tag.ToString()+" EGP";
+            label_price.Text = MOREtags(btn.Tag, "itmTAG") +" EGP";
             label_price.Width = 60;
             label_price.Height = 28;
             label_price.Name = "L3" + btn.Name + R4;
@@ -288,7 +290,7 @@ namespace egycashier
             lbl_minus.AutoSize = true;
             lbl_minus.BorderStyle = BorderStyle.FixedSingle;
             //price in tag decrease the price when clicking on it
-            lbl_minus.Tag = btn.Tag;
+            lbl_minus.Tag = MOREtags(btn.Tag, "itmTAG");
 
 
             Label lbl_count = new Label();
@@ -310,7 +312,7 @@ namespace egycashier
             lbl_plus.AutoSize = true;
             lbl_plus.BorderStyle = BorderStyle.FixedSingle;
             //price in tag increasing the price when clicking on it
-            lbl_plus.Tag=btn.Tag;
+            lbl_plus.Tag= MOREtags(btn.Tag, "itmTAG");
 
 
 
@@ -341,7 +343,7 @@ namespace egycashier
             lbl_plus.Click += Lbl_plus_Click;
 
 
-            NormalTotal += Convert.ToInt32(btn.Tag);
+            NormalTotal += Convert.ToInt32(MOREtags(btn.Tag, "itmTAG"));
 
 
              double theVat = 0;
@@ -432,7 +434,7 @@ namespace egycashier
 
             Label zz_labelNAME_zz = (Label)flowLayoutPanel2.Controls["L1"+ A1+A2+"btnName" + mynamedLABEL];
 
-            zz_labelNAME_zz.Tag = new { Yname = MOREtags(zz_labelNAME_zz.Tag, "Yname").ToString(), Yprice = MOREtags(zz_labelNAME_zz.Tag, "Yprice").ToString(), Ycount = NnumN , Yitem = MOREtags(zz_labelNAME_zz.Tag, "Yitem").ToString() };
+            zz_labelNAME_zz.Tag = new { YmenuName = MOREtags(zz_labelNAME_zz.Tag, "YmenuName").ToString(), Yname = MOREtags(zz_labelNAME_zz.Tag, "Yname").ToString(), Yprice = MOREtags(zz_labelNAME_zz.Tag, "Yprice").ToString(), Ycount = NnumN , Yitem = MOREtags(zz_labelNAME_zz.Tag, "Yitem").ToString() };
    
           //  MessageBox.Show(MOREtags(zz_labelNAME_zz.Tag, "Ycount").ToString() + "peice ... > " + MOREtags(zz_labelNAME_zz.Tag, "Yprice").ToString()+"$ ... and item"+ MOREtags(zz_labelNAME_zz.Tag, "Yname"));
 
@@ -502,7 +504,7 @@ namespace egycashier
            // MessageBox.Show(Forlabel);
             Label zz_labelNAME_zz = (Label)flowLayoutPanel2.Controls[Forlabel];
 
-            zz_labelNAME_zz.Tag = new { Yname = MOREtags(zz_labelNAME_zz.Tag, "Yname").ToString(), Yprice = MOREtags(zz_labelNAME_zz.Tag, "Yprice").ToString(), Ycount = NnumN , Yitem = MOREtags(zz_labelNAME_zz.Tag, "Yitem").ToString() };
+            zz_labelNAME_zz.Tag = new {YmenuName= MOREtags(zz_labelNAME_zz.Tag, "YmenuName"), Yname = MOREtags(zz_labelNAME_zz.Tag, "Yname").ToString(), Yprice = MOREtags(zz_labelNAME_zz.Tag, "Yprice").ToString(), Ycount = NnumN , Yitem = MOREtags(zz_labelNAME_zz.Tag, "Yitem").ToString() };
 
         }
 
@@ -662,7 +664,7 @@ namespace egycashier
 
             int Daloop = 0;
             string FullProcc="";
-
+            string timeNOW = DateTime.Now.ToString("h:mm:ss tt");
             int PAPrSize = 0;
             foreach (Control contr in flowLayoutPanel2.Controls)
             {
@@ -671,12 +673,16 @@ namespace egycashier
                     if(Daloop == 0)
                     {
                         PAPrSize++;
-                        string N = "\n";
- FullProcc +=
-    MOREtags(contr.Tag, "Yname").ToString() +"---"+N+
-    MOREtags(contr.Tag, "Yitem") + N +
-    MOREtags(contr.Tag, "Yprice") + "," +
-    MOREtags(contr.Tag, "Ycount");
+                        //string N = "\n";
+
+                        FullProcc +=
+                           // MOREtags(contr.Tag, "Yname").ToString() +"---"+N+ //THIS FOR ITEM ID ON MENU ID, no need more.
+
+                           MOREtags(contr.Tag, "Yitem") + "," +
+                           MOREtags(contr.Tag, "Yprice") + "," +
+                           MOREtags(contr.Tag, "Ycount") + "," +
+                           MOREtags(contr.Tag, "YmenuName");
+
                         Daloop++;
                         FullProcc += "\n";
                     }
@@ -689,6 +695,8 @@ namespace egycashier
 
             }
 
+
+        FullProcc = + PAPrSize +","+ timeNOW+","+ VATSystem + "," + VATtotal +"\n"+ FullProcc;
 
 
             File.WriteAllText(path + date + ".op", readText+FullProcc);
