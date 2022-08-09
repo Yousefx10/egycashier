@@ -37,6 +37,7 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printDocument2 = new System.Drawing.Printing.PrintDocument();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,11 +73,11 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(17, 134);
+            this.button2.Location = new System.Drawing.Point(17, 188);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(158, 30);
             this.button2.TabIndex = 3;
-            this.button2.Text = "All Reports";
+            this.button2.Text = "View All Reports";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -107,11 +108,22 @@
             // 
             this.printDocument2.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument2_PrintPage);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(17, 120);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(158, 30);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "View By Month";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(681, 503);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -138,5 +150,6 @@
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Drawing.Printing.PrintDocument printDocument2;
+        private System.Windows.Forms.Button button3;
     }
 }

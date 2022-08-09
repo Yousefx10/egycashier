@@ -21,27 +21,47 @@ namespace egycashier
 
         private void Reports_Load(object sender, EventArgs e)
         {
-            string filePATH = @"C:\EgyCashier\guest\operations\";
 
-            //string[] text1 = File.ReadAllLines(filePATH + "data.bill");
+            
 
-            DirectoryInfo d = new DirectoryInfo(filePATH);
+        }
 
-            foreach (var file in d.GetFiles("*.op"))
+
+
+
+
+        void LoadData(int proC)
+        {
+            flowLayoutPanel1.Visible = true;
+            if(proC==0)
             {
 
-                LinkLabel LinLabelDay = new LinkLabel();
-                LinLabelDay.Text = file.Name.Remove(file.Name.Length - 3);
-                LinLabelDay.Tag = file.FullName;
+            }
+            else if (proC == 1)
+            {
 
-                LinLabelDay.AutoSize = true;
-                LinLabelDay.Click += LinLabelDay_Click;
+                string filePATH = @"C:\EgyCashier\guest\operations\";
 
-                flowLayoutPanel1.Controls.Add(LinLabelDay);
+                //string[] text1 = File.ReadAllLines(filePATH + "data.bill");
 
+                DirectoryInfo d = new DirectoryInfo(filePATH);
+
+                foreach (var file in d.GetFiles("*.op"))
+                {
+
+                    LinkLabel LinLabelDay = new LinkLabel();
+                    LinLabelDay.Text = file.Name.Remove(file.Name.Length - 3);
+                    LinLabelDay.Tag = file.FullName;
+
+                    LinLabelDay.AutoSize = true;
+                    LinLabelDay.Click += LinLabelDay_Click;
+
+                    flowLayoutPanel1.Controls.Add(LinLabelDay);
+
+
+                }
 
             }
-
 
         }
 
@@ -66,7 +86,8 @@ namespace egycashier
 
         private void button1_Click(object sender, EventArgs e)
         {
-            flowLayoutPanel1.Visible = true;
+            LoadData(0);
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -200,7 +221,7 @@ namespace egycashier
                 
 
                     
-                    e.Graphics.DrawString("Report For " + file.Name, new Font("Arial", 25, FontStyle.Bold), Brushes.Black, new Point(250, LineLocation+20));
+                    e.Graphics.DrawString("Report For " + file.Name.Remove(file.Name.Length - 3), new Font("Arial", 25, FontStyle.Bold), Brushes.Black, new Point(250, LineLocation+20));
 
                     for (int i = 0; i < Dafile.Length; i++)
                     {
@@ -248,6 +269,12 @@ namespace egycashier
 
 
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            LoadData(1);
+
         }
     }
 }
