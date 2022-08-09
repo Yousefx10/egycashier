@@ -184,7 +184,7 @@ namespace egycashier
                 HOwmany2 += Dafileaa.Length;
 
             }
-            printDocument2.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 850, 600 + ((HOwmany2*35) + HOwmany * 100));
+            printDocument2.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 850, 1000 + ((HOwmany2*45) + HOwmany * 150));
          //   printDocument2.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 850, 2500);
             printPreviewDialog1.Document = printDocument2;
             printPreviewDialog1.ShowDialog();
@@ -246,14 +246,15 @@ namespace egycashier
                     if (MyTokens[3] == "1") vatEH = "On Customer";
                     e.Graphics.DrawString("Vat Is: [" + vatEH + "] - Vat Rate is : [" + MyTokens[4]+" % ]", new Font("Arial", 20, FontStyle.Regular), Brushes.Black, new Point(150, LineLocation + 120));
                     LineLocation += 60;
+                    int cc = 1;
                     for (int ii = 0; ii < III; ii++)
                     {
-                        
-                        string[] ShowItems = Dafile[ii + 1].Split(',');
 
-                      
+                        string[] ShowItems = Dafile[i + cc].Split(',');
+                        cc++;
 
-                        
+
+
                         e.Graphics.DrawString("item name : [" + ShowItems[0] + " ] item price: [" + ShowItems[1] + "] Quantity ["+ ShowItems[2]+ "] & MenuName :[ "  + ShowItems[3]+" ]", new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(80, LineLocation + 100));
                         LineLocation += 25;
 
@@ -313,11 +314,13 @@ namespace egycashier
                             if (MyTokens[3] == "1") vatEH = "On Customer";
                             e.Graphics.DrawString("Vat Is: [" + vatEH + "] - Vat Rate is : [" + MyTokens[4] + " % ]", new Font("Arial", 20, FontStyle.Regular), Brushes.Black, new Point(150, LineLocation + 120));
                             LineLocation += 60;
+                        int cc = 1;
                             for (int ii = 0; ii < III; ii++)
                             {
 
-                                string[] ShowItems = Dafile[ii + 1].Split(',');
-
+                                string[] ShowItems = Dafile[i + cc].Split(',');
+                            cc++;
+                            //MessageBox.Show("");
 
 
 
@@ -386,11 +389,12 @@ namespace egycashier
                             if (MyTokens[3] == "1") vatEH = "On Customer";
                             e.Graphics.DrawString("Vat Is: [" + vatEH + "] - Vat Rate is : [" + MyTokens[4] + " % ]", new Font("Arial", 20, FontStyle.Regular), Brushes.Black, new Point(150, LineLocation + 120));
                             LineLocation += 60;
+                            int cc = 1;
                             for (int ii = 0; ii < III; ii++)
                             {
 
-                                string[] ShowItems = Dafile[ii + 1].Split(',');
-
+                                string[] ShowItems = Dafile[i + cc].Split(',');
+                                cc++;
 
 
 
