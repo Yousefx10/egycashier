@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace egycashier
 {
@@ -32,14 +33,10 @@ namespace egycashier
 
         void LoadData(int proC)
         {
+            flowLayoutPanel1.Controls.Clear();
             flowLayoutPanel1.Visible = true;
             if(proC==0)
             {
-
-            }
-            else if (proC == 1)
-            {
-
                 string filePATH = @"C:\EgyCashier\guest\operations\";
 
                 //string[] text1 = File.ReadAllLines(filePATH + "data.bill");
@@ -60,9 +57,82 @@ namespace egycashier
 
 
                 }
+            }
+            else if (proC == 1)
+            {
+
+
+
+
+                string filePATH = @"C:\EgyCashier\guest\operations\";
+
+                //string[] text1 = File.ReadAllLines(filePATH + "data.bill");
+
+                DirectoryInfo d = new DirectoryInfo(filePATH);
+
+
+                List<string> monthValues = new List<string>();
+
+                foreach (var file in d.GetFiles("*.op"))
+                {
+
+                    LinkLabel LinLabelDay = new LinkLabel();
+                    LinLabelDay.Text = file.Name.Remove(file.Name.Length - 3);
+                    string str = LinLabelDay.Text.Substring(0, 2);
+                    if (!monthValues.Contains(str) )
+                    {
+                        monthValues.Add(str);
+                        LinLabelDay.Text = str;
+                        LinLabelDay.Tag = file.FullName;
+
+                        LinLabelDay.AutoSize = true;
+                        LinLabelDay.Click += LinLabelDay_Click1; ;
+
+                        flowLayoutPanel1.Controls.Add(LinLabelDay);
+                        
+
+
+
+                    }
+
+
+
+
+                }
+
+
+
+
+
 
             }
 
+        }
+
+        private void LinLabelDay_Click1(object sender, EventArgs e)
+        {
+            LinkLabel bbb = sender as LinkLabel;
+            currentMONTH = bbb.Text;
+            string path = @"C:\EgyCashier\guest\operations\";
+
+            int nowLength=0;
+            DirectoryInfo d = new DirectoryInfo(path);
+            foreach (var file in d.GetFiles("*.op"))
+            {
+                string str = file.Name.Substring(0, 2);
+
+                if (currentMONTH == str)
+                {
+                    string[] Dafileaa = File.ReadAllLines(file.FullName);
+                    nowLength += Dafileaa.Length;
+                }
+            }
+                    
+            printDocument3.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 850, 400 + (nowLength * 45));
+
+
+            printPreviewDialog1.Document = printDocument3;
+            printPreviewDialog1.ShowDialog();
         }
 
         private void LinLabelDay_Click(object sender, EventArgs e)
@@ -275,6 +345,74 @@ namespace egycashier
         {
             LoadData(1);
 
+        }
+
+        string currentMONTH;
+        private void printDocument3_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            string path = @"C:\EgyCashier\guest\operations\";
+
+            DirectoryInfo d = new DirectoryInfo(path);
+            int LineLocation = 0;
+            foreach (var file in d.GetFiles("*.op"))
+            {
+                string str = file.Name.Substring(0, 2);
+
+                if(currentMONTH== str)
+                {
+                    string[] Dafile = File.ReadAllLines(file.FullName);
+
+
+
+                    e.Graphics.DrawString("Report For " + file.Name.Remove(file.Name.Length - 3), new Font("Arial", 25, FontStyle.Bold), Brushes.Black, new Point(250, LineLocation + 20));
+
+                    for (int i = 0; i < Dafile.Length; i++)
+                    {
+
+                        string[] MyTokens = Dafile[i].Split(',');
+                        if (MyTokens[0] == "Head")
+                        {
+                            // currentLINE++;
+                            LineLocation += 70;
+                            //int to write how many lines in header.
+                            int III;
+                            Int32.TryParse(MyTokens[1], out III);
+                            e.Graphics.DrawString("At " + MyTokens[2] + " We Sale :", new Font("Arial", 25, FontStyle.Regular), Brushes.Black, new Point(100, LineLocation + 60));
+
+
+                            string vatEH = "On Your Company";
+                            if (MyTokens[3] == "1") vatEH = "On Customer";
+                            e.Graphics.DrawString("Vat Is: [" + vatEH + "] - Vat Rate is : [" + MyTokens[4] + " % ]", new Font("Arial", 20, FontStyle.Regular), Brushes.Black, new Point(150, LineLocation + 120));
+                            LineLocation += 60;
+                            for (int ii = 0; ii < III; ii++)
+                            {
+
+                                string[] ShowItems = Dafile[ii + 1].Split(',');
+
+
+
+
+                                e.Graphics.DrawString("item name : [" + ShowItems[0] + " ] item price: [" + ShowItems[1] + "] Quantity [" + ShowItems[2] + "] & MenuName :[ " + ShowItems[3] + " ]", new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(80, LineLocation + 100));
+                                LineLocation += 25;
+
+
+                            }
+                        }
+
+
+
+
+
+                    }
+                    LineLocation += 50;
+                    e.Graphics.DrawString("__________________________________________________________________", new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(50, LineLocation + 100));
+                    LineLocation += 50;
+
+                }
+
+
+
+            }
         }
     }
 }
