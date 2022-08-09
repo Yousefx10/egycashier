@@ -28,6 +28,44 @@ namespace egycashier
         int VATSystem = 0;
         int VATtotal = 0;
 
+        static public string DELIVERYperson="";
+        static public bool DELperson = false;
+
+
+
+
+        public void changeDEL()
+        {
+
+            if(DELperson)
+            {
+
+                string[] MyTokens = DELIVERYperson.Split(',');
+                label2.Text = MyTokens[0];
+                label3.Text = MyTokens[1];
+                panel5.Visible = true;
+            }
+            else
+            {
+                panel5.Visible = false;
+                //to call a method from OPENED form
+                if (Application.OpenForms["Delivery"] != null)
+                {
+                    (Application.OpenForms["Delivery"] as Delivery).canCelit();
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
         private void List_Life()
 
         {
@@ -681,9 +719,13 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
                            MOREtags(contr.Tag, "Yitem") + "," +
                            MOREtags(contr.Tag, "Yprice") + "," +
                            MOREtags(contr.Tag, "Ycount") + "," +
+
                            MOREtags(contr.Tag, "YmenuName");
 
-                        Daloop++;
+                        ;
+
+
+                    Daloop++;
                         FullProcc += "\n";
                     }
                     else
@@ -694,10 +736,14 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
 
 
             }
-
-
-        FullProcc = "Head,"+ PAPrSize +","+ timeNOW+","+ VATSystem + "," + VATtotal +"\n"+ FullProcc;
-
+            int personSTATS = 0;
+            if (DELperson)
+            {
+                personSTATS++;
+                FullProcc = "Head," + PAPrSize + "," + timeNOW + "," + VATSystem + "," + VATtotal + "," + personSTATS + "\n" + FullProcc + DELIVERYperson+"\n";
+            }
+            else
+            FullProcc = "Head," + PAPrSize + "," + timeNOW + "," + VATSystem + "," + VATtotal + "," + personSTATS + "\n" + FullProcc;
 
             File.WriteAllText(path + date + ".op", readText+FullProcc);
 
@@ -882,7 +928,8 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
             e.Graphics.DrawString(text1[4], new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(350, TALL+310));
             e.Graphics.DrawString(text1[5], new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(350, TALL+340));
 
-
+            DELperson = false;
+            changeDEL();
 
         }
         public static int[] omg()
@@ -919,6 +966,8 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
             if (fc != null)
                 Application.OpenForms["Delivery"].Close();
 
+            DELperson = false;
+            changeDEL();
         }
 
 
@@ -929,5 +978,13 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
             panel4.VerticalScroll.Value = e.NewValue;
         }
 
+        private void btn_remove_note_Click(object sender, EventArgs e)
+        {
+            DELperson = false;
+            changeDEL();
+
+
+
+        }
     }
 }

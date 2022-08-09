@@ -76,9 +76,12 @@ namespace egycashier
 
                 //string filename = MOREtags(contactLbl.Tag, "FileName").ToString();
 
-                foreach (string Da in Dafile)
-                {
-                }
+/*    
+foreach (string Da in Dafile)
+{
+}
+
+*/
                 contactLbl.Click += ContactLbl_Click;
                 flowLayoutPanel1.Controls.Add(contactLbl);
                 flowLayoutPanel1.SetFlowBreak(contactLbl, true);
@@ -102,7 +105,19 @@ namespace egycashier
             view_richtext.AppendText(MOREtags(LBL.Tag, "tag_note").ToString(), Color.Peru);
              ForeachControlsInForm(LBL.Name);
 
+            //contactLbl.Tag = new { tag_phone = Dafile[1], tag_address = Dafile[2],tag_note = Dafile[3] };
 
+
+            pos.DELIVERYperson = LBL.Text+","+MOREtags(LBL.Tag, "tag_note").ToString();
+            pos.DELperson = true;
+
+            //to call a method from OPENED form
+            if (Application.OpenForms["pos"] != null)
+            {
+                (Application.OpenForms["pos"] as pos).changeDEL();
+            }
+
+            
         }
  
 
@@ -140,6 +155,14 @@ namespace egycashier
             clm.ShowDialog();
             ReffRe();
         }
+
+
+
+        public void canCelit()
+        {
+            ForeachControlsInForm("");
+        }
+
     }
 
 

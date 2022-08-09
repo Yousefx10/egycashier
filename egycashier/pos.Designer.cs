@@ -33,6 +33,12 @@
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btn_remove_note = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.LBL_ADDITIONAL_VAT = new System.Windows.Forms.Label();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.panel3 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
@@ -46,9 +52,9 @@
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.LBL_ADDITIONAL_VAT = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +67,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(767, 791);
+            this.panel1.Size = new System.Drawing.Size(767, 816);
             this.panel1.TabIndex = 0;
             // 
             // flowLayoutPanel4
@@ -76,13 +82,14 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(248, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(517, 789);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(517, 814);
             this.flowLayoutPanel1.TabIndex = 9;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.LBL_ADDITIONAL_VAT);
             this.panel2.Controls.Add(this.vScrollBar1);
             this.panel2.Controls.Add(this.panel3);
@@ -95,15 +102,78 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(773, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(576, 791);
+            this.panel2.Size = new System.Drawing.Size(576, 816);
             this.panel2.TabIndex = 1;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.btn_remove_note);
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Location = new System.Drawing.Point(5, 696);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(533, 115);
+            this.panel5.TabIndex = 43;
+            this.panel5.Visible = false;
+            // 
+            // btn_remove_note
+            // 
+            this.btn_remove_note.Location = new System.Drawing.Point(399, 3);
+            this.btn_remove_note.Name = "btn_remove_note";
+            this.btn_remove_note.Size = new System.Drawing.Size(134, 26);
+            this.btn_remove_note.TabIndex = 49;
+            this.btn_remove_note.Text = "Remove Person";
+            this.btn_remove_note.UseVisualStyleBackColor = true;
+            this.btn_remove_note.Click += new System.EventHandler(this.btn_remove_note_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(9, 74);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 25);
+            this.label3.TabIndex = 48;
+            this.label3.Text = ". . .";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(284, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 29);
+            this.label2.TabIndex = 47;
+            this.label2.Text = ". . .";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(5, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(271, 29);
+            this.label1.TabIndex = 46;
+            this.label1.Text = "This Bill Is Specific For :";
+            // 
+            // LBL_ADDITIONAL_VAT
+            // 
+            this.LBL_ADDITIONAL_VAT.AutoSize = true;
+            this.LBL_ADDITIONAL_VAT.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_ADDITIONAL_VAT.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.LBL_ADDITIONAL_VAT.Location = new System.Drawing.Point(354, 581);
+            this.LBL_ADDITIONAL_VAT.Name = "LBL_ADDITIONAL_VAT";
+            this.LBL_ADDITIONAL_VAT.Size = new System.Drawing.Size(38, 32);
+            this.LBL_ADDITIONAL_VAT.TabIndex = 42;
+            this.LBL_ADDITIONAL_VAT.Text = "...";
             // 
             // vScrollBar1
             // 
             this.vScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
             this.vScrollBar1.Location = new System.Drawing.Point(541, 0);
             this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(33, 789);
+            this.vScrollBar1.Size = new System.Drawing.Size(33, 814);
             this.vScrollBar1.TabIndex = 41;
             this.vScrollBar1.Visible = false;
             this.vScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar1_Scroll);
@@ -177,7 +247,7 @@
             this.LBL_SUB_TOTAL.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBL_SUB_TOTAL.Location = new System.Drawing.Point(3, 522);
             this.LBL_SUB_TOTAL.Name = "LBL_SUB_TOTAL";
-            this.LBL_SUB_TOTAL.Size = new System.Drawing.Size(181, 39);
+            this.LBL_SUB_TOTAL.Size = new System.Drawing.Size(174, 38);
             this.LBL_SUB_TOTAL.TabIndex = 33;
             this.LBL_SUB_TOTAL.Text = "Sup Total :";
             // 
@@ -187,7 +257,7 @@
             this.button16.FlatAppearance.BorderSize = 0;
             this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.button16.Location = new System.Drawing.Point(92, 653);
+            this.button16.Location = new System.Drawing.Point(91, 616);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(338, 54);
             this.button16.TabIndex = 30;
@@ -213,23 +283,12 @@
             // 
             this.printDialog1.UseEXDialog = true;
             // 
-            // LBL_ADDITIONAL_VAT
-            // 
-            this.LBL_ADDITIONAL_VAT.AutoSize = true;
-            this.LBL_ADDITIONAL_VAT.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_ADDITIONAL_VAT.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.LBL_ADDITIONAL_VAT.Location = new System.Drawing.Point(354, 581);
-            this.LBL_ADDITIONAL_VAT.Name = "LBL_ADDITIONAL_VAT";
-            this.LBL_ADDITIONAL_VAT.Size = new System.Drawing.Size(38, 32);
-            this.LBL_ADDITIONAL_VAT.TabIndex = 42;
-            this.LBL_ADDITIONAL_VAT.Text = "...";
-            // 
             // pos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1349, 791);
+            this.ClientSize = new System.Drawing.Size(1349, 816);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
@@ -243,6 +302,8 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -269,5 +330,10 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.Label LBL_ADDITIONAL_VAT;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_remove_note;
     }
 }

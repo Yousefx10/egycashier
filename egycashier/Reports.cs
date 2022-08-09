@@ -184,7 +184,7 @@ namespace egycashier
                 HOwmany2 += Dafileaa.Length;
 
             }
-            printDocument2.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 850, 1000 + ((HOwmany2*45) + HOwmany * 150));
+            printDocument2.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 850, 600 + ((HOwmany2*45) + HOwmany * 140));
          //   printDocument2.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 850, 2500);
             printPreviewDialog1.Document = printDocument2;
             printPreviewDialog1.ShowDialog();
@@ -243,7 +243,9 @@ namespace egycashier
 
 
                     string vatEH = "On Your Company";
+
                     if (MyTokens[3] == "1") vatEH = "On Customer";
+
                     e.Graphics.DrawString("Vat Is: [" + vatEH + "] - Vat Rate is : [" + MyTokens[4]+" % ]", new Font("Arial", 20, FontStyle.Regular), Brushes.Black, new Point(150, LineLocation + 120));
                     LineLocation += 60;
                     int cc = 1;
@@ -253,13 +255,23 @@ namespace egycashier
                         string[] ShowItems = Dafile[i + cc].Split(',');
                         cc++;
 
-
-
                         e.Graphics.DrawString("item name : [" + ShowItems[0] + " ] item price: [" + ShowItems[1] + "] Quantity ["+ ShowItems[2]+ "] & MenuName :[ "  + ShowItems[3]+" ]", new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(80, LineLocation + 100));
+
                         LineLocation += 25;
 
-
                     }
+                    
+
+                    if (MyTokens[5] == "1")
+                    {
+                        
+                        string[] ShowItemsA = Dafile[i + cc].Split(',');
+                        // MessageBox.Show(ShowItemsA[0]+ ShowItemsA[1]);
+
+                        e.Graphics.DrawString("THIS IS FOR : {"+ ShowItemsA[0] + "} - Address : {"+ ShowItemsA[1], new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(80, LineLocation + 100));
+                    }
+                    LineLocation += 25;
+
                 }
                // else { }
 
@@ -329,7 +341,18 @@ namespace egycashier
 
 
                             }
+
+                        if (MyTokens[5] == "1")
+                        {
+
+                            string[] ShowItemsA = Dafile[i + cc].Split(',');
+                            // MessageBox.Show(ShowItemsA[0]+ ShowItemsA[1]);
+
+                            e.Graphics.DrawString("THIS IS FOR : {" + ShowItemsA[0] + "} - Address : {" + ShowItemsA[1], new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(80, LineLocation + 100));
                         }
+                        LineLocation += 25;
+
+                    }
 
 
 
@@ -403,6 +426,15 @@ namespace egycashier
 
 
                             }
+                            if (MyTokens[5] == "1")
+                            {
+
+                                string[] ShowItemsA = Dafile[i + cc].Split(',');
+                                // MessageBox.Show(ShowItemsA[0]+ ShowItemsA[1]);
+
+                                e.Graphics.DrawString("THIS IS FOR : {" + ShowItemsA[0] + "} - Address : {" + ShowItemsA[1], new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(80, LineLocation + 100));
+                            }
+                            LineLocation += 25;
                         }
 
 
