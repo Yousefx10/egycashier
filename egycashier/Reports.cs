@@ -86,6 +86,8 @@ namespace egycashier
                         LinLabelDay.Tag = file.FullName;
 
                         LinLabelDay.AutoSize = true;
+                        LinLabelDay.Font = new Font("Arial", 20);
+                        LinLabelDay.BorderStyle = BorderStyle.FixedSingle;
                         LinLabelDay.Click += LinLabelDay_Click1; ;
 
                         flowLayoutPanel1.Controls.Add(LinLabelDay);
