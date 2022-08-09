@@ -923,11 +923,21 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
 
 
 
+            if(DELperson)
+            {
+                string[] ShowItemsA = DELIVERYperson.Split(',');
+
+                e.Graphics.DrawString("This Bill Is For : " + ShowItemsA[0],
+                    new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(290, TALL + 310));
+
+                e.Graphics.DrawString("Customer's Address : \n" + ShowItemsA[2]+ " - [phone number]"+ShowItemsA[3],
+                    new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(290, TALL + 335));
+
+            }
 
 
-            e.Graphics.DrawString(text1[4], new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(350, TALL+310));
-            e.Graphics.DrawString(text1[5], new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(350, TALL+340));
-
+            e.Graphics.DrawString(text1[4], new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(350, TALL + 400));
+            e.Graphics.DrawString(text1[5], new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(350, TALL + 435));
             DELperson = false;
             changeDEL();
 

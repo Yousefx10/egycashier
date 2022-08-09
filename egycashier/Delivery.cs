@@ -105,10 +105,10 @@ foreach (string Da in Dafile)
             view_richtext.AppendText(MOREtags(LBL.Tag, "tag_note").ToString(), Color.Peru);
              ForeachControlsInForm(LBL.Name);
 
-            //contactLbl.Tag = new { tag_phone = Dafile[1], tag_address = Dafile[2],tag_note = Dafile[3] };
+            //contactLbl.Tag ={ tag_phone , tag_address ,tag_note = };
 
 
-            pos.DELIVERYperson = LBL.Text+","+MOREtags(LBL.Tag, "tag_note").ToString();
+            pos.DELIVERYperson = LBL.Text+","+MOREtags(LBL.Tag, "tag_note").ToString()+","+ MOREtags(LBL.Tag, "tag_address").ToString()+ ","+ MOREtags(LBL.Tag, "tag_phone").ToString();
             pos.DELperson = true;
 
             //to call a method from OPENED form
