@@ -268,7 +268,7 @@ namespace egycashier
                         string[] ShowItemsA = Dafile[i + cc].Split(',');
                         // MessageBox.Show(ShowItemsA[0]+ ShowItemsA[1]);
 
-                        e.Graphics.DrawString("THIS IS FOR : {"+ ShowItemsA[0] + "} - Address : {"+ ShowItemsA[1], new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(80, LineLocation + 100));
+                        e.Graphics.DrawString("THIS IS FOR : { "+ ShowItemsA[0] + " } - Address : {"+ ShowItemsA[2]+" }", new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(80, LineLocation + 100));
                     }
                     LineLocation += 25;
 
@@ -348,7 +348,7 @@ namespace egycashier
                             string[] ShowItemsA = Dafile[i + cc].Split(',');
                             // MessageBox.Show(ShowItemsA[0]+ ShowItemsA[1]);
 
-                            e.Graphics.DrawString("THIS IS FOR : {" + ShowItemsA[0] + "} - Address : {" + ShowItemsA[1], new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(80, LineLocation + 100));
+                            e.Graphics.DrawString("THIS IS FOR : { " + ShowItemsA[0] + " } - Address : {" + ShowItemsA[2] + " }", new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(80, LineLocation + 100));
                         }
                         LineLocation += 25;
 
@@ -432,7 +432,7 @@ namespace egycashier
                                 string[] ShowItemsA = Dafile[i + cc].Split(',');
                                 // MessageBox.Show(ShowItemsA[0]+ ShowItemsA[1]);
 
-                                e.Graphics.DrawString("THIS IS FOR : {" + ShowItemsA[0] + "} - Address : {" + ShowItemsA[1], new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(80, LineLocation + 100));
+                                e.Graphics.DrawString("THIS IS FOR : { " + ShowItemsA[0] + " } - Address : {" + ShowItemsA[2] + " } Phone : " + ShowItemsA[3] , new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(80, LineLocation + 100));
                             }
                             LineLocation += 25;
                         }
