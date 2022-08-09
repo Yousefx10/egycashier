@@ -941,7 +941,45 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
             DELperson = false;
             changeDEL();
 
+            //here to clear, why in print document ? beacuse i can't print before showing current data
+            clearEND();
+
+
+
+
+
+
         }
+        //this void simple is just for clear everything and start nwe sale.
+       private void clearEND()
+        {
+            flowLayoutPanel2.Controls.Clear();
+
+            flowLayoutPanel3.Controls.Clear();
+            NormalTotal = 0;
+
+            double theVat = 0;
+
+            theVat = (double)VATtotal / 100;
+            theVat *= NormalTotal;
+
+            LBL_AMOUNT_VAT.Text = theVat + "EGP";
+
+            if (VATSystem == 0 || VATSystem == 1)
+                LBL_AMOUNT.Text = NormalTotal + " EGP";
+            else if (VATSystem == 2)
+            {
+                LBL_AMOUNT.Text = (NormalTotal + theVat) + " EGP";
+                LBL_ADDITIONAL_VAT.Text = "+" + NormalTotal;
+
+            }
+            ChangeScroll(false);
+        }
+
+
+
+
+        //this is moving the delivery form.
         public static int[] omg()
         {
             Form fc = Application.OpenForms["pos"];
