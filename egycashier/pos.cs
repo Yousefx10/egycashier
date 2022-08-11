@@ -10,7 +10,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using ZXing;
 namespace egycashier
 {
     public partial class pos : Form
@@ -750,16 +750,31 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
 
 
 
-            printDocument1.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 850, 780 + (PAPrSize * 40));
+
+
+
+            printDocument1.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 850, 870 + (PAPrSize * 40));
 
             //The Random Number Will Use For Barcode.
-            MessageBox.Show(RandomString(4));
+            // MessageBox.Show(RandomString(4));
+
+            BarcodeWriter NewBarcode = new BarcodeWriter() { 
+                Format = BarcodeFormat.UPC_A, 
+                Options = new ZXing.Common.EncodingOptions
+            {
+                Width = 300,
+                Height = 90
+            } };
+
+            pic_BARCODE.Image = NewBarcode.Write(RandomString(4)+ RandomString(4)+ RandomString(3));
+
+
 
 
             PrintMe(panel2);
 
         }
-
+        PictureBox pic_BARCODE = new PictureBox();
 
 
         private static Random random = new Random();
@@ -948,6 +963,22 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
 
             e.Graphics.DrawString(text1[4], new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(350, TALL + 400));
             e.Graphics.DrawString(text1[5], new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(350, TALL + 435));
+
+
+
+
+
+            Image Bar_img = pic_BARCODE.Image;
+            // Point loc = new Point(350, 200);
+            //The img, location (290,200) for example , the size , width and height
+         //   e.Graphics.DrawImage(Bar_img, 150, TALL + 480, Bar_img.Width, Bar_img.Height);
+            e.Graphics.DrawImage(Bar_img,280,TALL+480,Bar_img.Width,Bar_img.Height);
+            
+
+
+
+
+
             DELperson = false;
             changeDEL();
 
