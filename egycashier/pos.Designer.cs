@@ -257,7 +257,7 @@
             this.button16.FlatAppearance.BorderSize = 0;
             this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.button16.Location = new System.Drawing.Point(91, 616);
+            this.button16.Location = new System.Drawing.Point(91, 621);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(338, 54);
             this.button16.TabIndex = 30;
