@@ -784,17 +784,16 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
 
 
 
-
-
+            string data_FullProcc = "Head," + PAPrSize + "," + timeNOW + "," + VATSystem + "," + VATtotal + ",";
 
             int personSTATS = 0;
             if (DELperson)
             {
                 personSTATS++;
-                FullProcc = "Head," + PAPrSize + "," + timeNOW + "," + VATSystem + "," + VATtotal + "," + personSTATS + "\n" + FullProcc + DELIVERYperson+"\n";
+                FullProcc = data_FullProcc + personSTATS + "," + BarCodeSTRING + "\n" + FullProcc + DELIVERYperson+"\n";
             }
             else
-            FullProcc = "Head," + PAPrSize + "," + timeNOW + "," + VATSystem + "," + VATtotal + "," + personSTATS + "\n" + FullProcc;
+                FullProcc = data_FullProcc + personSTATS + "," + BarCodeSTRING + "\n" + FullProcc;
 
             File.WriteAllText(path + date + ".op", readText+FullProcc);
 
