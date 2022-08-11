@@ -747,7 +747,8 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
             //BarCode System :
             //Barcode Contains 12 Numbers...
             //i can use only 11 Numbers,because it have checksum in the far right Side.
-            //Month[2] + Day[2] + Hour[2] + Minutes[2]+ Seconds[2] + One Random number1[1] + |checksum|[1].
+            //THIS CANCELED : > Month[2] + Day[2] + Hour[2] + Minutes[2]+ Seconds[2] + One Random number1[1] + |checksum|[1].
+            //Month[2] + Day[2] + Hour[2] + Minutes[2]+ Seconds[2] + And 4 Random numbers[4]
 
 
             /*
@@ -761,21 +762,13 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
             //The Random Number Will Use For Barcode.
             // MessageBox.Show(RandomString(4));
 
-            BarcodeWriter NewBarcode = new BarcodeWriter()
-            {
-                Format = BarcodeFormat.CODE_128,
-                Options = new ZXing.Common.EncodingOptions
-                {
-                    Width = 300,
-                    Height = 90
-                }
-            };
+
 
 
 
 
             //Month,Day,Hour,Minute,Second
-            BarCodeSTRING = nowX.ToString("MMddHHmmss") + RandomString(1);
+            BarCodeSTRING = nowX.ToString("MMddHHmmss") + RandomString(4);
 
             pic_BARCODE.Image = NewBarcode.Write(BarCodeSTRING);
 
@@ -815,6 +808,16 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
             PrintMe(panel2);
 
         }
+        //make it always Ready.
+        BarcodeWriter NewBarcode = new BarcodeWriter()
+        {
+            Format = BarcodeFormat.CODE_128,
+            Options = new ZXing.Common.EncodingOptions
+            {
+                Width = 300,
+                Height = 90
+            }
+        };
         string BarCodeSTRING;
         PictureBox pic_BARCODE = new PictureBox();
 
