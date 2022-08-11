@@ -924,7 +924,7 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
             e.Graphics.DrawString("The SubTotal Is : " + NormalTotal + " EGP",
                 new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(400, TALL + 70));
 
-            e.Graphics.DrawString("Vat Amount :( " + LBL_AMOUNT_VAT.Text + " ) EGP",
+            e.Graphics.DrawString("Vat Amount :( " + LBL_AMOUNT_VAT.Text + " )",
                 new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(400, TALL + 110));
 
             e.Graphics.DrawString("Vat Rate Is :( " + VATtotal + " % )",
