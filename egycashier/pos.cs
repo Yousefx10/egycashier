@@ -752,6 +752,8 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
 
             printDocument1.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 850, 780 + (PAPrSize * 40));
 
+            //The Random Number Will Use For Barcode.
+            MessageBox.Show(RandomString(4));
 
 
             PrintMe(panel2);
@@ -760,6 +762,14 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
 
 
 
+        private static Random random = new Random();
+        public static string RandomString(int length)
+        {
+          //const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            const string chars = "0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
 
 
 
