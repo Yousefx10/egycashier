@@ -688,7 +688,13 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
 
             string path = @"C:\EgyCashier\guest\operations\";
 
-            string date = DateTime.Now.ToString("MM-dd-yyyy");
+            //important that time needs to be THE SAME
+
+            DateTime nowX = DateTime.Now;
+            string date = nowX.ToString("MM-dd-yyyy");
+
+
+
             DirectoryInfo d = new DirectoryInfo(path);
             string readText = "";
 
@@ -702,7 +708,7 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
 
             int Daloop = 0;
             string FullProcc="";
-            string timeNOW = DateTime.Now.ToString("h:mm:ss tt");
+            string timeNOW = nowX.ToString("h:mm:ss tt");
             int PAPrSize = 0;
             foreach (Control contr in flowLayoutPanel2.Controls)
             {
@@ -736,6 +742,51 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
 
 
             }
+
+
+            //BarCode System :
+            //Barcode Contains 12 Numbers...
+            //i can use only 11 Numbers,because it have checksum in the far right Side.
+            //Month[2] + Day[2] + Hour[2] + Minutes[2] + Random 3 numbers[2] + |checksum|[1].
+
+
+            /*
+        DateTime now = DateTime.Now;
+        Console.WriteLine(now.ToString("MM:dd:H:mm"));
+        MessageBox.Show(nowX.ToString("MMddHHmm"));
+             * 
+             */
+
+
+            //The Random Number Will Use For Barcode.
+            // MessageBox.Show(RandomString(4));
+
+            BarcodeWriter NewBarcode = new BarcodeWriter()
+            {
+                Format = BarcodeFormat.UPC_A,
+                Options = new ZXing.Common.EncodingOptions
+                {
+                    Width = 300,
+                    Height = 90
+                }
+            };
+
+
+
+
+
+            BarCodeSTRING = nowX.ToString("MMddHHmm") + RandomString(3);
+
+            pic_BARCODE.Image = NewBarcode.Write(BarCodeSTRING);
+
+
+
+
+
+
+
+
+
             int personSTATS = 0;
             if (DELperson)
             {
@@ -755,36 +806,8 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
 
             printDocument1.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 850, 870 + (PAPrSize * 40));
 
-            //The Random Number Will Use For Barcode.
-            // MessageBox.Show(RandomString(4));
-
-            BarcodeWriter NewBarcode = new BarcodeWriter() { 
-                Format = BarcodeFormat.UPC_A, 
-                Options = new ZXing.Common.EncodingOptions
-            {
-                Width = 300,
-                Height = 90
-            } };
 
 
-            //BarCode System :
-            //Barcode Contains 12 Numbers...
-            //i can use only 11 Numbers,because it have checksum in the far right Side.
-            //Month[2] + Day[2] + Hour[2] + Minutes[2] + Random 3 numbers[2] + |checksum|[1].
-
-
-
-            /*
-        DateTime now = DateTime.Now;
-        Console.WriteLine(now.ToString("MM:dd:H:mm"));
-        MessageBox.Show(nowX.ToString("MMddHHmm"));
-             * 
-             */
-            DateTime nowX = DateTime.Now;
-
-            string terr = nowX.ToString("MMddHHmm")  + RandomString(3);
-
-            pic_BARCODE.Image = NewBarcode.Write(terr);
 
 
 
@@ -793,6 +816,7 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
             PrintMe(panel2);
 
         }
+        string BarCodeSTRING;
         PictureBox pic_BARCODE = new PictureBox();
 
 
