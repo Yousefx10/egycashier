@@ -763,7 +763,7 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
 
             BarcodeWriter NewBarcode = new BarcodeWriter()
             {
-                Format = BarcodeFormat.UPC_A,
+                Format = BarcodeFormat.CODE_128,
                 Options = new ZXing.Common.EncodingOptions
                 {
                     Width = 300,
