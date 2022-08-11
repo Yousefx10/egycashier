@@ -961,8 +961,8 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
             }
 
 
-            e.Graphics.DrawString(text1[4], new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(350, TALL + 400));
-            e.Graphics.DrawString(text1[5], new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(350, TALL + 435));
+            e.Graphics.DrawString(text1[4], new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(350, TALL + 355));
+            e.Graphics.DrawString(text1[5], new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(350, TALL + 390));
 
 
 
@@ -972,7 +972,7 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
             // Point loc = new Point(350, 200);
             //The img, location (290,200) for example , the size , width and height
          //   e.Graphics.DrawImage(Bar_img, 150, TALL + 480, Bar_img.Width, Bar_img.Height);
-            e.Graphics.DrawImage(Bar_img,280,TALL+480,Bar_img.Width,Bar_img.Height);
+            e.Graphics.DrawImage(Bar_img,280,TALL+430,Bar_img.Width,Bar_img.Height);
             
 
 
