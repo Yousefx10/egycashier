@@ -766,7 +766,26 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
                 Height = 90
             } };
 
-            pic_BARCODE.Image = NewBarcode.Write(RandomString(4)+ RandomString(4)+ RandomString(3));
+
+            //BarCode System :
+            //Barcode Contains 12 Numbers...
+            //i can use only 11 Numbers,because it have checksum in the far right Side.
+            //Month[2] + Day[2] + Hour[2] + Minutes[2] + Random 3 numbers[2] + |checksum|[1].
+
+
+
+            /*
+        DateTime now = DateTime.Now;
+        Console.WriteLine(now.ToString("MM:dd:H:mm"));
+        MessageBox.Show(nowX.ToString("MMddHHmm"));
+             * 
+             */
+            DateTime nowX = DateTime.Now;
+
+            string terr = nowX.ToString("MMddHHmm")  + RandomString(3);
+
+            pic_BARCODE.Image = NewBarcode.Write(terr);
+
 
 
 
