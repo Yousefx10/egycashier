@@ -748,7 +748,7 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
             //Barcode Contains 12 Numbers...
             //i can use only 11 Numbers,because it have checksum in the far right Side.
             //THIS CANCELED : > Month[2] + Day[2] + Hour[2] + Minutes[2]+ Seconds[2] + One Random number1[1] + |checksum|[1].
-            //Month[2] + Day[2] + Hour[2] + Minutes[2]+ Seconds[2] + And 4 Random numbers[4]
+            //Month[2] + Day[2] + Hour[2] + Minutes[2]+ Seconds[2] + And 5 Random numbers[5]
 
 
             /*
@@ -768,7 +768,7 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
 
 
             //Month,Day,Hour,Minute,Second
-            BarCodeSTRING = nowX.ToString("MMddHHmmss") + RandomString(4);
+            BarCodeSTRING = nowX.ToString("MMddHHmmss") + RandomString(5);
 
             pic_BARCODE.Image = NewBarcode.Write(BarCodeSTRING);
 

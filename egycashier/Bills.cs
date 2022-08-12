@@ -24,43 +24,8 @@ namespace egycashier
             
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             printPreviewControl1.Visible = true;
-            printDocument1.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 2000, 14600);
+            printDocument1.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 900, 1000);
             printPreviewControl1.Document = printDocument1;
             printPreviewControl1.Show();
         }
@@ -109,23 +74,47 @@ namespace egycashier
 
 
 
-            foreach (var line in File.ReadLines(filePATH + "08-12-2022.op").
-                    SkipWhile(line => !line.Contains(textBox1.Text)).Skip(1).TakeWhile(line => !line.Contains("Head")))
+
+            DirectoryInfo d = new DirectoryInfo(filePATH);
+            foreach (var file in d.GetFiles("*"+textBox1.Text.Substring(0, 2) + "-" + textBox1.Text.Substring(2, 2) + "*.op"))
             {
-                string[] MyTokens = line.Split(',');
 
-                e.Graphics.DrawString(MyTokens[2],
-                    new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(60, TALL + 50));
-                e.Graphics.DrawString(MyTokens[0],
-                    new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(200, TALL + 50));
-                e.Graphics.DrawString(MyTokens[1],
-                    new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(600, TALL + 50));
-                //
-                e.Graphics.DrawString("---------------------------------------------------------------------------------------------------------------------------",
-                    new Font("Arial", 15, FontStyle.Italic), Brushes.DarkGray, new Point(1, TALL + 65));
+                //MessageBox.Show(file.Name);
+                foreach (var line in File.ReadLines( file.FullName ).
+    SkipWhile(line => !line.Contains(textBox1.Text)).Skip(1).TakeWhile(line => !line.Contains("Head")))
+                {
+                    if(line!="")
+                    {
+                        string[] MyTokens = line.Split(',');
 
-                TALL += 50;
+                        e.Graphics.DrawString(MyTokens[2],
+                            new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(60, TALL + 50));
+                        e.Graphics.DrawString(MyTokens[0],
+                            new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(200, TALL + 50));
+                        e.Graphics.DrawString(MyTokens[1],
+                            new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(600, TALL + 50));
+                        //
+                        e.Graphics.DrawString("---------------------------------------------------------------------------------------------------------------------------",
+                            new Font("Arial", 15, FontStyle.Italic), Brushes.DarkGray, new Point(1, TALL + 65));
+
+                        TALL += 50;
+                    }
+
+                }
+
+
+
+
+
+
+
+
+
+
+
             }
+
+
 
 
 
