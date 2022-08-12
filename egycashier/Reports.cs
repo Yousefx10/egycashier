@@ -130,7 +130,7 @@ namespace egycashier
                 }
             }
                     
-            printDocument3.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 850, 400 + (nowLength * 45));
+            printDocument3.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 850, 400 + (nowLength * 60));
 
 
             printPreviewDialog1.Document = printDocument3;
@@ -146,8 +146,8 @@ namespace egycashier
             currentDate = bbb.Text;
             string[] Dafileaa = File.ReadAllLines(CurrentFile);
 
-            printDocument1.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 850, 250 + (Dafileaa.Length * 40));
-
+            printDocument1.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 850, 400 + (Dafileaa.Length * 60));
+            //MessageBox.Show(Dafileaa.Length.ToString());
 
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.ShowDialog();
@@ -184,7 +184,7 @@ namespace egycashier
                 HOwmany2 += Dafileaa.Length;
 
             }
-            printDocument2.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 850, 600 + ((HOwmany2*45) + HOwmany * 140));
+            printDocument2.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 850, 600 + ((HOwmany2*60) + HOwmany * 140));
          //   printDocument2.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 850, 2500);
             printPreviewDialog1.Document = printDocument2;
             printPreviewDialog1.ShowDialog();

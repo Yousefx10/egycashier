@@ -818,6 +818,7 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
                 Height = 90
             }
         };
+
         string BarCodeSTRING;
         PictureBox pic_BARCODE = new PictureBox();
 
