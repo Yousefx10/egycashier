@@ -107,18 +107,10 @@ namespace egycashier
 
                         TALL += 50;
                     }
-                    //for stop continue searching
-                    return;
+                   else return; //for stop continue searching 
+
 
                 }
-
-
-
-
-
-
-
-
 
 
 
@@ -177,10 +169,7 @@ namespace egycashier
             e.Graphics.DrawString(text1[5], new Font("Arial", 15, FontStyle.Regular), Brushes.Black, new Point(350, TALL + 390));
 
 
-
-            BarCodeSTRING = textBox1.Text;
-
-            pic_BARCODE.Image = NewBarcode.Write(BarCodeSTRING);
+            pic_BARCODE.Image = NewBarcode.Write(correctBAR);
 
             Image Bar_img = pic_BARCODE.Image;
             // Point loc = new Point(350, 200);
@@ -203,7 +192,6 @@ namespace egycashier
             }
         };
 
-        string BarCodeSTRING;
         PictureBox pic_BARCODE = new PictureBox();
     }
 }
