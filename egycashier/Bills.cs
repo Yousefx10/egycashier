@@ -99,6 +99,8 @@ namespace egycashier
 
                         TALL += 50;
                     }
+                    //for stop continue searching
+                    return;
 
                 }
 
@@ -113,15 +115,6 @@ namespace egycashier
 
 
             }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -205,6 +198,9 @@ namespace egycashier
         string BarCodeSTRING;
         PictureBox pic_BARCODE = new PictureBox();
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }
