@@ -18,16 +18,23 @@ namespace egycashier
         {
             InitializeComponent();
         }
-
+        string correctBAR;
         private void btn_go_Click(object sender, EventArgs e)
         {
             
+            if(textBox1.TextLength==15 && (textBox1.Text[0]=='0' || textBox1.Text[0] == '1'))
+            {
+                correctBAR = textBox1.Text;
+                label1.Text = correctBAR;
 
+                textBox1.Clear();
+                printPreviewControl1.Visible = true;
+                printDocument1.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 900, 1000);
+                printPreviewControl1.Document = printDocument1;
+                printPreviewControl1.Show();
+            }
 
-            printPreviewControl1.Visible = true;
-            printDocument1.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 900, 1000);
-            printPreviewControl1.Document = printDocument1;
-            printPreviewControl1.Show();
+            textBox1.Focus();
         }
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
@@ -76,12 +83,12 @@ namespace egycashier
 
 
             DirectoryInfo d = new DirectoryInfo(filePATH);
-            foreach (var file in d.GetFiles("*"+textBox1.Text.Substring(0, 2) + "-" + textBox1.Text.Substring(2, 2) + "*.op"))
+            foreach (var file in d.GetFiles("*"+ correctBAR.Substring(0, 2) + "-" + correctBAR.Substring(2, 2) + "*.op"))
             {
 
                 //MessageBox.Show(file.Name);
                 foreach (var line in File.ReadLines( file.FullName ).
-    SkipWhile(line => !line.Contains(textBox1.Text)).Skip(1).TakeWhile(line => !line.Contains("Head")))
+    SkipWhile(line => !line.Contains(correctBAR)).Skip(1).TakeWhile(line => !line.Contains("Head")))
                 {
                     if(line!="")
                     {
@@ -197,10 +204,5 @@ namespace egycashier
 
         string BarCodeSTRING;
         PictureBox pic_BARCODE = new PictureBox();
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

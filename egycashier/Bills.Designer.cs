@@ -32,6 +32,7 @@
             this.printPreviewControl1 = new System.Windows.Forms.PrintPreviewControl();
             this.btn_go = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -42,15 +43,16 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(362, 55);
             this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.TextChanged += new System.EventHandler(this.btn_go_Click);
             // 
             // printPreviewControl1
             // 
             this.printPreviewControl1.AutoZoom = false;
             this.printPreviewControl1.BackColor = System.Drawing.SystemColors.Control;
-            this.printPreviewControl1.Location = new System.Drawing.Point(13, 95);
+            this.printPreviewControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.printPreviewControl1.Location = new System.Drawing.Point(0, 152);
             this.printPreviewControl1.Name = "printPreviewControl1";
-            this.printPreviewControl1.Size = new System.Drawing.Size(515, 513);
+            this.printPreviewControl1.Size = new System.Drawing.Size(540, 513);
             this.printPreviewControl1.TabIndex = 1;
             this.printPreviewControl1.Visible = false;
             this.printPreviewControl1.Zoom = 0.4D;
@@ -69,12 +71,23 @@
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(71, 90);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(333, 42);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "000000000000000";
+            // 
             // Bills
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(540, 620);
+            this.ClientSize = new System.Drawing.Size(540, 665);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_go);
             this.Controls.Add(this.printPreviewControl1);
             this.Controls.Add(this.textBox1);
@@ -94,5 +107,6 @@
         private System.Windows.Forms.PrintPreviewControl printPreviewControl1;
         private System.Windows.Forms.Button btn_go;
         private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.Label label1;
     }
 }
