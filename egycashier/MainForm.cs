@@ -248,7 +248,8 @@ namespace egycashier
 
         private void btn_bills_Click(object sender, EventArgs e)
         {
-
+            Bills Bi = new Bills();
+            Bi.Show();
         }
     }
 }

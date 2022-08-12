@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pic_minimize = new System.Windows.Forms.PictureBox();
+            this.pic_close = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnPOS = new System.Windows.Forms.Button();
             this.btnDELIVERY = new System.Windows.Forms.Button();
@@ -52,9 +54,9 @@
             this.btn_reports = new System.Windows.Forms.PictureBox();
             this.btn_Settings = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pic_minimize = new System.Windows.Forms.PictureBox();
-            this.pic_close = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_minimize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_close)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_bills)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_supplies)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_money)).BeginInit();
@@ -62,8 +64,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_reports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Settings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_minimize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_close)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -81,6 +81,28 @@
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            // 
+            // pic_minimize
+            // 
+            this.pic_minimize.Image = global::egycashier.Properties.Resources.minus;
+            this.pic_minimize.Location = new System.Drawing.Point(993, 2);
+            this.pic_minimize.Name = "pic_minimize";
+            this.pic_minimize.Size = new System.Drawing.Size(42, 35);
+            this.pic_minimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_minimize.TabIndex = 2;
+            this.pic_minimize.TabStop = false;
+            this.pic_minimize.Click += new System.EventHandler(this.pic_minimize_Click);
+            // 
+            // pic_close
+            // 
+            this.pic_close.Image = ((System.Drawing.Image)(resources.GetObject("pic_close.Image")));
+            this.pic_close.Location = new System.Drawing.Point(1041, 2);
+            this.pic_close.Name = "pic_close";
+            this.pic_close.Size = new System.Drawing.Size(42, 35);
+            this.pic_close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_close.TabIndex = 1;
+            this.pic_close.TabStop = false;
+            this.pic_close.Click += new System.EventHandler(this.pic_close_Click);
             // 
             // label1
             // 
@@ -245,7 +267,6 @@
             this.Lbl_bills.Size = new System.Drawing.Size(32, 16);
             this.Lbl_bills.TabIndex = 23;
             this.Lbl_bills.Text = "Bills";
-            this.Lbl_bills.Visible = false;
             this.Lbl_bills.Click += new System.EventHandler(this.btn_bills_Click);
             // 
             // btn_bills
@@ -257,7 +278,6 @@
             this.btn_bills.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_bills.TabIndex = 22;
             this.btn_bills.TabStop = false;
-            this.btn_bills.Visible = false;
             this.btn_bills.Click += new System.EventHandler(this.btn_bills_Click);
             // 
             // btn_supplies
@@ -328,28 +348,6 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // pic_minimize
-            // 
-            this.pic_minimize.Image = global::egycashier.Properties.Resources.minus;
-            this.pic_minimize.Location = new System.Drawing.Point(993, 2);
-            this.pic_minimize.Name = "pic_minimize";
-            this.pic_minimize.Size = new System.Drawing.Size(42, 35);
-            this.pic_minimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_minimize.TabIndex = 2;
-            this.pic_minimize.TabStop = false;
-            this.pic_minimize.Click += new System.EventHandler(this.pic_minimize_Click);
-            // 
-            // pic_close
-            // 
-            this.pic_close.Image = ((System.Drawing.Image)(resources.GetObject("pic_close.Image")));
-            this.pic_close.Location = new System.Drawing.Point(1041, 2);
-            this.pic_close.Name = "pic_close";
-            this.pic_close.Size = new System.Drawing.Size(42, 35);
-            this.pic_close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_close.TabIndex = 1;
-            this.pic_close.TabStop = false;
-            this.pic_close.Click += new System.EventHandler(this.pic_close_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -389,6 +387,8 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_minimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_close)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_bills)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_supplies)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_money)).EndInit();
@@ -396,8 +396,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_reports)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Settings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_minimize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_close)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
