@@ -287,7 +287,7 @@ namespace egycashier
         private void live()
         {
             //in case Setting was on EditMenu.
-            if(GlobalwhatH == 0)
+            if (GlobalwhatH == 0)
             {
 
                 flowLayoutPanel1.Controls.Clear();
@@ -344,7 +344,7 @@ namespace egycashier
                 textLine5.Text = text1[4];
                 textLine6.Text = text1[5];
 
-                if (text1[6]=="1")
+                if (text1[6] == "1")
                 {
                     bill_checkbox.Checked = true;
                     bill_logo_pic.ImageLocation = filePATH + "logo.jpg";
@@ -352,7 +352,7 @@ namespace egycashier
                 DontChang = true;
 
             }
-            else if(GlobalwhatH == 3)//vat settings
+            else if (GlobalwhatH == 3)//vat settings
             {
                 string filePATH = @"C:\EgyCashier\guest\configuration.txt";
                 string[] text1 = File.ReadAllLines(filePATH);
@@ -369,12 +369,14 @@ namespace egycashier
                     vat_textbox.Text = text1[3];
                 }
             }
+            else if (GlobalwhatH == 4)//GENERAL SETTINGS.
+            {
+
+            }
 
 
 
-
-
-        }
+            }
 
 
         private void ITMnew_Click(object sender, EventArgs e)

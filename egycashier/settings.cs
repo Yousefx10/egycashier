@@ -19,31 +19,39 @@ namespace egycashier
 
         private void label1_Click(object sender, EventArgs e)
         {
-            settingSCREEN SCSC = new settingSCREEN(1);
-            SCSC.Show();
-            Close();
+            ShowSettingForm(1);
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-            settingSCREEN SCSC = new settingSCREEN(0);
-            SCSC.Show();
-            Close();
+            ShowSettingForm(0);
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
-            settingSCREEN SCSC = new settingSCREEN(2);
-            SCSC.Show();
-            Close();
+            ShowSettingForm(2);
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
-            settingSCREEN SCSC = new settingSCREEN(3);
+            ShowSettingForm(3);
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            ShowSettingForm(4);
+        }
+
+
+
+
+
+
+        private void ShowSettingForm(int openNum)
+        {
+            settingSCREEN SCSC = new settingSCREEN(openNum);
             SCSC.Show();
             Close();
         }
-
     }
 }

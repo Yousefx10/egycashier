@@ -32,6 +32,7 @@ namespace egycashier
                 printDocument1.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 900, 1000);
                 printPreviewControl1.Document = printDocument1;
                 printPreviewControl1.Show();
+                label1.Visible = true;
             }
 
             textBox1.Focus();

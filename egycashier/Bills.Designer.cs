@@ -80,6 +80,7 @@
             this.label1.Size = new System.Drawing.Size(333, 42);
             this.label1.TabIndex = 3;
             this.label1.Text = "000000000000000";
+            this.label1.Visible = false;
             // 
             // Bills
             // 

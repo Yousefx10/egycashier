@@ -763,10 +763,6 @@ itemBTN.Tag = new { itmTAG = temp1[1], itmMENU = bbb.Text };
             // MessageBox.Show(RandomString(4));
 
 
-
-
-
-
             //Month,Day,Hour,Minute,Second
             BarCodeSTRING = nowX.ToString("MMddHHmmss") + RandomString(5);
 

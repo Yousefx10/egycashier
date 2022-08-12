@@ -99,6 +99,20 @@
             this.label__2 = new System.Windows.Forms.Label();
             this.textLine1 = new System.Windows.Forms.TextBox();
             this.label__1 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label26 = new System.Windows.Forms.Label();
+            this.pic_saveVAT = new System.Windows.Forms.PictureBox();
+            this.panel_VAT = new System.Windows.Forms.Panel();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.vat_textbox = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.checkBoxVAT = new System.Windows.Forms.CheckBox();
+            this.label_vat = new System.Windows.Forms.Label();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.label14 = new System.Windows.Forms.Label();
@@ -137,20 +151,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label_vat = new System.Windows.Forms.Label();
-            this.checkBoxVAT = new System.Windows.Forms.CheckBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.panel_VAT = new System.Windows.Forms.Panel();
-            this.pic_saveVAT = new System.Windows.Forms.PictureBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label28 = new System.Windows.Forms.Label();
-            this.vat_textbox = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label31 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -169,6 +171,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.bill_logo_pic)).BeginInit();
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_saveVAT)).BeginInit();
+            this.panel_VAT.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage10.SuspendLayout();
             this.tabPage7.SuspendLayout();
@@ -183,9 +188,7 @@
             this.tabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.tabPage4.SuspendLayout();
-            this.panel_VAT.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_saveVAT)).BeginInit();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -194,6 +197,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.ItemSize = new System.Drawing.Size(1, 1);
             this.tabControl1.Location = new System.Drawing.Point(13, 55);
             this.tabControl1.Name = "tabControl1";
@@ -965,6 +969,163 @@
             this.label__1.TabIndex = 1;
             this.label__1.Text = "Bill\'s Informations";
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.label26);
+            this.tabPage4.Controls.Add(this.pic_saveVAT);
+            this.tabPage4.Controls.Add(this.panel_VAT);
+            this.tabPage4.Controls.Add(this.label25);
+            this.tabPage4.Controls.Add(this.checkBoxVAT);
+            this.tabPage4.Controls.Add(this.label_vat);
+            this.tabPage4.Location = new System.Drawing.Point(4, 5);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(837, 610);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "vat Setting";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(757, 572);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(63, 29);
+            this.label26.TabIndex = 5;
+            this.label26.Text = "save";
+            this.label26.Click += new System.EventHandler(this.pic_saveVAT_Click);
+            // 
+            // pic_saveVAT
+            // 
+            this.pic_saveVAT.Image = global::egycashier.Properties.Resources.save;
+            this.pic_saveVAT.Location = new System.Drawing.Point(757, 500);
+            this.pic_saveVAT.Name = "pic_saveVAT";
+            this.pic_saveVAT.Size = new System.Drawing.Size(63, 69);
+            this.pic_saveVAT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_saveVAT.TabIndex = 4;
+            this.pic_saveVAT.TabStop = false;
+            this.pic_saveVAT.Click += new System.EventHandler(this.pic_saveVAT_Click);
+            // 
+            // panel_VAT
+            // 
+            this.panel_VAT.Controls.Add(this.label30);
+            this.panel_VAT.Controls.Add(this.label29);
+            this.panel_VAT.Controls.Add(this.vat_textbox);
+            this.panel_VAT.Controls.Add(this.label28);
+            this.panel_VAT.Controls.Add(this.radioButton2);
+            this.panel_VAT.Controls.Add(this.radioButton1);
+            this.panel_VAT.Controls.Add(this.label27);
+            this.panel_VAT.Location = new System.Drawing.Point(14, 200);
+            this.panel_VAT.Name = "panel_VAT";
+            this.panel_VAT.Size = new System.Drawing.Size(724, 281);
+            this.panel_VAT.TabIndex = 3;
+            this.panel_VAT.Visible = false;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(17, 208);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(600, 58);
+            this.label30.TabIndex = 6;
+            this.label30.Text = "Note : if vat is on you it will be with the total of the order,\r\notherwise, it wi" +
+    "ll added to the Suptotal";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(233, 99);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(42, 36);
+            this.label29.TabIndex = 5;
+            this.label29.Text = "%";
+            // 
+            // vat_textbox
+            // 
+            this.vat_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vat_textbox.Location = new System.Drawing.Point(160, 99);
+            this.vat_textbox.Name = "vat_textbox";
+            this.vat_textbox.Size = new System.Drawing.Size(67, 38);
+            this.vat_textbox.TabIndex = 4;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(16, 99);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(138, 32);
+            this.label28.TabIndex = 3;
+            this.label28.Text = "Vat Value";
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Location = new System.Drawing.Point(456, 38);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(150, 29);
+            this.radioButton2.TabIndex = 2;
+            this.radioButton2.Text = "On Customer";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Location = new System.Drawing.Point(456, 3);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(93, 29);
+            this.radioButton1.TabIndex = 1;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "On Me";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(3, 14);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(419, 29);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "The Vat is on you or on the Customer?";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(6, 165);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(149, 29);
+            this.label25.TabIndex = 2;
+            this.label25.Text = "Include Vat ?";
+            // 
+            // checkBoxVAT
+            // 
+            this.checkBoxVAT.AutoSize = true;
+            this.checkBoxVAT.Location = new System.Drawing.Point(170, 174);
+            this.checkBoxVAT.Name = "checkBoxVAT";
+            this.checkBoxVAT.Size = new System.Drawing.Size(53, 20);
+            this.checkBoxVAT.TabIndex = 1;
+            this.checkBoxVAT.Text = "Yes";
+            this.checkBoxVAT.UseVisualStyleBackColor = true;
+            this.checkBoxVAT.CheckedChanged += new System.EventHandler(this.checkBoxVAT_CheckedChanged);
+            // 
+            // label_vat
+            // 
+            this.label_vat.AutoSize = true;
+            this.label_vat.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_vat.Location = new System.Drawing.Point(242, 25);
+            this.label_vat.Name = "label_vat";
+            this.label_vat.Size = new System.Drawing.Size(323, 38);
+            this.label_vat.TabIndex = 0;
+            this.label_vat.Text = "Welcome To The Vat";
+            // 
             // tabControl2
             // 
             this.tabControl2.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
@@ -1368,162 +1529,26 @@
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // tabPage4
+            // tabPage5
             // 
-            this.tabPage4.Controls.Add(this.label26);
-            this.tabPage4.Controls.Add(this.pic_saveVAT);
-            this.tabPage4.Controls.Add(this.panel_VAT);
-            this.tabPage4.Controls.Add(this.label25);
-            this.tabPage4.Controls.Add(this.checkBoxVAT);
-            this.tabPage4.Controls.Add(this.label_vat);
-            this.tabPage4.Location = new System.Drawing.Point(4, 5);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(837, 610);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "vat Setting";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage5.Controls.Add(this.label31);
+            this.tabPage5.Location = new System.Drawing.Point(4, 5);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(837, 610);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "tabPage5";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // label_vat
+            // label31
             // 
-            this.label_vat.AutoSize = true;
-            this.label_vat.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_vat.Location = new System.Drawing.Point(242, 25);
-            this.label_vat.Name = "label_vat";
-            this.label_vat.Size = new System.Drawing.Size(336, 39);
-            this.label_vat.TabIndex = 0;
-            this.label_vat.Text = "Welcome To The Vat";
-            // 
-            // checkBoxVAT
-            // 
-            this.checkBoxVAT.AutoSize = true;
-            this.checkBoxVAT.Location = new System.Drawing.Point(170, 174);
-            this.checkBoxVAT.Name = "checkBoxVAT";
-            this.checkBoxVAT.Size = new System.Drawing.Size(53, 20);
-            this.checkBoxVAT.TabIndex = 1;
-            this.checkBoxVAT.Text = "Yes";
-            this.checkBoxVAT.UseVisualStyleBackColor = true;
-            this.checkBoxVAT.CheckedChanged += new System.EventHandler(this.checkBoxVAT_CheckedChanged);
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(6, 165);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(149, 29);
-            this.label25.TabIndex = 2;
-            this.label25.Text = "Include Vat ?";
-            // 
-            // panel_VAT
-            // 
-            this.panel_VAT.Controls.Add(this.label30);
-            this.panel_VAT.Controls.Add(this.label29);
-            this.panel_VAT.Controls.Add(this.vat_textbox);
-            this.panel_VAT.Controls.Add(this.label28);
-            this.panel_VAT.Controls.Add(this.radioButton2);
-            this.panel_VAT.Controls.Add(this.radioButton1);
-            this.panel_VAT.Controls.Add(this.label27);
-            this.panel_VAT.Location = new System.Drawing.Point(14, 200);
-            this.panel_VAT.Name = "panel_VAT";
-            this.panel_VAT.Size = new System.Drawing.Size(724, 281);
-            this.panel_VAT.TabIndex = 3;
-            this.panel_VAT.Visible = false;
-            // 
-            // pic_saveVAT
-            // 
-            this.pic_saveVAT.Image = global::egycashier.Properties.Resources.save;
-            this.pic_saveVAT.Location = new System.Drawing.Point(757, 500);
-            this.pic_saveVAT.Name = "pic_saveVAT";
-            this.pic_saveVAT.Size = new System.Drawing.Size(63, 69);
-            this.pic_saveVAT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_saveVAT.TabIndex = 4;
-            this.pic_saveVAT.TabStop = false;
-            this.pic_saveVAT.Click += new System.EventHandler(this.pic_saveVAT_Click);
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(757, 572);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(63, 29);
-            this.label26.TabIndex = 5;
-            this.label26.Text = "save";
-            this.label26.Click += new System.EventHandler(this.pic_saveVAT_Click);
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(3, 14);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(419, 29);
-            this.label27.TabIndex = 0;
-            this.label27.Text = "The Vat is on you or on the Customer?";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(456, 3);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(93, 29);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "On Me";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(456, 38);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(150, 29);
-            this.radioButton2.TabIndex = 2;
-            this.radioButton2.Text = "On Customer";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(16, 99);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(138, 32);
-            this.label28.TabIndex = 3;
-            this.label28.Text = "Vat Value";
-            // 
-            // vat_textbox
-            // 
-            this.vat_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vat_textbox.Location = new System.Drawing.Point(160, 99);
-            this.vat_textbox.Name = "vat_textbox";
-            this.vat_textbox.Size = new System.Drawing.Size(67, 38);
-            this.vat_textbox.TabIndex = 4;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(233, 99);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(42, 36);
-            this.label29.TabIndex = 5;
-            this.label29.Text = "%";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(17, 208);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(600, 58);
-            this.label30.TabIndex = 6;
-            this.label30.Text = "Note : if vat is on you it will be with the total of the order,\r\notherwise, it wi" +
-    "ll added to the Suptotal";
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(28, 34);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(316, 46);
+            this.label31.TabIndex = 0;
+            this.label31.Text = "General Settings";
             // 
             // settingSCREEN
             // 
@@ -1564,6 +1589,11 @@
             this.panel11.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_saveVAT)).EndInit();
+            this.panel_VAT.ResumeLayout(false);
+            this.panel_VAT.PerformLayout();
             this.tabControl2.ResumeLayout(false);
             this.tabPage10.ResumeLayout(false);
             this.tabPage10.PerformLayout();
@@ -1582,11 +1612,8 @@
             this.tabPage9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
-            this.panel_VAT.ResumeLayout(false);
-            this.panel_VAT.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_saveVAT)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1716,5 +1743,7 @@
         private System.Windows.Forms.TextBox vat_textbox;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Label label31;
     }
 }
