@@ -15,11 +15,8 @@ namespace egycashier
 
             tabControl1.SelectedIndex = whatH;
             GlobalwhatH = whatH;
-            if (whatH == 1 || whatH == 2 || whatH == 3)
-            {
+            if (whatH == 1 || whatH == 2 || whatH == 3 || whatH == 4)
                 Width = tabControl1.Width + 50;
-               
-            }
 
 
             //    string filePATH = @"C:\EgyCashier\guest\";
