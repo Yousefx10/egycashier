@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pic_minimize = new System.Windows.Forms.PictureBox();
-            this.pic_close = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnPOS = new System.Windows.Forms.Button();
             this.btnDELIVERY = new System.Windows.Forms.Button();
@@ -45,22 +43,27 @@
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.label7 = new System.Windows.Forms.Label();
             this.Lbl_supplies = new System.Windows.Forms.Label();
+            this.label_please = new System.Windows.Forms.Label();
+            this.Lbl_bills = new System.Windows.Forms.Label();
+            this.btn_bills = new System.Windows.Forms.PictureBox();
             this.btn_supplies = new System.Windows.Forms.PictureBox();
             this.btn_money = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btn_reports = new System.Windows.Forms.PictureBox();
             this.btn_Settings = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label_please = new System.Windows.Forms.Label();
+            this.pic_minimize = new System.Windows.Forms.PictureBox();
+            this.pic_close = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_minimize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_close)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_bills)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_supplies)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_money)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_reports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Settings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_minimize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_close)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,28 +81,6 @@
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
-            // 
-            // pic_minimize
-            // 
-            this.pic_minimize.Image = global::egycashier.Properties.Resources.minus;
-            this.pic_minimize.Location = new System.Drawing.Point(993, 2);
-            this.pic_minimize.Name = "pic_minimize";
-            this.pic_minimize.Size = new System.Drawing.Size(42, 35);
-            this.pic_minimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_minimize.TabIndex = 2;
-            this.pic_minimize.TabStop = false;
-            this.pic_minimize.Click += new System.EventHandler(this.pic_minimize_Click);
-            // 
-            // pic_close
-            // 
-            this.pic_close.Image = ((System.Drawing.Image)(resources.GetObject("pic_close.Image")));
-            this.pic_close.Location = new System.Drawing.Point(1041, 2);
-            this.pic_close.Name = "pic_close";
-            this.pic_close.Size = new System.Drawing.Size(42, 35);
-            this.pic_close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_close.TabIndex = 1;
-            this.pic_close.TabStop = false;
-            this.pic_close.Click += new System.EventHandler(this.pic_close_Click);
             // 
             // label1
             // 
@@ -193,7 +174,7 @@
             // Lbl_money
             // 
             this.Lbl_money.AutoSize = true;
-            this.Lbl_money.Location = new System.Drawing.Point(941, 704);
+            this.Lbl_money.Location = new System.Drawing.Point(877, 704);
             this.Lbl_money.Name = "Lbl_money";
             this.Lbl_money.Size = new System.Drawing.Size(48, 16);
             this.Lbl_money.TabIndex = 15;
@@ -238,7 +219,7 @@
             // Lbl_supplies
             // 
             this.Lbl_supplies.AutoSize = true;
-            this.Lbl_supplies.Location = new System.Drawing.Point(844, 704);
+            this.Lbl_supplies.Location = new System.Drawing.Point(780, 704);
             this.Lbl_supplies.Name = "Lbl_supplies";
             this.Lbl_supplies.Size = new System.Drawing.Size(64, 16);
             this.Lbl_supplies.TabIndex = 20;
@@ -246,10 +227,43 @@
             this.Lbl_supplies.Visible = false;
             this.Lbl_supplies.Click += new System.EventHandler(this.btn_supplies_Click);
             // 
+            // label_please
+            // 
+            this.label_please.AutoSize = true;
+            this.label_please.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_please.Location = new System.Drawing.Point(347, 328);
+            this.label_please.Name = "label_please";
+            this.label_please.Size = new System.Drawing.Size(366, 25);
+            this.label_please.TabIndex = 21;
+            this.label_please.Text = "Please Login To Start Using The System";
+            // 
+            // Lbl_bills
+            // 
+            this.Lbl_bills.AutoSize = true;
+            this.Lbl_bills.Location = new System.Drawing.Point(954, 704);
+            this.Lbl_bills.Name = "Lbl_bills";
+            this.Lbl_bills.Size = new System.Drawing.Size(32, 16);
+            this.Lbl_bills.TabIndex = 23;
+            this.Lbl_bills.Text = "Bills";
+            this.Lbl_bills.Visible = false;
+            this.Lbl_bills.Click += new System.EventHandler(this.btn_bills_Click);
+            // 
+            // btn_bills
+            // 
+            this.btn_bills.Image = global::egycashier.Properties.Resources.bill;
+            this.btn_bills.Location = new System.Drawing.Point(946, 645);
+            this.btn_bills.Name = "btn_bills";
+            this.btn_bills.Size = new System.Drawing.Size(55, 56);
+            this.btn_bills.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_bills.TabIndex = 22;
+            this.btn_bills.TabStop = false;
+            this.btn_bills.Visible = false;
+            this.btn_bills.Click += new System.EventHandler(this.btn_bills_Click);
+            // 
             // btn_supplies
             // 
             this.btn_supplies.Image = global::egycashier.Properties.Resources.packages;
-            this.btn_supplies.Location = new System.Drawing.Point(847, 645);
+            this.btn_supplies.Location = new System.Drawing.Point(783, 645);
             this.btn_supplies.Name = "btn_supplies";
             this.btn_supplies.Size = new System.Drawing.Size(55, 56);
             this.btn_supplies.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -261,7 +275,7 @@
             // btn_money
             // 
             this.btn_money.Image = global::egycashier.Properties.Resources.pay;
-            this.btn_money.Location = new System.Drawing.Point(934, 645);
+            this.btn_money.Location = new System.Drawing.Point(870, 645);
             this.btn_money.Name = "btn_money";
             this.btn_money.Size = new System.Drawing.Size(55, 56);
             this.btn_money.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -314,15 +328,27 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // label_please
+            // pic_minimize
             // 
-            this.label_please.AutoSize = true;
-            this.label_please.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_please.Location = new System.Drawing.Point(347, 328);
-            this.label_please.Name = "label_please";
-            this.label_please.Size = new System.Drawing.Size(366, 25);
-            this.label_please.TabIndex = 21;
-            this.label_please.Text = "Please Login To Start Using The System";
+            this.pic_minimize.Image = global::egycashier.Properties.Resources.minus;
+            this.pic_minimize.Location = new System.Drawing.Point(993, 2);
+            this.pic_minimize.Name = "pic_minimize";
+            this.pic_minimize.Size = new System.Drawing.Size(42, 35);
+            this.pic_minimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_minimize.TabIndex = 2;
+            this.pic_minimize.TabStop = false;
+            this.pic_minimize.Click += new System.EventHandler(this.pic_minimize_Click);
+            // 
+            // pic_close
+            // 
+            this.pic_close.Image = ((System.Drawing.Image)(resources.GetObject("pic_close.Image")));
+            this.pic_close.Location = new System.Drawing.Point(1041, 2);
+            this.pic_close.Name = "pic_close";
+            this.pic_close.Size = new System.Drawing.Size(42, 35);
+            this.pic_close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_close.TabIndex = 1;
+            this.pic_close.TabStop = false;
+            this.pic_close.Click += new System.EventHandler(this.pic_close_Click);
             // 
             // MainForm
             // 
@@ -331,6 +357,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1088, 731);
             this.ControlBox = false;
+            this.Controls.Add(this.Lbl_bills);
+            this.Controls.Add(this.btn_bills);
             this.Controls.Add(this.label_please);
             this.Controls.Add(this.Lbl_supplies);
             this.Controls.Add(this.btn_supplies);
@@ -361,14 +389,15 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_minimize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_close)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_bills)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_supplies)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_money)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_reports)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Settings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_minimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_close)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,5 +428,7 @@
         private System.Windows.Forms.Label Lbl_supplies;
         private System.Windows.Forms.PictureBox btn_supplies;
         private System.Windows.Forms.Label label_please;
+        private System.Windows.Forms.Label Lbl_bills;
+        private System.Windows.Forms.PictureBox btn_bills;
     }
 }

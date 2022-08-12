@@ -245,5 +245,10 @@ namespace egycashier
             Reports rep = new Reports();
             rep.Show();
         }
+
+        private void btn_bills_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
