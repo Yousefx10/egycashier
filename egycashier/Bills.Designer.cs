@@ -33,6 +33,8 @@
             this.btn_go = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.label1 = new System.Windows.Forms.Label();
+            this.printDocument2 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewControl2 = new System.Windows.Forms.PrintPreviewControl();
             this.SuspendLayout();
             // 
             // textBox1
@@ -50,9 +52,9 @@
             this.printPreviewControl1.AutoZoom = false;
             this.printPreviewControl1.BackColor = System.Drawing.SystemColors.Control;
             this.printPreviewControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.printPreviewControl1.Location = new System.Drawing.Point(0, 152);
+            this.printPreviewControl1.Location = new System.Drawing.Point(0, 135);
             this.printPreviewControl1.Name = "printPreviewControl1";
-            this.printPreviewControl1.Size = new System.Drawing.Size(540, 513);
+            this.printPreviewControl1.Size = new System.Drawing.Size(540, 530);
             this.printPreviewControl1.TabIndex = 1;
             this.printPreviewControl1.Visible = false;
             this.printPreviewControl1.Zoom = 0.4D;
@@ -69,6 +71,7 @@
             // 
             // printDocument1
             // 
+            this.printDocument1.EndPrint += new System.Drawing.Printing.PrintEventHandler(this.printDocument1_EndPrint);
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // label1
@@ -82,12 +85,25 @@
             this.label1.Text = "000000000000000";
             this.label1.Visible = false;
             // 
+            // printDocument2
+            // 
+            this.printDocument2.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument2_PrintPage);
+            // 
+            // printPreviewControl2
+            // 
+            this.printPreviewControl2.Location = new System.Drawing.Point(137, 7);
+            this.printPreviewControl2.Name = "printPreviewControl2";
+            this.printPreviewControl2.Size = new System.Drawing.Size(223, 10);
+            this.printPreviewControl2.TabIndex = 4;
+            this.printPreviewControl2.Visible = false;
+            // 
             // Bills
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(540, 665);
+            this.Controls.Add(this.printPreviewControl2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_go);
             this.Controls.Add(this.printPreviewControl1);
@@ -109,5 +125,7 @@
         private System.Windows.Forms.Button btn_go;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.Label label1;
+        private System.Drawing.Printing.PrintDocument printDocument2;
+        private System.Windows.Forms.PrintPreviewControl printPreviewControl2;
     }
 }

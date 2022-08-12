@@ -19,6 +19,7 @@ namespace egycashier
             InitializeComponent();
         }
         string correctBAR;
+        int PPRsize=0;
         private void btn_go_Click(object sender, EventArgs e)
         {
             
@@ -28,15 +29,38 @@ namespace egycashier
                 label1.Text = correctBAR;
 
                 textBox1.Clear();
-                printPreviewControl1.Visible = true;
-                printDocument1.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 900, 1000);
-                printPreviewControl1.Document = printDocument1;
-                printPreviewControl1.Show();
+
+
+
+
+
+
+
+
+
+
+                printPreviewControl2.Document = printDocument1;
+                printPreviewControl2.Show();
+
+
+
+
+
+
+
+
                 label1.Visible = true;
             }
 
             textBox1.Focus();
         }
+
+
+
+
+
+
+
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
@@ -47,7 +71,7 @@ namespace egycashier
             string[] text1 = File.ReadAllLines(@"C:\EgyCashier\guest\general\" + "data.bill");
 
 
-
+            
 
 
 
@@ -82,7 +106,6 @@ namespace egycashier
 
 
 
-
             DirectoryInfo d = new DirectoryInfo(filePATH);
             foreach (var file in d.GetFiles("*"+ correctBAR.Substring(0, 2) + "-" + correctBAR.Substring(2, 2) + "*.op"))
             {
@@ -106,6 +129,7 @@ namespace egycashier
                             new Font("Arial", 15, FontStyle.Italic), Brushes.DarkGray, new Point(1, TALL + 65));
 
                         TALL += 50;
+                        PPRsize++;
                     }
                    else return; //for stop continue searching 
 
@@ -115,8 +139,6 @@ namespace egycashier
 
 
             }
-
-
 
 
             e.Graphics.DrawString("------------------------------------------------------------------------",
@@ -178,6 +200,7 @@ namespace egycashier
             e.Graphics.DrawImage(Bar_img, 280, TALL + 430, Bar_img.Width, Bar_img.Height);
 
 
+            //MessageBox.Show(PPRsize + " LINE : printpage");
 
 
         }
@@ -193,5 +216,20 @@ namespace egycashier
         };
 
         PictureBox pic_BARCODE = new PictureBox();
+
+        private void printDocument2_PrintPage(object sender, PrintPageEventArgs e)
+        {
+
+        }
+
+        private void printDocument1_EndPrint(object sender, PrintEventArgs e)
+        {
+            printPreviewControl1.Visible = true;
+            printDocument1.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 900, 600 + (PPRsize * 60));
+            printPreviewControl1.Document = printDocument1;
+            printPreviewControl1.Show();
+
+           // MessageBox.Show(PPRsize + " LINE : printpage");
+        }
     }
 }
