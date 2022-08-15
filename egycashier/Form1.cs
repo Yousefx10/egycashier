@@ -111,7 +111,7 @@ namespace egycashier
 
             e.Graphics.DrawString("---------------------------------------------------------------------------------------------------------------------------", new Font("Arial", 15, FontStyle.Italic), Brushes.DarkGray, new Point(1, 330));
 
-
+            //test new pc
         }
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
