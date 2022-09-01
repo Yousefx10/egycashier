@@ -39,7 +39,7 @@
             this.Lbl_settings = new System.Windows.Forms.Label();
             this.Lbl_reports = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.Lbl_help = new System.Windows.Forms.Label();
             this.Lbl_money = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
@@ -75,8 +75,9 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1088, 45);
+            this.panel1.Size = new System.Drawing.Size(816, 37);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -85,9 +86,10 @@
             // pic_minimize
             // 
             this.pic_minimize.Image = global::egycashier.Properties.Resources.minus;
-            this.pic_minimize.Location = new System.Drawing.Point(993, 2);
+            this.pic_minimize.Location = new System.Drawing.Point(745, 2);
+            this.pic_minimize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pic_minimize.Name = "pic_minimize";
-            this.pic_minimize.Size = new System.Drawing.Size(42, 35);
+            this.pic_minimize.Size = new System.Drawing.Size(32, 28);
             this.pic_minimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_minimize.TabIndex = 2;
             this.pic_minimize.TabStop = false;
@@ -96,9 +98,10 @@
             // pic_close
             // 
             this.pic_close.Image = ((System.Drawing.Image)(resources.GetObject("pic_close.Image")));
-            this.pic_close.Location = new System.Drawing.Point(1041, 2);
+            this.pic_close.Location = new System.Drawing.Point(781, 2);
+            this.pic_close.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pic_close.Name = "pic_close";
-            this.pic_close.Size = new System.Drawing.Size(42, 35);
+            this.pic_close.Size = new System.Drawing.Size(32, 28);
             this.pic_close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_close.TabIndex = 1;
             this.pic_close.TabStop = false;
@@ -108,9 +111,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label1.Location = new System.Drawing.Point(357, 8);
+            this.label1.Location = new System.Drawing.Point(268, 6);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(365, 29);
+            this.label1.Size = new System.Drawing.Size(284, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Welcome Back - Egypt Cashier";
             this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
@@ -120,9 +124,10 @@
             // btnPOS
             // 
             this.btnPOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPOS.Location = new System.Drawing.Point(311, 341);
+            this.btnPOS.Location = new System.Drawing.Point(233, 277);
+            this.btnPOS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPOS.Name = "btnPOS";
-            this.btnPOS.Size = new System.Drawing.Size(232, 122);
+            this.btnPOS.Size = new System.Drawing.Size(174, 99);
             this.btnPOS.TabIndex = 4;
             this.btnPOS.Text = "POS";
             this.btnPOS.UseVisualStyleBackColor = true;
@@ -132,9 +137,10 @@
             // btnDELIVERY
             // 
             this.btnDELIVERY.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDELIVERY.Location = new System.Drawing.Point(549, 341);
+            this.btnDELIVERY.Location = new System.Drawing.Point(412, 277);
+            this.btnDELIVERY.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDELIVERY.Name = "btnDELIVERY";
-            this.btnDELIVERY.Size = new System.Drawing.Size(232, 122);
+            this.btnDELIVERY.Size = new System.Drawing.Size(174, 99);
             this.btnDELIVERY.TabIndex = 5;
             this.btnDELIVERY.Text = "Delivery";
             this.btnDELIVERY.UseVisualStyleBackColor = true;
@@ -145,9 +151,10 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.linkLabel1.Location = new System.Drawing.Point(12, 184);
+            this.linkLabel1.Location = new System.Drawing.Point(9, 150);
+            this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(120, 18);
+            this.linkLabel1.Size = new System.Drawing.Size(97, 15);
             this.linkLabel1.TabIndex = 6;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Welcome Guest ";
@@ -155,9 +162,10 @@
             // Lbl_settings
             // 
             this.Lbl_settings.AutoSize = true;
-            this.Lbl_settings.Location = new System.Drawing.Point(9, 704);
+            this.Lbl_settings.Location = new System.Drawing.Point(7, 572);
+            this.Lbl_settings.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_settings.Name = "Lbl_settings";
-            this.Lbl_settings.Size = new System.Drawing.Size(55, 16);
+            this.Lbl_settings.Size = new System.Drawing.Size(45, 13);
             this.Lbl_settings.TabIndex = 8;
             this.Lbl_settings.Text = "Settings";
             this.Lbl_settings.Visible = false;
@@ -166,9 +174,10 @@
             // Lbl_reports
             // 
             this.Lbl_reports.AutoSize = true;
-            this.Lbl_reports.Location = new System.Drawing.Point(1021, 704);
+            this.Lbl_reports.Location = new System.Drawing.Point(766, 572);
+            this.Lbl_reports.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_reports.Name = "Lbl_reports";
-            this.Lbl_reports.Size = new System.Drawing.Size(55, 16);
+            this.Lbl_reports.Size = new System.Drawing.Size(44, 13);
             this.Lbl_reports.TabIndex = 10;
             this.Lbl_reports.Text = "Reports";
             this.Lbl_reports.Visible = false;
@@ -178,27 +187,30 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 44F);
-            this.label4.Location = new System.Drawing.Point(296, 184);
+            this.label4.Location = new System.Drawing.Point(222, 150);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(501, 85);
+            this.label4.Size = new System.Drawing.Size(401, 67);
             this.label4.TabIndex = 11;
             this.label4.Text = "Egypt Cashier";
             // 
-            // label5
+            // Lbl_help
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(96, 704);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 16);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Help";
+            this.Lbl_help.AutoSize = true;
+            this.Lbl_help.Location = new System.Drawing.Point(72, 572);
+            this.Lbl_help.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Lbl_help.Name = "Lbl_help";
+            this.Lbl_help.Size = new System.Drawing.Size(29, 13);
+            this.Lbl_help.TabIndex = 13;
+            this.Lbl_help.Text = "Help";
             // 
             // Lbl_money
             // 
             this.Lbl_money.AutoSize = true;
-            this.Lbl_money.Location = new System.Drawing.Point(877, 704);
+            this.Lbl_money.Location = new System.Drawing.Point(658, 572);
+            this.Lbl_money.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_money.Name = "Lbl_money";
-            this.Lbl_money.Size = new System.Drawing.Size(48, 16);
+            this.Lbl_money.Size = new System.Drawing.Size(39, 13);
             this.Lbl_money.TabIndex = 15;
             this.Lbl_money.Text = "Money";
             this.Lbl_money.Visible = false;
@@ -206,9 +218,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(15, 206);
+            this.button3.Location = new System.Drawing.Point(11, 167);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(117, 31);
+            this.button3.Size = new System.Drawing.Size(88, 25);
             this.button3.TabIndex = 16;
             this.button3.Text = "Login";
             this.button3.UseVisualStyleBackColor = true;
@@ -219,9 +232,10 @@
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.linkLabel2.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel2.Location = new System.Drawing.Point(138, 184);
+            this.linkLabel2.Location = new System.Drawing.Point(104, 150);
+            this.linkLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(54, 18);
+            this.linkLabel2.Size = new System.Drawing.Size(45, 15);
             this.linkLabel2.TabIndex = 17;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Logout";
@@ -232,18 +246,20 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(445, 695);
+            this.label7.Location = new System.Drawing.Point(334, 565);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(164, 25);
+            this.label7.Size = new System.Drawing.Size(130, 20);
             this.label7.TabIndex = 18;
             this.label7.Text = "Version : v1.0.0.1";
             // 
             // Lbl_supplies
             // 
             this.Lbl_supplies.AutoSize = true;
-            this.Lbl_supplies.Location = new System.Drawing.Point(780, 704);
+            this.Lbl_supplies.Location = new System.Drawing.Point(585, 572);
+            this.Lbl_supplies.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_supplies.Name = "Lbl_supplies";
-            this.Lbl_supplies.Size = new System.Drawing.Size(64, 16);
+            this.Lbl_supplies.Size = new System.Drawing.Size(50, 13);
             this.Lbl_supplies.TabIndex = 20;
             this.Lbl_supplies.Text = "Suppliers";
             this.Lbl_supplies.Visible = false;
@@ -253,18 +269,20 @@
             // 
             this.label_please.AutoSize = true;
             this.label_please.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_please.Location = new System.Drawing.Point(347, 328);
+            this.label_please.Location = new System.Drawing.Point(260, 266);
+            this.label_please.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_please.Name = "label_please";
-            this.label_please.Size = new System.Drawing.Size(366, 25);
+            this.label_please.Size = new System.Drawing.Size(294, 20);
             this.label_please.TabIndex = 21;
             this.label_please.Text = "Please Login To Start Using The System";
             // 
             // Lbl_bills
             // 
             this.Lbl_bills.AutoSize = true;
-            this.Lbl_bills.Location = new System.Drawing.Point(954, 704);
+            this.Lbl_bills.Location = new System.Drawing.Point(716, 572);
+            this.Lbl_bills.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_bills.Name = "Lbl_bills";
-            this.Lbl_bills.Size = new System.Drawing.Size(32, 16);
+            this.Lbl_bills.Size = new System.Drawing.Size(25, 13);
             this.Lbl_bills.TabIndex = 23;
             this.Lbl_bills.Text = "Bills";
             this.Lbl_bills.Click += new System.EventHandler(this.btn_bills_Click);
@@ -272,9 +290,10 @@
             // btn_bills
             // 
             this.btn_bills.Image = global::egycashier.Properties.Resources.bill;
-            this.btn_bills.Location = new System.Drawing.Point(946, 645);
+            this.btn_bills.Location = new System.Drawing.Point(710, 524);
+            this.btn_bills.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_bills.Name = "btn_bills";
-            this.btn_bills.Size = new System.Drawing.Size(55, 56);
+            this.btn_bills.Size = new System.Drawing.Size(41, 46);
             this.btn_bills.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_bills.TabIndex = 22;
             this.btn_bills.TabStop = false;
@@ -283,9 +302,10 @@
             // btn_supplies
             // 
             this.btn_supplies.Image = global::egycashier.Properties.Resources.packages;
-            this.btn_supplies.Location = new System.Drawing.Point(783, 645);
+            this.btn_supplies.Location = new System.Drawing.Point(587, 524);
+            this.btn_supplies.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_supplies.Name = "btn_supplies";
-            this.btn_supplies.Size = new System.Drawing.Size(55, 56);
+            this.btn_supplies.Size = new System.Drawing.Size(41, 46);
             this.btn_supplies.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_supplies.TabIndex = 19;
             this.btn_supplies.TabStop = false;
@@ -295,9 +315,10 @@
             // btn_money
             // 
             this.btn_money.Image = global::egycashier.Properties.Resources.pay;
-            this.btn_money.Location = new System.Drawing.Point(870, 645);
+            this.btn_money.Location = new System.Drawing.Point(652, 524);
+            this.btn_money.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_money.Name = "btn_money";
-            this.btn_money.Size = new System.Drawing.Size(55, 56);
+            this.btn_money.Size = new System.Drawing.Size(41, 46);
             this.btn_money.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_money.TabIndex = 14;
             this.btn_money.TabStop = false;
@@ -307,9 +328,10 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::egycashier.Properties.Resources.question;
-            this.pictureBox4.Location = new System.Drawing.Point(87, 645);
+            this.pictureBox4.Location = new System.Drawing.Point(65, 524);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(55, 56);
+            this.pictureBox4.Size = new System.Drawing.Size(41, 46);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 12;
             this.pictureBox4.TabStop = false;
@@ -317,9 +339,10 @@
             // btn_reports
             // 
             this.btn_reports.Image = global::egycashier.Properties.Resources.report;
-            this.btn_reports.Location = new System.Drawing.Point(1021, 645);
+            this.btn_reports.Location = new System.Drawing.Point(766, 524);
+            this.btn_reports.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_reports.Name = "btn_reports";
-            this.btn_reports.Size = new System.Drawing.Size(55, 56);
+            this.btn_reports.Size = new System.Drawing.Size(41, 46);
             this.btn_reports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_reports.TabIndex = 9;
             this.btn_reports.TabStop = false;
@@ -329,9 +352,10 @@
             // btn_Settings
             // 
             this.btn_Settings.Image = global::egycashier.Properties.Resources.settings;
-            this.btn_Settings.Location = new System.Drawing.Point(9, 645);
+            this.btn_Settings.Location = new System.Drawing.Point(7, 524);
+            this.btn_Settings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Settings.Name = "btn_Settings";
-            this.btn_Settings.Size = new System.Drawing.Size(55, 56);
+            this.btn_Settings.Size = new System.Drawing.Size(41, 46);
             this.btn_Settings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_Settings.TabIndex = 7;
             this.btn_Settings.TabStop = false;
@@ -341,19 +365,20 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::egycashier.Properties.Resources.usericon;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 51);
+            this.pictureBox1.Location = new System.Drawing.Point(9, 41);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(118, 126);
+            this.pictureBox1.Size = new System.Drawing.Size(88, 102);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1088, 731);
+            this.ClientSize = new System.Drawing.Size(816, 594);
             this.ControlBox = false;
             this.Controls.Add(this.Lbl_bills);
             this.Controls.Add(this.btn_bills);
@@ -365,7 +390,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.Lbl_money);
             this.Controls.Add(this.btn_money);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.Lbl_help);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Lbl_reports);
@@ -378,6 +403,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
@@ -416,7 +442,7 @@
         private System.Windows.Forms.Label Lbl_reports;
         private System.Windows.Forms.PictureBox btn_reports;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label Lbl_help;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label Lbl_money;
         private System.Windows.Forms.PictureBox btn_money;

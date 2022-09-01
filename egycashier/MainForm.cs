@@ -64,7 +64,28 @@ namespace egycashier
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            string filePATH = @"C:\EgyCashier\guest\configuration.txt";
+            string[] langNow = File.ReadAllLines(filePATH);
+            if (langNow[4]=="1")
+            {
+                label1.Text = "مرحبا بعودتك - كاشير مصر";
+                label4.Text = "كاشير مصر";
+                linkLabel1.Text = "مرحبا بالمستخدم";
+                button3.Text = "تسجيل الدخول";
+                label_please.Text = "من فضلك قم بتسجيل الدخول حتى تستخدم البرنامج";
+                label7.Text = "الإصدار : " + label7.Text.Remove(0,10);
 
+
+                Lbl_settings.Text = "الإعدادات";
+                Lbl_help.Text = "المساعدة";
+                Lbl_supplies.Text = "التموينات";
+                Lbl_money.Text = "الخزنة";
+                Lbl_bills.Text = "الفواتير";
+                Lbl_reports.Text = "التقارير";
+
+                //btnPOS.Text = "";
+                btnDELIVERY.Text = "طلب خارجي";
+            }
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)

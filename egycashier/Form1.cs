@@ -219,7 +219,7 @@ namespace egycashier
                         dir.Delete(true);
 
                     }
-                    File.WriteAllText(filePATH + "configuration.txt", "0\n0\n0\n0\n");
+                    File.WriteAllText(filePATH + "configuration.txt", "0\n0\n0\n0\n0\n");
                     File.WriteAllText(filePATH + "list.txt", "0");
 
                     Directory.CreateDirectory(filePATH + "money");
