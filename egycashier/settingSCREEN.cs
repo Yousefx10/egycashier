@@ -944,8 +944,7 @@ namespace egycashier
         private void btn_general_setting_Click(object sender, EventArgs e)
         {
             MessageBox.Show(comboBox1.SelectedIndex.ToString());
-            if (comboBox1.SelectedIndex == 1) 
-            {
+
                 string filePATH = @"C:\EgyCashier\guest\configuration.txt";
                 string[] temp1 = File.ReadAllLines(filePATH);
                 string old1 = temp1[0],
@@ -954,14 +953,15 @@ namespace egycashier
                        old4 = temp1[3];
                 string final_ = temp1[0] + "\n" + temp1[1] + "\n" + temp1[2] + "\n" + temp1[3] + "\n";
                // MessageBox.Show(final_);
-                File.WriteAllText(filePATH, final_ + comboBox1.SelectedIndex.ToString());
-            }
-            else
-            {
+               
+            //The Language value and Sound Value Will Stick Together.
+                File.WriteAllText(filePATH, final_ + comboBox1.SelectedIndex.ToString() + comboBox2.SelectedIndex.ToString());
 
-            }
+        }
 
-
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btn_general_setting.Visible = true;
         }
 
 
