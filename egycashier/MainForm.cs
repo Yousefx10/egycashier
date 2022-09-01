@@ -274,5 +274,11 @@ namespace egycashier
             Bills Bi = new Bills();
             Bi.Show();
         }
+
+        private void btn_help_Click(object sender, EventArgs e)
+        {
+            helpForm Se = new helpForm();
+            Se.Show();
+        }
     }
 }

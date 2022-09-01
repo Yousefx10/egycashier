@@ -50,7 +50,7 @@
             this.btn_bills = new System.Windows.Forms.PictureBox();
             this.btn_supplies = new System.Windows.Forms.PictureBox();
             this.btn_money = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btn_help = new System.Windows.Forms.PictureBox();
             this.btn_reports = new System.Windows.Forms.PictureBox();
             this.btn_Settings = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -60,7 +60,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_bills)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_supplies)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_money)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_help)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_reports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Settings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -75,7 +75,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(816, 37);
             this.panel1.TabIndex = 0;
@@ -87,7 +87,7 @@
             // 
             this.pic_minimize.Image = global::egycashier.Properties.Resources.minus;
             this.pic_minimize.Location = new System.Drawing.Point(745, 2);
-            this.pic_minimize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pic_minimize.Margin = new System.Windows.Forms.Padding(2);
             this.pic_minimize.Name = "pic_minimize";
             this.pic_minimize.Size = new System.Drawing.Size(32, 28);
             this.pic_minimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -99,7 +99,7 @@
             // 
             this.pic_close.Image = ((System.Drawing.Image)(resources.GetObject("pic_close.Image")));
             this.pic_close.Location = new System.Drawing.Point(781, 2);
-            this.pic_close.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pic_close.Margin = new System.Windows.Forms.Padding(2);
             this.pic_close.Name = "pic_close";
             this.pic_close.Size = new System.Drawing.Size(32, 28);
             this.pic_close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -125,7 +125,7 @@
             // 
             this.btnPOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPOS.Location = new System.Drawing.Point(233, 277);
-            this.btnPOS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPOS.Margin = new System.Windows.Forms.Padding(2);
             this.btnPOS.Name = "btnPOS";
             this.btnPOS.Size = new System.Drawing.Size(174, 99);
             this.btnPOS.TabIndex = 4;
@@ -138,7 +138,7 @@
             // 
             this.btnDELIVERY.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDELIVERY.Location = new System.Drawing.Point(412, 277);
-            this.btnDELIVERY.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDELIVERY.Margin = new System.Windows.Forms.Padding(2);
             this.btnDELIVERY.Name = "btnDELIVERY";
             this.btnDELIVERY.Size = new System.Drawing.Size(174, 99);
             this.btnDELIVERY.TabIndex = 5;
@@ -203,6 +203,7 @@
             this.Lbl_help.Size = new System.Drawing.Size(29, 13);
             this.Lbl_help.TabIndex = 13;
             this.Lbl_help.Text = "Help";
+            this.Lbl_help.Click += new System.EventHandler(this.btn_help_Click);
             // 
             // Lbl_money
             // 
@@ -219,7 +220,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(11, 167);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(88, 25);
             this.button3.TabIndex = 16;
@@ -291,7 +292,7 @@
             // 
             this.btn_bills.Image = global::egycashier.Properties.Resources.bill;
             this.btn_bills.Location = new System.Drawing.Point(710, 524);
-            this.btn_bills.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_bills.Margin = new System.Windows.Forms.Padding(2);
             this.btn_bills.Name = "btn_bills";
             this.btn_bills.Size = new System.Drawing.Size(41, 46);
             this.btn_bills.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -303,7 +304,7 @@
             // 
             this.btn_supplies.Image = global::egycashier.Properties.Resources.packages;
             this.btn_supplies.Location = new System.Drawing.Point(587, 524);
-            this.btn_supplies.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_supplies.Margin = new System.Windows.Forms.Padding(2);
             this.btn_supplies.Name = "btn_supplies";
             this.btn_supplies.Size = new System.Drawing.Size(41, 46);
             this.btn_supplies.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -316,7 +317,7 @@
             // 
             this.btn_money.Image = global::egycashier.Properties.Resources.pay;
             this.btn_money.Location = new System.Drawing.Point(652, 524);
-            this.btn_money.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_money.Margin = new System.Windows.Forms.Padding(2);
             this.btn_money.Name = "btn_money";
             this.btn_money.Size = new System.Drawing.Size(41, 46);
             this.btn_money.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -325,22 +326,23 @@
             this.btn_money.Visible = false;
             this.btn_money.Click += new System.EventHandler(this.btn_money_Click);
             // 
-            // pictureBox4
+            // btn_help
             // 
-            this.pictureBox4.Image = global::egycashier.Properties.Resources.question;
-            this.pictureBox4.Location = new System.Drawing.Point(65, 524);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(41, 46);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 12;
-            this.pictureBox4.TabStop = false;
+            this.btn_help.Image = global::egycashier.Properties.Resources.question;
+            this.btn_help.Location = new System.Drawing.Point(65, 524);
+            this.btn_help.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_help.Name = "btn_help";
+            this.btn_help.Size = new System.Drawing.Size(41, 46);
+            this.btn_help.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_help.TabIndex = 12;
+            this.btn_help.TabStop = false;
+            this.btn_help.Click += new System.EventHandler(this.btn_help_Click);
             // 
             // btn_reports
             // 
             this.btn_reports.Image = global::egycashier.Properties.Resources.report;
             this.btn_reports.Location = new System.Drawing.Point(766, 524);
-            this.btn_reports.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_reports.Margin = new System.Windows.Forms.Padding(2);
             this.btn_reports.Name = "btn_reports";
             this.btn_reports.Size = new System.Drawing.Size(41, 46);
             this.btn_reports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -353,7 +355,7 @@
             // 
             this.btn_Settings.Image = global::egycashier.Properties.Resources.settings;
             this.btn_Settings.Location = new System.Drawing.Point(7, 524);
-            this.btn_Settings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Settings.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Settings.Name = "btn_Settings";
             this.btn_Settings.Size = new System.Drawing.Size(41, 46);
             this.btn_Settings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -366,7 +368,7 @@
             // 
             this.pictureBox1.Image = global::egycashier.Properties.Resources.usericon;
             this.pictureBox1.Location = new System.Drawing.Point(9, 41);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(88, 102);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -391,7 +393,7 @@
             this.Controls.Add(this.Lbl_money);
             this.Controls.Add(this.btn_money);
             this.Controls.Add(this.Lbl_help);
-            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.btn_help);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Lbl_reports);
             this.Controls.Add(this.btn_reports);
@@ -403,7 +405,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
@@ -418,7 +420,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_bills)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_supplies)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_money)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_help)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_reports)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Settings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -443,7 +445,7 @@
         private System.Windows.Forms.PictureBox btn_reports;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label Lbl_help;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox btn_help;
         private System.Windows.Forms.Label Lbl_money;
         private System.Windows.Forms.PictureBox btn_money;
         private System.Windows.Forms.Button button3;
