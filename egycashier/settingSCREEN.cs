@@ -943,7 +943,7 @@ namespace egycashier
 
         private void btn_general_setting_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(comboBox1.SelectedIndex.ToString());
+            //MessageBox.Show(comboBox1.SelectedIndex.ToString());
 
                 string filePATH = @"C:\EgyCashier\guest\configuration.txt";
                 string[] temp1 = File.ReadAllLines(filePATH);
