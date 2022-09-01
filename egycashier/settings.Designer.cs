@@ -51,9 +51,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.label1.Location = new System.Drawing.Point(12, 180);
+            this.label1.Location = new System.Drawing.Point(9, 146);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(290, 48);
+            this.label1.Size = new System.Drawing.Size(238, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Manage Users";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -62,9 +63,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.label2.Location = new System.Drawing.Point(12, 276);
+            this.label2.Location = new System.Drawing.Point(9, 224);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(284, 48);
+            this.label2.Size = new System.Drawing.Size(232, 39);
             this.label2.TabIndex = 1;
             this.label2.Text = "Manage Items";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -72,9 +74,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::egycashier.Properties.Resources.settings;
-            this.pictureBox1.Location = new System.Drawing.Point(90, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(68, 10);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(246, 137);
+            this.pictureBox1.Size = new System.Drawing.Size(184, 111);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -82,27 +85,30 @@
             // pictureBox2
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 242);
+            this.pictureBox2.Location = new System.Drawing.Point(9, 197);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(400, 2);
+            this.pictureBox2.Size = new System.Drawing.Size(300, 2);
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox3
             // 
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Location = new System.Drawing.Point(12, 336);
+            this.pictureBox3.Location = new System.Drawing.Point(9, 273);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(400, 2);
+            this.pictureBox3.Size = new System.Drawing.Size(300, 2);
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox4
             // 
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Location = new System.Drawing.Point(12, 434);
+            this.pictureBox4.Location = new System.Drawing.Point(9, 353);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(400, 2);
+            this.pictureBox4.Size = new System.Drawing.Size(300, 2);
             this.pictureBox4.TabIndex = 6;
             this.pictureBox4.TabStop = false;
             // 
@@ -110,9 +116,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.label3.Location = new System.Drawing.Point(12, 374);
+            this.label3.Location = new System.Drawing.Point(9, 304);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(241, 48);
+            this.label3.Size = new System.Drawing.Size(196, 39);
             this.label3.TabIndex = 5;
             this.label3.Text = "Bill Settings";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -120,9 +127,10 @@
             // pictureBox5
             // 
             this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Location = new System.Drawing.Point(12, 528);
+            this.pictureBox5.Location = new System.Drawing.Point(9, 429);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(400, 2);
+            this.pictureBox5.Size = new System.Drawing.Size(300, 2);
             this.pictureBox5.TabIndex = 8;
             this.pictureBox5.TabStop = false;
             // 
@@ -130,9 +138,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.label4.Location = new System.Drawing.Point(12, 468);
+            this.label4.Location = new System.Drawing.Point(9, 380);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(246, 48);
+            this.label4.Size = new System.Drawing.Size(200, 39);
             this.label4.TabIndex = 7;
             this.label4.Text = "Vat Settings";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -140,9 +149,10 @@
             // pictureBox6
             // 
             this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox6.Location = new System.Drawing.Point(7, 614);
+            this.pictureBox6.Location = new System.Drawing.Point(5, 499);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(400, 2);
+            this.pictureBox6.Size = new System.Drawing.Size(300, 2);
             this.pictureBox6.TabIndex = 10;
             this.pictureBox6.TabStop = false;
             // 
@@ -150,19 +160,20 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.label5.Location = new System.Drawing.Point(7, 554);
+            this.label5.Location = new System.Drawing.Point(5, 450);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(332, 48);
+            this.label5.Size = new System.Drawing.Size(270, 39);
             this.label5.TabIndex = 9;
             this.label5.Text = "General Settings";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // settings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(471, 640);
+            this.ClientSize = new System.Drawing.Size(353, 520);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox5);
@@ -174,11 +185,13 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "settings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "settings";
+            this.Load += new System.EventHandler(this.settings_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

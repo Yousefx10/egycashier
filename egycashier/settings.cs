@@ -12,9 +12,11 @@ namespace egycashier
 {
     public partial class settings : Form
     {
-        public settings()
+        int lang = 0;
+        public settings(int LANG)
         {
             InitializeComponent();
+            lang = LANG;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -52,6 +54,20 @@ namespace egycashier
             settingSCREEN SCSC = new settingSCREEN(openNum);
             SCSC.Show();
             Close();
+        }
+
+        private void settings_Load(object sender, EventArgs e)
+        {
+            if (lang == 1)
+            {
+                label1.Text = "إدارة المستخدمين";
+                label2.Text = "إدارة المنتجات";
+                label3.Text = "ظبط الفاتورة";
+                label4.Text = "ظبط الضريبة";
+                label5.Text = "إعدادات عامة";
+
+                Text = "إعدادات البرنامج";
+            }
         }
     }
 }

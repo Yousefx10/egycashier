@@ -85,7 +85,9 @@ namespace egycashier
 
                 //btnPOS.Text = "";
                 btnDELIVERY.Text = "طلب خارجي";
+                LANG = 1;
             }
+
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -252,12 +254,12 @@ namespace egycashier
             money mon = new money();
             mon.Show();
         }
-
+        int LANG = 0;
         private void btn_Settings_Click(object sender, EventArgs e)
         {
             //settingSCREEN st = new settingSCREEN(0);
             //st.Show();
-            settings Se = new settings();
+            settings Se = new settings(LANG);
             Se.Show();
         }
 
