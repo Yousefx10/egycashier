@@ -56,6 +56,20 @@ namespace egycashier
         private void loginForm_Load(object sender, EventArgs e)
         {
             FriSH();
+
+            string filePATH = @"C:\EgyCashier\guest\configuration.txt";
+            string[] langNow = File.ReadAllLines(filePATH);
+            if (langNow[4] == "1")
+            {
+                label1.Text = "رجاء إختر المستخدم الذي تريد إستعماله";
+                label2.Text = "أكتب كلمة السر هنا";
+
+                label5.Text = "آخر دخول";
+
+                Text = "تسجيل الدخول إلى الحساب";
+                button6.Text = "الدخول";
+            }
+
         }
         void FriSH()
         {
