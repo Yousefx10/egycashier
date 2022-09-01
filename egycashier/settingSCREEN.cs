@@ -911,10 +911,11 @@ namespace egycashier
 
                 string filePATH = @"C:\EgyCashier\guest\configuration.txt";
                 string[] temp1 = File.ReadAllLines(filePATH);
-                string old1 = temp1[0];
-                string old2 = temp1[1];
+               // string old1 = temp1[0];
+               // string old2 = temp1[1];
+                string lang = temp1[4];
                 string final_old = temp1[0] + "\n" + temp1[1] + "\n";
-                string HHnew = final_old + STATS + "\n" + vat_textbox.Text;
+                string HHnew = final_old + STATS + "\n" + vat_textbox.Text+"\n"+ lang;
                 File.WriteAllText(filePATH, HHnew);
 
             }
@@ -922,9 +923,10 @@ namespace egycashier
             {
                 string filePATH = @"C:\EgyCashier\guest\configuration.txt";
                 string[] temp1 = File.ReadAllLines(filePATH);
-                string old1 = temp1[0];
-                string old2 = temp1[1];
-                string final_old = temp1[0] + "\n" + temp1[1] + "\n" + STATS + "\n" + 0;
+                // string old1 = temp1[0];
+                //  string old2 = temp1[1];
+                string lang = temp1[4];
+                string final_old = temp1[0] + "\n" + temp1[1] + "\n" + STATS + "\n" + 0 + "\n" + lang;
                 string HHnew = final_old;
                 File.WriteAllText(filePATH, HHnew);
             }
@@ -937,6 +939,29 @@ namespace egycashier
                 panel_VAT.Visible = true;
             else
                 panel_VAT.Visible = false;
+        }
+
+        private void btn_general_setting_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(comboBox1.SelectedIndex.ToString());
+            if (comboBox1.SelectedIndex == 1) 
+            {
+                string filePATH = @"C:\EgyCashier\guest\configuration.txt";
+                string[] temp1 = File.ReadAllLines(filePATH);
+                string old1 = temp1[0],
+                       old2 = temp1[1],
+                       old3 = temp1[2],
+                       old4 = temp1[3];
+                string final_ = temp1[0] + "\n" + temp1[1] + "\n" + temp1[2] + "\n" + temp1[3] + "\n";
+               // MessageBox.Show(final_);
+                File.WriteAllText(filePATH, final_ + comboBox1.SelectedIndex.ToString());
+            }
+            else
+            {
+
+            }
+
+
         }
 
 
